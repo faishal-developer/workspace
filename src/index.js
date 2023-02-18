@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './Language/i18';
 import App from './App';
+import {BrowserRouter} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
+import MainRoutes from './routes/Index';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+localStorage.setItem("userData",true);
+localStorage.setItem("isDeveloper",false);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename='/'>
+      <ToastContainer/>
+      <MainRoutes/>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

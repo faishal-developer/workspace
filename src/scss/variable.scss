@@ -1,0 +1,51 @@
+.dark-theme {
+    // --bg-color: #191E2B;
+   
+}
+
+.light-theme {
+    
+}
+
+
+
+// $bg-color1:var(--bg-color);
+
+
+
+
+
+
+
+
+
+
+// $light_colors:(
+//     base:#fff,
+//     bg-color:rgb(77, 158, 158),
+//     color: #141414
+// );
+// $dark_colors:(
+//     base:#fff,
+//     bg-color:#141414,
+//     color: rgb(77, 158, 158)
+// );
+
+// :root{
+//     @each $name, $color in $light_colors{
+//         --color-#{$name} : #{$color};
+//     }
+//     --theme:'light'
+// }
+// @media (prefers-color-scheme:dark){
+//     :root{
+//         @each $name, $color in $dark_colors{
+//             --color-#{$name} : #{$color};
+//         }
+//         --theme:'dark'
+//     }
+// }
+
+// @function getColor($color-name){
+//     @return var(--color-#{$color-name})
+// }
