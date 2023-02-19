@@ -1,4 +1,4 @@
-import Logo from "../assets/images/CPDigital.svg";
+import Logo from "../assets/images/CP0.png";
 import favicon from "../assets/images/CPDigital.svg";
 import user_default_profile_pic from "../assets/images/user.svg"
 

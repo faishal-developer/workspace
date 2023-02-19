@@ -5,6 +5,17 @@
 //     color: $btn_color;
 // }
 
-
+.offcanvas-start{
+    max-width: 60%;
+}
+.offcanvas-body{
+    max-width: 100%;
+}
 
 //function to use multiple times
+
+@mixin textgradient($color1,$color2){
+    background: -webkit-linear-gradient($color1, $color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

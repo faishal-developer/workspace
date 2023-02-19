@@ -1,4 +1,4 @@
-let css = {
+let BP = {
     d_flex: 'd-flex',
     JC_center: 'justify-content-center',
     container:'container',
@@ -15,4 +15,4 @@ let css = {
     row_c_l5: 'row-cols-lg-5'
 
 }
-export default css;
+export default BP;

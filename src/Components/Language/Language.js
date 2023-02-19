@@ -11,7 +11,7 @@ const Language = () => {
         setSelected(lng);
     }
     return (
-        <div>
+        <div className='lang'>
            {
             langlist.map((item,index)=>(
                 <li key={index} onClick={()=>changeLanguage(item.code)}>
