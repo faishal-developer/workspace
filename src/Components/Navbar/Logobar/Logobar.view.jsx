@@ -28,6 +28,7 @@ const Logobar = () => {
                                 <p 
                                     className={`shop_p ${i===index && 'active'}`}
                                     onClick={()=>setIndex(i)}
+                                    key={el}
                                 >
                                     {el}
                                 </p>
@@ -39,11 +40,11 @@ const Logobar = () => {
                         <ul className='list'>
                             <li>
                                 <FontAwesome icon={iconList.cart}/>
-                                {t("cart")}
+                                <span className='text'>{t("cart")}</span>
                             </li>
                             <li>
                                 <FontAwesome icon={iconList.heart} />
-                                {t("wish")}
+                                <span className='text'>{t("wish")}</span>
                             </li>
                             <li className='user'><FontAwesome icon={iconList.user} /></li>
                         </ul>
@@ -63,6 +64,7 @@ const Logobar = () => {
                                     <p
                                         className={`shop_p ${i === index && 'active'}`}
                                         onClick={() => setIndex(i)}
+                                        key={el}
                                     >
                                         {el}
                                     </p>

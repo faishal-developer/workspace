@@ -2,3 +2,44 @@
 @import '../../scss/variable.scss';
 @import '../../scss/global.scss';
 
+.home-container{
+    .main{
+        // display: flex;
+        // float: left;
+        .asideBar{
+            float: left;
+            width: 266px;
+            background-color: $pal-ash;
+            padding: 20px 0px;
+        }
+        .mainBox{
+            // max-width: calc(100vw - 400px);
+            padding: 5px 5px;
+            // background-color: $white;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 767px){
+    .home-container{
+        .main{
+            .asideBar{
+                width: 200px ;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 767px){
+    .home-container{
+        .main{
+            .asideBar{
+                width: 100% ;
+                float: none;
+            }
+            .mainBox {
+                padding: 5px 0px;
+            }
+        }
+        
+    }
+}

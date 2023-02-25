@@ -8,3 +8,14 @@ export const themeChange = (givenTheme)=>{
     document.body.className = resultTheme;
     return resultTheme;
 } 
+
+export const stringSlicer=(data,length)=>{
+    if(typeof data !== 'string') return null;
+    else if(data.length<=length) return data;
+    return `${data.slice(0,length)}+...`
+}
+
+export const widthDetector=(max,min)=>{
+    let w = window.innerWidth;
+    return w<= max && w>= min ?true : false;
+}

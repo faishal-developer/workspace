@@ -11,6 +11,52 @@
 .offcanvas-body{
     max-width: 100%;
 }
+.bg_green{
+    background-color: $pal-green;
+}
+.bg_ash{
+    background-color: $pal-ash;
+}
+.bg_lightRed{
+    background-color: $lightRed;
+}
+.bg_skyblue{
+    background-color: $skyblue;
+}
+.bg_red{
+    background-color: $primary;
+}
+.op_0{
+    transition: opacity 200ms, display 200ms;
+    display: none !important;
+    opacity: 0;
+}
+
+@keyframes slideaway {
+    from {
+        display: block;
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+}
+@keyframes slideBlock {
+    from {
+        display: none;
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+        display: block;
+    }
+}
+
 
 //function to use multiple times
 

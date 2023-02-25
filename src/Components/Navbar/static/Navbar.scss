@@ -1,8 +1,12 @@
 @import '../../../scss/variable.scss';
 @import '../../../scss/global.scss';
 
+
+.Navbar{
+    background-color: $pal-green;
+};
 .topbar{
-    background-color: $white;
+    background-color: $pal-ash;
     color:$black;
 
     .top-Navbar {
@@ -26,6 +30,7 @@
                     display: flex;
                     list-style-type: none;
                     margin-bottom: 0px;
+                    cursor: pointer;
     
                     li {
                         padding: 7px 12px;
@@ -73,7 +78,7 @@
     .logo {
         // background-color: black;
         display: flex;
-        min-width: 40%;
+        min-width: 35%;
         align-items: center;
         img {
             display: block;
@@ -82,7 +87,7 @@
         .Custom{
             font-size: 25px;
             font-weight: bold;
-            @include textgradient($blue,$skyblue);
+            @include textgradient($lightRed,$red);
             margin-bottom: 0px;
             margin-left:5px;
             line-height: 1;
@@ -92,7 +97,7 @@
     .right_bar{
         display: flex;
         justify-content: space-between;
-        width: 60%;
+        width: 65%;
         align-items: center;
 
         .shop{
@@ -100,7 +105,7 @@
             cursor: pointer;
             display: flex;
             .shop_p{
-                font-weight: bold;
+                font-weight: 600;
                 color: $black;
                 margin:0 12px 0 0;
             }
@@ -183,7 +188,7 @@
 }
 
 
-@media only screen and (max-width: 768px) and (min-width: 500px) {
+@media only screen and (max-width: 900px) and (min-width: 650px) {
     .topbar{
         .top-Navbar {
             justify-content: center;
@@ -197,22 +202,22 @@
         justify-content: space-between;
         .right_bar{
             width: auto;
-            .shop {
-                    display: none;
-                }
+            // .shop {
+            //         display: none;
+            //     }
             
                 .list {
-                    display: none;
+                    .text{display: none;}
                 }
             
-                .bar {
-                    display: block;
-                }
+                // .bar {
+                //     display: block;
+                // }
         }
     }
     
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) {
     .topbar{
         .top-Navbar {
             justify-content: center;

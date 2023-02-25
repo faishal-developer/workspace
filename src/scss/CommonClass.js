@@ -1,7 +1,7 @@
 let BP = {
     d_flex: 'd-flex',
     JC_center: 'justify-content-center',
-    container:'container',
+    container:'container-xxl',
     mb5:'mb-5',
     pt5:'pt-5',
     pb5:'pb-5',
@@ -12,7 +12,8 @@ let BP = {
     row_c2: 'row-cols-2',
     g3: 'g-3' ,
     row_c_m3:'row-cols-md-3',
-    row_c_l5: 'row-cols-lg-5'
+    row_c_l5: 'row-cols-lg-5',
+    dnone:'op_0'
 
 }
 export default BP;

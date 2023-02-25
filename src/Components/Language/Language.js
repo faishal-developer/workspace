@@ -14,7 +14,7 @@ const Language = () => {
         <div className='lang'>
            {
             langlist.map((item,index)=>(
-                <li key={index} onClick={()=>changeLanguage(item.code)}>
+                <li key={item.name} onClick={()=>changeLanguage(item.code)}>
                     {item.name}
                 </li>
             ))

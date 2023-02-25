@@ -1,0 +1,96 @@
+@import "../../../scss/variable.scss";
+
+.main_box{
+        // margin-top: 10px;
+    .banner{
+        height: 80px;
+        // width: 100%;
+        background-image: linear-gradient(to right,$pal-ash,$pal-green);
+    }
+    .search_bar{
+        margin-left: 5px;
+        padding:5px;
+
+        .search{
+            display: flex;
+            justify-content: center;
+            input {
+                    border-radius: 15px;
+                    width: 50%;
+                    padding: 2px 15px;
+                    border: 2px solid $pal-green;
+                }
+            
+                input:focus {
+                    outline: 3px solid $pal-ash;
+                }
+            
+                .src_btn {
+                    // transition: .1s;
+                    padding: 2px 25px;
+                    cursor: pointer;
+                    color: $white;
+                    font-size: 20px;
+                    border-radius: 18px;
+                    background-color: $lightRed;
+                    margin-left: 5px;
+                    border: 1px solid $pal-ash;
+                }
+            
+                .src_btn:hover {
+                    padding: 0px 23px;
+                    color: $pal-green;
+                    border: 3px solid $pal-ash;
+                }
+            
+                .drop_down {
+                    background-color: $pal-ash;
+                    padding: 4px 40px;
+                    border-radius: 20px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+        }
+        .keyword{
+            display: flex;
+            flex-wrap: wrap;
+            background-color: $pal-ash;
+            margin-top: 5px;
+            p{
+                padding:5px;
+                background-color: $pal-trans-yellow;
+                border-radius: 15px;
+                font-weight: 300;
+                font-size: 13px;
+                color: $light;
+                margin: 5px;
+            }
+        }
+    }
+    .icons{
+        font-size: 30px;
+        .icon{
+            background-color: $pal-green;
+            box-shadow: -1px -1px 3px $pal-ash,
+            inset -1px -1px 3px $pal-ash;
+            margin: 0px 3px 0 3px;
+            padding: 6px;
+            color: $white;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .main_box{
+        .search_bar{
+            margin-left: 0px;
+            .keyword{
+
+            }
+        }
+        .icons {
+            font-size: 25px;
+        }
+    }
+    
+}

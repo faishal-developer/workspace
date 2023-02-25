@@ -1,0 +1,36 @@
+[
+    {
+        "cloths": [
+            "Man",
+            "Woman",
+            "Sports",
+            "Dummy",
+            "Dummy",
+            "Dummy",
+            "Dummy"
+        ]
+    },
+    {
+        "laser": [
+            "Key ring",
+            "Portrait",
+            "Shopies",
+            "Dummy",
+            "Dummy",
+            "Dummy",
+            "Dummy"
+        ]
+    },
+    {
+        "TD_printed": [
+            "Box",
+            "Cartoon",
+            "Sports",
+            "Dummy",
+            "Dummy",
+            "Dummy",
+            "Dummy"
+        ]
+    }
+    
+]
