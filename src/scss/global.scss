@@ -31,6 +31,28 @@
     display: none !important;
     opacity: 0;
 }
+.top_0{
+    
+}
+.top_20{
+    top: 20;
+}
+.p_sticky0{
+    position: fixed;
+    width:80%;
+    background-color: $pal-ash;
+    top: 0;
+    padding:3px 0;
+    // right: 0;
+}
+.p_sticky40{
+    position: fixed;
+    width:80%;
+    background-color: $pal-ash;
+    top: 41px;
+    padding-top: 2px;
+    // right: 0;
+}
 
 @keyframes slideaway {
     from {
@@ -64,4 +86,10 @@
     background: -webkit-linear-gradient($color1, $color2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 767px){
+    .p_sticky{
+        width:95%;
+    }
 }

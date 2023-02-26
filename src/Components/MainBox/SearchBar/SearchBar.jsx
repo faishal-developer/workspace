@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { stickyPosition } from '../../../helper/CommonFunction';
 import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 
 const keyword=["key ring","portrait","shopies","map","busket","Dummy","family","3d","Cloth","laser cutting"];
 const SearchBar = () => {
+    useEffect(()=>{
+        stickyPosition("search_bar","p_sticky0")
+    },[])
     return (
-        <div className='search_bar'>
+        <div  className='search_bar'>
             <div>
-                <div className='search'>
+                <div id="search_bar" className='search'>
                     <input type="text" />
                     <span className='src_btn'>
                         <FontAwesome icon={iconList.search} />

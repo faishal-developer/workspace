@@ -24,7 +24,9 @@
     --palete-skyblue:#6EE8CC;
     // --palete-ash:#E8E6E3;
      --palete-ash:#99FFFF;
+     --palete-ash-op:#99ffff36;
      --palete-yellow-op:#f1dc60;
+     --palete-yellow-text:#f57224;
 }
 
 
@@ -43,7 +45,9 @@ $light:var(--light);
 $pal-green:var(--palete-green);
 $pal-skyblue:var(--palete-skyblue);
 $pal-ash:var(--palete-ash);
+$pal-ash-op:var(--palete-ash);
 $pal-trans-yellow:var(--palete-yellow-op);
+$yellow-text:var(--palete-yellow-text);
 
 
 

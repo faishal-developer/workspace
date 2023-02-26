@@ -1,0 +1,67 @@
+@import '../../../scss/variable.scss';
+@import '../../../scss/global.scss';
+
+
+.custom_card{
+    transition: box-shadow .2s;
+    // background-color: $pal-ash;
+    border-radius: 3px;
+    .card_body{
+        height: 100%;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        figure{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            max-width: 200px;
+            overflow: hidden;
+            img{
+                animation: slideBlock 200ms;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .data{
+            display: flex;
+            align-items: flex-end;
+            p{
+                margin: 0;
+                font-size: 14px;
+            }
+            .title{
+                color:$light;
+            }
+            .price{
+                color:$red;
+                .del{
+                    position:relative;
+                    z-index: -1;
+                    color: $red;
+                    opacity: .5;
+                    margin-left: 10px;
+                }
+            }
+            .button{
+                border:1px solid $pal-green;
+                font-size: 13px;
+                color:$pal-green;
+            }
+            .button:hover{
+                background-color: $pal-green;
+                color: $white;
+            }
+        }
+    }
+}
+.custom_card:hover{
+    box-shadow: 1px 1px 2px $skyblue,
+    inset 1px 1px 2px $skyblue;
+}
+.border_green{
+    border: 1px solid $pal-ash;
+}

@@ -6,26 +6,33 @@
     .main{
         // display: flex;
         // float: left;
+        
         .asideBar{
             float: left;
+            position: sticky;
+            top:0;
             width: 266px;
             background-color: $pal-ash;
             padding: 20px 0px;
+            margin-right: 5px;
+            animation: slideBlock 200ms;
         }
         .mainBox{
             // max-width: calc(100vw - 400px);
             padding: 5px 5px;
+            animation: slideBlock 200ms;
             // background-color: $white;
         }
     }
 }
 
-@media only screen and (max-width: 900px) and (min-width: 767px){
+@media only screen and (max-width: 1200px) and (min-width: 767px){
     .home-container{
         .main{
             .asideBar{
                 width: 200px ;
             }
+            
         }
     }
 }
@@ -35,6 +42,8 @@
             .asideBar{
                 width: 100% ;
                 float: none;
+                margin-right: 0px;
+                position: static;
             }
             .mainBox {
                 padding: 5px 0px;

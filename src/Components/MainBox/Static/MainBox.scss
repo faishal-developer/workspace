@@ -2,14 +2,17 @@
 
 .main_box{
         // margin-top: 10px;
+        overflow: hidden;
+        height: 2000px;
+        position: relative;
     .banner{
         height: 80px;
         // width: 100%;
         background-image: linear-gradient(to right,$pal-ash,$pal-green);
     }
     .search_bar{
-        margin-left: 5px;
         padding:5px;
+        padding-left: 0px;
 
         .search{
             display: flex;
@@ -35,6 +38,8 @@
                     background-color: $lightRed;
                     margin-left: 5px;
                     border: 1px solid $pal-ash;
+                    // background-color: $light;
+                    z-index: 10;
                 }
             
                 .src_btn:hover {
@@ -56,6 +61,7 @@
             flex-wrap: wrap;
             background-color: $pal-ash;
             margin-top: 5px;
+            justify-content: center;
             p{
                 padding:5px;
                 background-color: $pal-trans-yellow;
@@ -69,13 +75,38 @@
     }
     .icons{
         font-size: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         .icon{
             background-color: $pal-green;
             box-shadow: -1px -1px 3px $pal-ash,
             inset -1px -1px 3px $pal-ash;
             margin: 0px 3px 0 3px;
             padding: 6px;
+            border-radius: 3px;
             color: $white;
+        }
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width:900px){
+    .main_box{
+        .cards{
+            grid-template-columns: repeat(4,1fr);
+        }
+    }
+}
+@media only screen and (max-width: 900px) and (min-width:768px){
+    .main_box{
+        .cards{
+            grid-template-columns: repeat(3,1fr);
         }
     }
 }
@@ -90,6 +121,9 @@
         }
         .icons {
             font-size: 25px;
+        }
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
     
