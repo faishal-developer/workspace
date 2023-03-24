@@ -3,7 +3,6 @@
 .main_box{
         // margin-top: 10px;
         overflow: hidden;
-        height: 2000px;
         position: relative;
     .banner{
         height: 80px;
@@ -74,8 +73,9 @@
         }
     }
     .icons{
+        display: none;
         font-size: 30px;
-        display: flex;
+        // display: flex;
         flex-wrap: wrap;
         justify-content: center;
         .icon{
@@ -115,6 +115,7 @@
     .main_box{
         .search_bar{
             margin-left: 0px;
+            width: 100%;
             .keyword{
 
             }

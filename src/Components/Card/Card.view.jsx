@@ -17,7 +17,7 @@ function CardView(props) {
                 </figure>
                 <div className='data'>
                     <div>
-                        <p className='title'>{stringSlicer(name, 50)}</p>
+                        <p className='title'>{stringSlicer(name, 40)}</p>
                         <p className='price'>
                             {t("money")}
                             {price}

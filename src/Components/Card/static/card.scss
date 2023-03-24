@@ -29,14 +29,20 @@
         .data{
             display: flex;
             align-items: flex-end;
+            justify-content: center;
+            text-align: center;
             p{
                 margin: 0;
                 font-size: 14px;
+                text-align: center;
             }
             .title{
                 color:$light;
+                text-align: center;
+                height: 43px;
             }
             .price{
+                text-align: center;
                 color:$red;
                 .del{
                     position:relative;
@@ -50,6 +56,8 @@
                 border:1px solid $pal-green;
                 font-size: 13px;
                 color:$pal-green;
+                width: 150px;
+                border-radius: 3px;
             }
             .button:hover{
                 background-color: $pal-green;

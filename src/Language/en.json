@@ -22,6 +22,19 @@
         "all":"All",
         "subcat":"Sub Category"
     },
+    "footer":{
+        "about":"ABOUT US",
+        "terms":"TERMS & CONDITIONS",
+        "privacy":"PRIVACY POLICY",
+        "return":"RETURN POLICY",
+        "contact":"CONTACT US",
+        "securePay":"All secure payment methods",
+        "getIn":"Get In Touch",
+        "madeWith":"Made with premium quality materials.",
+        "satisfiction":"Satisfaction guaranteed",
+        "delivery":"Countrywide delivery",
+        "copywright":"Copyright © 2023 CUSTOM POINT BD Limited. All Right Reserved"
+    },
     "current_year": "{{count}}",
     "number": {"0": "0","1": "1","2": "2","3": "3","4": "4","5": "5","6": "6","7": "7","8": "8","9": "9"}
 }

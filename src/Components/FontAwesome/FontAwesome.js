@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope,faBolt,faCar,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope,faBolt,faCar,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck} from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faFacebook,faLinkedin } from '@fortawesome/free-brands-svg-icons'
+
 
 
 const FontAwesome = (props) => {
@@ -23,6 +25,12 @@ export const iconList={
     bar:faBars,
     cros:faX,
     wood:faBowlFood,
+    Lock:faBuildingLock,
+    smily:faFaceSmile,
+    truck:faTruck,
+    facebook:faFacebook,
+    twitter:faTwitter,
+    linkedin:faLinkedin
 }
 
 export default FontAwesome;

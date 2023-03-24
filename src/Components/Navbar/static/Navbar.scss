@@ -86,11 +86,12 @@
         }
         .Custom{
             font-size: 25px;
-            font-weight: bold;
-            @include textgradient($lightRed,$red);
+            font-weight: 600;
+            // @include textgradient($lightRed,$red);
             margin-bottom: 0px;
             margin-left:5px;
             line-height: 1;
+            color: white;
             // border-right: 1px solid rgba(0, 0, 0, 0.158);
         }
     }

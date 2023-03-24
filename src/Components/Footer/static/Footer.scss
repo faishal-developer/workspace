@@ -1,0 +1,125 @@
+@import "../../../scss/global.scss";
+@import "../../../scss/variable.scss";
+
+.footer{
+    .subscription{
+        margin: 10px 0;
+        background-color: $pal-ash;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        p{
+            margin: 0;
+            background-color: $pal-green;
+            padding:5px 10px;
+            border-radius: 10px;
+            color:$white;
+            font-weight: bold;
+        }
+        p:hover{
+            color: $lightRed;
+        }
+    }
+
+    .three_sec{
+        display: flex;
+        justify-content: space-between;
+        color: $white;
+        align-items: center;
+
+        .section{
+            background-color: $pal-green;
+            width:33%;
+            padding: 5px;
+            text-align:center;
+
+            .icon{
+                font-size: 25px;
+                color: $lightRed;
+            }
+        }
+    }
+    .social_link{
+        background-color: $pal-ash;
+        margin: 8px 0;
+        ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+            margin-bottom: 0;
+
+            li{
+                font-size: 25px;
+                margin: 0px 8px;
+                height: 37px;
+                width:38px;
+                border-radius: 50%;
+                text-align: center;
+                color: $white;
+            }
+            .facebook{
+                background-color: $facebook_color;
+            }
+            .linkedin{
+                background-color: $linkedin_color;
+            }
+            .twitter{
+                background-color: $twitter;
+            }
+        }
+    }
+
+    .sub_items{
+        background-color: $black;
+        color: $white;
+        display: flex;
+        justify-content: space-around;
+        // grid-template-columns: repeat(4,1fr);
+        padding: 10px ;
+        .company_name{
+            @include textgradient($lightRed,$red);
+            font-size: 22px;
+            font-weight: bold;
+        }
+        h6{
+            font-size: 19px;
+        }
+
+        .items{
+            p{
+                margin-bottom: 0;
+                a{
+                    color: $white;
+                    text-decoration: none;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    .nav_items{
+        background-color: $black;
+        // opacity: 0.5;
+        color: $lightRed;
+        display: none;
+        justify-content: center;
+        // display: flex;
+        opacity: 0.9;
+        p{
+            font-weight: 300;
+            margin:0 10px ;
+        }
+    }
+    .copy_right{
+        background-color: $light;
+        opacity: 0.7;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        p{
+            margin-bottom: 0;
+        }
+    }
+}

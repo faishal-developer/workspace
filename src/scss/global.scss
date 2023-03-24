@@ -26,6 +26,11 @@
 .bg_red{
     background-color: $primary;
 }
+.bg_black{
+    background-color: $black;
+    color: $white !important;
+}
+
 .op_0{
     transition: opacity 200ms, display 200ms;
     display: none !important;
@@ -89,7 +94,10 @@
 }
 
 @media only screen and (max-width: 767px){
-    .p_sticky{
-        width:95%;
+    .p_sticky0{
+        width:100%;
+    }
+    .p_sticky40{
+        width: 100%;
     }
 }
