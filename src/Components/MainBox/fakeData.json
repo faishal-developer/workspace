@@ -1,12 +1,14 @@
 [
     {
-        "id": 1,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 1,
+        "discount":0,
         "name": "Pen Holder",
         "price": 100,
-        "image": "https://i.ibb.co/dt7N10w/Pen-Box-1.jpg",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/dt7N10w/Pen-Box-1.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -21,15 +23,18 @@
             "green"
         ],
         "Brand": "Reebok",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 2,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 2,
+        "discount":10,
         "name": "acrilic madel designed in laser",
         "price": 120,
-        "image": "https://i.ibb.co/ygLG001/acrilic-madel.jpg",
-        "moreImage": [
-            "https://i.ibb.co/RPbtcTw/Product2.png",
+        
+        "images": [
+            "https://i.ibb.co/ygLG001/acrilic-madel.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -43,16 +48,18 @@
             "green"
         ],
         "Brand": "Addidas",
-        "shortDes": "Jacket + Skinny Pant + lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 3,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 3,
+        "discount":10,
         "name": "acrilic laser madel",
         "price": 200,
-        "image": "https://i.ibb.co/xmbSRCh/acrilic-lasermadel-1.jpg",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/xmbSRCh/acrilic-lasermadel-1.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -66,16 +73,18 @@
             "green"
         ],
         "Brand": "Nike",
-        "shortDes": "Special Cotton + Export Quality",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 4,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 4,
+        "discount":10,
         "name": "Wooden Pen Holder",
         "price": 150,
-        "image": "https://i.ibb.co/dt7N10w/Pen-Box-1.jpg",
-        "moreImage": [
-            "https://i.ibb.co/xXSSxFr/Product4.png",
+        
+        "images": [
+            "https://i.ibb.co/dt7N10w/Pen-Box-1.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -89,17 +98,18 @@
             "green"
         ],
         "Brand": "Addidas",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 5,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 5,
+        "discount":10,
         "name": "Wooden Laser designed clock",
         "price": 180,
-        "image": "https://i.ibb.co/TmX2cJp/laser-Clock.jpg",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/TmX2cJp/laser-Clock.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -114,15 +124,18 @@
             "green"
         ],
         "Brand": "Nike",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 6,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 6,
+        "discount":10,
         "name": "acrilic laser",
         "price": 200,
-        "image": "https://i.ibb.co/0hxWp9Q/acrilic-laser1.jpg",
-        "moreImage": [
-            "https://i.ibb.co/RPbtcTw/Product2.png",
+        
+        "images": [
+            "https://i.ibb.co/0hxWp9Q/acrilic-laser1.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -135,16 +148,18 @@
             "green"
         ],
         "Brand": "Reebok",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 7,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 7,
+        "discount":10,
         "name": "laser acrilic clock",
         "price": 170,
-        "image": "https://i.ibb.co/CPQ4dqB/laser-acrilic-clock.jpg",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/CPQ4dqB/laser-acrilic-clock.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -158,16 +173,18 @@
             "green"
         ],
         "Brand": "Nike",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "Half Jacket + Skinny Trouser + Boot lether"
     },
     {
-        "id": 8,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 8,
+        "discount":10,
         "name": "laser pvc keyring",
         "price": 230,
-        "image": "https://i.ibb.co/cDGMkZy/laserpvc-Keyring.jpg",
-        "moreImage": [
-            "https://i.ibb.co/xXSSxFr/Product4.png",
+        
+        "images": [
+            "https://i.ibb.co/cDGMkZy/laserpvc-Keyring.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -180,16 +197,18 @@
             "green"
         ],
         "Brand": "Active",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 9,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 9,
+        "discount":10,
         "name": "giftbox",
         "price": 180,
-        "image": "https://i.ibb.co/FBYWHTP/laser-Pvc-Giftbox.jpg",
-        "moreImage": [
-            "https://i.ibb.co/RPbtcTw/Product2.png",
+        
+        "images": [
+            "https://i.ibb.co/FBYWHTP/laser-Pvc-Giftbox.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -204,17 +223,18 @@
             "green"
         ],
         "Brand": "Reebok",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 10,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 10,
+        "discount":10,
         "name": "giftbox",
         "price": 170,
-        "image": "https://i.ibb.co/QdScMHw/laser-giftbox.jpg",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/QdScMHw/laser-giftbox.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -229,15 +249,18 @@
             "green"
         ],
         "Brand": "Active",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 11,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 11,
+        "discount":10,
         "name": "pencil box",
         "price": 220,
-        "image": "https://i.ibb.co/4Z5KgjD/laser-pencil-box.jpg",
-        "moreImage": [
-            "https://i.ibb.co/xXSSxFr/Product4.png",
+        
+        "images": [
+            "https://i.ibb.co/4Z5KgjD/laser-pencil-box.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -253,15 +276,17 @@
             "green"
         ],
         "Brand": "Addidas",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 12,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 12,
+        "discount":10,
         "name": "wooden pencil box",
         "price": 160,
-        "image": "https://i.ibb.co/GRtM70J/laser-pencil-Box.jpg",
-        "moreImage": [
+        
+        "images": [
             "https://i.ibb.co/kq8p04P/home-Product.png",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
@@ -276,16 +301,17 @@
             "green"
         ],
         "Brand": "Active",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 13,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 13,
+        "discount":10,
         "name": "pencil box",
         "price": 130,
-        "image": "https://i.ibb.co/4WT9tbj/laser-Pencil-Box.jpg",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "moreImage": [
+        
+        "images": [
             "https://i.ibb.co/kq8p04P/home-Product.png",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
@@ -301,14 +327,17 @@
             "green"
         ],
         "Brand": "Reebok",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 14,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 14,
+        "discount":10,
         "name": "One Man Shirt Red",
         "price": 140,
-        "image": "https://i.ibb.co/cLwcZPV/laser-Wooden-Pencil-Boxes.jpg",
-        "moreImage": [
+        
+        "images": [
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
@@ -323,15 +352,17 @@
             "green"
         ],
         "Brand": "Addidas",
-        "shortDes": "Jacket + Skinny Pant + lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 15,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 15,
+        "discount":10,
         "name": "Jacket Track Reebok",
         "price": 150,
-        "image": "https://i.ibb.co/fknkhq1/laser-Name.jpg",
-        "moreImage": [
+        
+        "images": [
             "https://i.ibb.co/FhBWH3y/writer4.png",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
@@ -346,15 +377,17 @@
             "green"
         ],
         "Brand": "Nike",
-        "shortDes": "Special Cotton + Export Quality",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 16,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 16,
+        "discount":10,
         "name": "Reebok Track Jacket",
         "price": 160,
-        "image": "https://i.ibb.co/Z84LHMG/pvc-Laserclock.jpg",
-        "moreImage": [
+        
+        "images": [
             "https://i.ibb.co/Bj2T1ty/cycle8.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
@@ -369,16 +402,17 @@
             "green"
         ],
         "Brand": "Addidas",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 17,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 17,
+        "discount":10,
         "name": "Reebok Track Jacket",
         "price": 170,
-        "image": "https://i.ibb.co/LYxqnMd/acrilic-lasermadel.jpg",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "moreImage": [
+        
+        "images": [
             "https://i.ibb.co/kq8p04P/home-Product.png",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
@@ -394,14 +428,17 @@
             "green"
         ],
         "Brand": "Nike",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 18,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 18,
+        "discount":10,
         "name": "Reebok Track Jacket",
         "price": 180,
-        "image": "https://i.ibb.co/cTGCBvX/wooden-Clock-Laser.jpg",
-        "moreImage": [
+        
+        "images": [
             "https://i.ibb.co/RPbtcTw/Product2.png",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
@@ -415,16 +452,18 @@
             "green"
         ],
         "Brand": "Reebok",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 19,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 19,
+        "discount":10,
         "name": "Reebok Track Jacket",
         "price": 190,
-        "image": "https://i.ibb.co/rfJD9vF/laser-Clock-Wooden.jpg",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/GRtM70J/laser-pencil-Box.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -438,16 +477,18 @@
             "green"
         ],
         "Brand": "Nike",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 20,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 20,
+        "discount":10,
         "name": "Reebok Track Jacket",
         "price": 200,
-        "image": "https://i.ibb.co/GHdDPF8/laserclock-Image.jpg",
-        "moreImage": [
-            "https://i.ibb.co/xXSSxFr/Product4.png",
+        
+        "images": [
+            "https://i.ibb.co/4WT9tbj/laser-Pencil-Box.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -460,16 +501,18 @@
             "green"
         ],
         "Brand": "Active",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "Half Jacket + Skinny Trouser + Boot lether"
     },
     {
-        "id": 21,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 21,
+        "discount":10,
         "name": "Stylish wooden clock",
         "price": 210,
-        "image": "https://i.ibb.co/GHdDPF8/laserclock-Image.jpg",
-        "moreImage": [
-            "https://i.ibb.co/RPbtcTw/Product2.png",
+        
+        "images": [
+            "https://i.ibb.co/cLwcZPV/laser-Wooden-Pencil-Boxes.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -484,17 +527,18 @@
             "green"
         ],
         "Brand": "Reebok",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 22,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 22,
+        "discount":10,
         "name": "Stylish wooden clock",
         "price": 220,
-        "image": "https://i.ibb.co/GHdDPF8/laserclock-Image.jpg",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/fknkhq1/laser-Name.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -509,15 +553,18 @@
             "green"
         ],
         "Brand": "Active",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 23,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 23,
+        "discount":10,
         "name": "Stylish wooden clock",
         "price": 210,
-        "image": "https://i.ibb.co/GHdDPF8/laserclock-Image.jpg",
-        "moreImage": [
-            "https://i.ibb.co/xXSSxFr/Product4.png",
+        
+        "images": [
+            "https://i.ibb.co/Z84LHMG/pvc-Laserclock.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -533,16 +580,18 @@
             "green"
         ],
         "Brand": "Addidas",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 24,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 24,
+        "discount":10,
         "name": "wooden clock",
         "price": 90,
-        "image": "https://i.ibb.co/GHdDPF8/laserclock-Image.jpg",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/LYxqnMd/acrilic-lasermadel.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -556,16 +605,18 @@
             "green"
         ],
         "Brand": "Active",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 25,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 25,
+        "discount":10,
         "name": "Wooden clock ",
         "price": 210,
-        "image": "https://i.ibb.co/GHdDPF8/laserclock-Image.jpg",
-        "moreImage": [
-            "https://i.ibb.co/xXSSxFr/Product4.png",
+        
+        "images": [
+            "https://i.ibb.co/cTGCBvX/wooden-Clock-Laser.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -581,16 +632,18 @@
             "green"
         ],
         "Brand": "Addidas",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     },
     {
-        "id": 26,
+        "cat_id":"15875vjvk25",
+        "subCat_id":"dkdh45625220",
+        "_id": 26,
+        "discount":10,
         "name": "Wooden clock ",
         "price": 90,
-        "image": "https://i.ibb.co/GHdDPF8/laserclock-Image.jpg",
-        "moreImage": [
-            "https://i.ibb.co/kq8p04P/home-Product.png",
+        
+        "images": [
+            "https://i.ibb.co/rfJD9vF/laser-Clock-Wooden.jpg",
             "https://i.ibb.co/ct6n2QV/hat.png",
             "https://i.ibb.co/d4XG8Qq/Trouser.png"
         ],
@@ -604,7 +657,6 @@
             "green"
         ],
         "Brand": "Active",
-        "shortDes": "Half Jacket + Skinny Trouser + Boot lether",
-        "des": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
+        "desc": "lorem ipsum dummy text goes here.lorem ipsum dummy text goes herelorem ipsum dummy text goes herelorem ipsum dummy text goes here"
     }
 ]

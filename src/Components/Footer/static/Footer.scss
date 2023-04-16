@@ -2,6 +2,7 @@
 @import "../../../scss/variable.scss";
 
 .footer{
+    animation: slideBlock 200ms;
     .subscription{
         margin: 10px 0;
         background-color: $pal-ash;

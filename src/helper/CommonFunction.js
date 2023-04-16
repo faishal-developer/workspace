@@ -26,7 +26,6 @@ export const stickyPosition=(id,className)=>{
     const rect = stickyElement.getBoundingClientRect();
 
     window.addEventListener('scroll', () => {
-        console.log(rect.top, window.scrollY, 'top')
         const scrollPosition = window.scrollY;
         if (rect.top <= scrollPosition) {
             stickyElement.classList.add(className);
@@ -34,4 +33,11 @@ export const stickyPosition=(id,className)=>{
             stickyElement.classList.remove(className);
         }
     });
+}
+
+export const cal_discounted_price = (price,discount) =>{
+    price = Number(price);
+    discount = Number(discount);
+    let discounted =  Math.ceil(price - price*discount/100);
+    return discounted ;
 }
