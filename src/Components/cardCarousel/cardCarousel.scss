@@ -1,0 +1,30 @@
+@import '../../scss/variable.scss';
+@import '../../scss/global.scss';
+
+.cardsCarousel{
+    margin-top: 40px;
+    .head_btn {
+        display: flex;
+        justify-content: space-between;
+
+        h4 {
+            font-weight: 400;
+        }
+        .button {
+            border: 1px solid $pal-green;
+            font-size: 13px;
+            color: $pal-green;
+            width: 80px;
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            background-color: $pal-green;
+            color: $white;
+        }
+    }
+
+    .react-multi-carousel-item {
+        padding-bottom: 5px;
+    }
+}

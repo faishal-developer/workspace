@@ -5,8 +5,6 @@ import './Home.scss';
 import AsideBar from '../../Components/AsideBar/AsideBar';
 import MainBox from '../../Components/MainBox/MainBox';
 import BP from '../../scss/CommonClass';
-import CardsCarousel from '../../Components/cardCarousel/CardsCarousel.view';
-import data from '../../Components/MainBox/fakeData.json';
 
 const Home = (props) => {
     pagetitle(props.pageTitle);
@@ -17,7 +15,6 @@ const Home = (props) => {
             <main className='main'>
                 <AsideBar className="asideBar" />
                 <MainBox className="mainBox" />
-                <CardsCarousel heading="Popular" data={data}/>
             </main>
         </div>
     );

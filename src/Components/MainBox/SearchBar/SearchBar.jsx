@@ -5,7 +5,7 @@ import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 const keyword=["key ring","portrait","shopies","map","busket","Dummy","family","3d","Cloth","laser cutting"];
 const SearchBar = () => {
     useEffect(()=>{
-        stickyPosition("search_bar", "p_sticky0","cards")
+        stickyPosition("search_bar", "p_sticky0")
     },[])
     return (
         <div  className='search_bar'>

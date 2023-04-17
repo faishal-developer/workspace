@@ -13,20 +13,15 @@ const CustomCarousel = (props) => {
         },
         LargeDesktop: {
             // the naming can be any, depends on you.
-            breakpoint: { max: 3000, min: 2000 },
+            breakpoint: { max: 3000, min: 1600 },
             items: props.responsive.ld
         },
-        Desktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 2000, min: 1400 },
-            items: props.responsive.d
-        },
         laptop: {
-            breakpoint: { max: 1400, min: 1024 },
+            breakpoint: { max: 1600, min: 1200 },
             items: props.responsive.l
         },
         largeTablet: {
-            breakpoint: { max: 1024, min: 900 },
+            breakpoint: { max: 1200, min: 900 },
             items: props.responsive.lt
         },
         tablet: {
@@ -34,11 +29,11 @@ const CustomCarousel = (props) => {
             items: props.responsive.t
         },
         largemobile: {
-            breakpoint: { max: 767, min: 488 },
+            breakpoint: { max: 767, min: 600 },
             items: props.responsive.lm
         },
         mobile: {
-            breakpoint: { max: 488, min: 0 },
+            breakpoint: { max: 600, min: 0 },
             items: props.responsive.m
         }
     };

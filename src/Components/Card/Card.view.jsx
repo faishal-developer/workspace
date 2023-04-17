@@ -7,6 +7,7 @@ import TableSkeleton from '../skeleton/Skeleton';
 import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
 import useCardLogic from './card.presenter';
 import { path } from '../../routes/path';
+import Commonbutton from '../Button/Button.view';
 
 function CardView(props) {
     const { name, images,price,discount,_id } = props.product;
@@ -30,12 +31,12 @@ function CardView(props) {
                         <FontAwesome icon={iconList.heart} />
                     </div>
                     <LazyLoader placeholder={<TableSkeleton count={1} height={120}/>}>
-                        <img onClick={()=>changeRoute(history,path.single_products(_id))} src={images[0]} alt={name} />
+                        <img onClick={()=>changeRoute(history,path.single_products+`/${_id}`)} src={images[0]} alt={name} />
                     </LazyLoader>
                 </figure>
                 <div className='data'>
                     <div>
-                        <span onClick={() => changeRoute(history, path.single_products(_id))}>
+                        <span onClick={() => changeRoute(history, path.single_products+`/${_id}`)}>
                             <p className='title'>{stringSlicer(name, 40)}</p>
                             <p className='price'>
                                 {t("money")}
@@ -43,7 +44,14 @@ function CardView(props) {
                                 {Number(discount) ? <del className='del'>{t("money")}{price}</del> : null}
                             </p>
                         </span>
-                        <button className="button">Add To Cart</button>
+                        <Commonbutton
+                            type="button"
+                            onClick={props.onClick}
+                            className="button"
+                            btnText="Add To Cart"
+                            isLoading={false}
+                            disabled={false}
+                        />
                     </div>
                 </div>
             </div>

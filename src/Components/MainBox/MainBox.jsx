@@ -5,6 +5,7 @@ import SearchBar from './SearchBar/SearchBar';
 import './Static/MainBox.scss'
 import jsonData from './fakeData.json'
 import { stickyPosition } from '../../helper/CommonFunction';
+import CardsCarousel from '../cardCarousel/CardsCarousel.view';
 
 const icons={...iconList};
 const MainBox = (props) => {
@@ -29,16 +30,27 @@ const MainBox = (props) => {
                   }               
                 </div>
             </div>
-            <div id='cards' className='cards'>
-                {
-                    data.length>=1?(data.map((el,i)=>(
-                        <CardView
-                            product={el}
-                            border='border_green'
-                        />
-                    ))):null
-                }
+            <div id='cards'>
+                <div  className='cards'>
+                    {
+                        data.length >= 1 ? (data.map((el, i) => (
+                            <CardView
+                                product={el}
+                                border='border_green'
+                            />
+                        ))) : null
+                    }
+                </div>
+                <div className='card_carousel'>
+                    <CardsCarousel heading="Discounted Products" data={data} className='popular' />
+                    <CardsCarousel heading="Popular Products" data={data} className='popular' />
+                    <CardsCarousel heading="Latest Products" data={data} className='Latest' />
+                    <CardsCarousel heading="Laser Cut & Engraving" data={data} className='Latest' />
+                    <CardsCarousel heading="3D Modeling" data={data} className='Latest' />
+                    <CardsCarousel heading="DTF/Cloths" data={data} className='Latest' />
+                </div>
             </div>
+            
         </div>
     );
 };

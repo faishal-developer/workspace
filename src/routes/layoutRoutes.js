@@ -13,7 +13,10 @@ const AboutUs = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "AboutUs" */ "../pages/AboutUs/AboutUs"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 const ContactUs = React.lazy(() => {
-    return Promise.all([import(/*webpackChunkName: "AboutUs" */ "../pages/ContactUs/ContactUs"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+    return Promise.all([import(/*webpackChunkName: "contactUs" */ "../pages/ContactUs/ContactUs"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+});
+const SingleProduct = React.lazy(() => {
+    return Promise.all([import(/*webpackChunkName: "singleProducts" */ "../pages/SingleProduct/SingleProduct.view"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 
 
@@ -31,7 +34,8 @@ export const public_routes = [
 
 // ************ Example for public private route *********** //
 export const public_private_routes = [
-    { path: `${path.home}`, Component: <Home pageTitle={`Home ${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.home}`, Component: <Home pageTitle={`Home |${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.single_products +'/:productId'}`, Component: <SingleProduct pageTitle={`products |${SiteName}`} />, Layout: <CommonLayout /> },
     
     // {path: `${process.env.PUBLIC_URL}${path.registration}`, Component: <Signup pageTitle={`Sign Up ${SiteName}`}/>, Layout: <TheAuthLayout/> },
 ]

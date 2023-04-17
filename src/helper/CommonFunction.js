@@ -52,6 +52,6 @@ export const stickyPosition=(id,className,id2)=>{
 export const cal_discounted_price = (price,discount) =>{
     price = Number(price);
     discount = Number(discount);
-    let discounted =  Math.ceil(price - price*discount/100);
+    let discounted =  Math.floor(price - price*discount/100);
     return discounted ;
 }

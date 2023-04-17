@@ -5,5 +5,5 @@ export const path ={
     search:"/search",
     aboutUs:"/about",
     contactUs:"/contact",
-    single_products:(id)=>`/products/${id}`
+    single_products:`/products`
 };

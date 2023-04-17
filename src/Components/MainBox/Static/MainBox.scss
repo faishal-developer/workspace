@@ -103,6 +103,13 @@
         column-gap: 10px;
         row-gap: 10px;
     }
+    .card_carousel{
+        
+        
+        .popular{
+            
+        }
+    }
 }
 
 @media only screen and (max-width: 1200px) and (min-width:900px){
@@ -112,7 +119,7 @@
         }
     }
 }
-@media only screen and (max-width: 900px) and (min-width:768px){
+@media only screen and (max-width: 900px) and (min-width:600px){
     .main_box{
         .cards{
             grid-template-columns: repeat(3,1fr);
@@ -120,7 +127,7 @@
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 600px) {
     .main_box{
         .search_bar{
             margin-left: 0px;
