@@ -29,7 +29,7 @@ const MainBox = (props) => {
                   }               
                 </div>
             </div>
-            <div className='cards'>
+            <div id='cards' className='cards'>
                 {
                     data.length>=1?(data.map((el,i)=>(
                         <CardView

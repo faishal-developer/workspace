@@ -33,9 +33,17 @@ const MainRoutes = () => {
         <>
             <Routes>
                 <Route exact path='/' element={<RouteRestriction type="both" />}>
-                    {public_private_routes.map(({ path, Component, Layout }, i) => (
+                    {public_private_routes.map(({ path, Component, Layout,Layout2 }, i) => (
                         <Route element={Layout} key={path}>
-                            <Route exact path={path} element={<Suspense fallback={<CustomPageLoader default />}>{Component}</Suspense>} />
+                            {
+                                Layout2? (
+                                    <Route element={Layout2} key={path+"second"}>
+                                        <Route exact path={path} element={<Suspense fallback={<CustomPageLoader default />}>{Component}</Suspense>} />
+                                    </Route>
+                                ) :(
+                                    <Route exact path = { path } element = { <Suspense fallback = { <CustomPageLoader default />}>{Component}</Suspense>} />
+                                )
+                            }
                         </Route>
                     ))}
                 </Route>

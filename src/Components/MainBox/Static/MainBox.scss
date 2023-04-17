@@ -12,6 +12,9 @@
     .search_bar{
         padding:5px;
         padding-left: 0px;
+        // animation: slideBlock 200ms;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
 
         .search{
             z-index: 10;
@@ -72,6 +75,11 @@
                 margin: 5px;
             }
         }
+    }
+    .search_bar.hidden{
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
     }
     .icons{
         display: none;

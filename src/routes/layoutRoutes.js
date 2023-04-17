@@ -32,5 +32,6 @@ export const public_routes = [
 // ************ Example for public private route *********** //
 export const public_private_routes = [
     { path: `${path.home}`, Component: <Home pageTitle={`Home ${SiteName}`} />, Layout: <CommonLayout /> },
+    
     // {path: `${process.env.PUBLIC_URL}${path.registration}`, Component: <Signup pageTitle={`Sign Up ${SiteName}`}/>, Layout: <TheAuthLayout/> },
 ]

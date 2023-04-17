@@ -21,7 +21,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className='footer'>
+        <footer id='footer' className='footer'>
             <div className='subscription'>
                 <p>{t('footer.getIn')}</p>
             </div>
