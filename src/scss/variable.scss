@@ -24,9 +24,11 @@
     --palete-skyblue:#6EE8CC;
     // --palete-ash:#E8E6E3;
      --palete-ash:#99FFFF;
+     --palete-yellow-text:#f57224;
+
      --palete-ash-op:#99ffff36;
      --palete-yellow-op:#f1dc60;
-     --palete-yellow-text:#f57224;
+     --palete-skyblue-opacity:#6ee8cc94;
 }
 
 
@@ -48,9 +50,12 @@ $pal-ash:var(--palete-ash);
 $pal-ash-op:var(--palete-ash);
 $pal-trans-yellow:var(--palete-yellow-op);
 $yellow-text:var(--palete-yellow-text);
+$orange_op:var(--palete-skyblue-opacity);
 $facebook_color:#0D8FF2;
 $linkedin_color:#0965C1;
 $twitter:#229CEE;
+$black_op: rgba(0, 0, 0, 0.068);
+$black_op2:rgba(0, 0, 0, 0.171);
 
 
 

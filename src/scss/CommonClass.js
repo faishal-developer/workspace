@@ -2,6 +2,7 @@ let BP = {
     d_flex: 'd-flex',
     JC_center: 'justify-content-center',
     container:'container-xxl',
+    container_sm:'container-sm',
     mb5:'mb-5',
     pt5:'pt-5',
     pb5:'pb-5',

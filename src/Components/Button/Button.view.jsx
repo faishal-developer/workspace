@@ -7,7 +7,7 @@ const Commonbutton = (props) => {
             type={props.type ?? 'button'}
             ref={props.inputRef}
             onClick={props.onclickCallback}
-            className={(props.isLoading || props.disabled) ?props.className: props.disabled_className}
+            className={(props.isLoading || props.disabled) ? props.disabled_className : props.className}
             disabled={props.isLoading || props.disabled}
         >
             {

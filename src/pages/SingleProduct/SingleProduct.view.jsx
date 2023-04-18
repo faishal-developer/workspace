@@ -3,28 +3,35 @@ import fakeData from '../../Components/MainBox/fakeData.json'
 import { cal_discounted_price } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
 import Commonbutton from '../../Components/Button/Button.view';
+import './SingleProducts.scss';
+import BP from '../../scss/CommonClass';
+import ModalBootstrap from '../../Components/Modal/Modal.view';
+import ReactImageZooM from '../../Components/react-image-zoom/React_image_zoom.view';
 
-//todo:dynamically color change by product color selection
+//todo:dynamically color change by product color selection (grayscale)
 const SingleProduct = () => {
     let { name, discount, price, sizes, color, desc, images } = fakeData[1];
     const { t } = useTranslation();
     const [cart,setCart] = useState(1);
     const [image,setImage] = useState(images[0]);
+    const [mouseOver,setMouseOver] = useState(false);
 
     
     return (
-        <div className='singleProducts'>
+        <div className={`singleProducts ${BP.container_sm}`}>
             <div className='main'>
                 <div className='images'>
-                    <figure className='Show'>
-                        <img src={image} alt={name}/>
+                    <figure onMouseOut={()=>setMouseOver(false)} onMouseOver={()=>setMouseOver(true)} className='Show'>
+                        {/* <img src={image} alt={name}/> */}
+                        <ReactImageZooM img={image} />
                     </figure>
-                    <div>
+                    <div className='images_sm'>
                         {
                             images.map((img)=>(
-                                <span className='img-span' onClick={()=>setImage(img)}>
-                                    <img src={img} alt={name} />
-                                </span>
+                                <figure onClick={()=>setImage(img)} key={img} className='figure'>
+                                    <img className='img-h-w-60' src={img} alt={name}/>
+                                    <div className={img===image ?'p-show-image-blend':''}></div>
+                                </figure>
                             ))
                         }
                     </div>
@@ -87,7 +94,7 @@ const SingleProduct = () => {
                         <Commonbutton
                             onClick={() => { }}
                             className="button"
-                            btnText={1}
+                            btnText={cart}
                         />
                         <Commonbutton
                             onClick={() => { }}
@@ -106,6 +113,11 @@ const SingleProduct = () => {
                 <h6>Description</h6>
                 <p>{desc}</p>
             </div>
+            {/* {
+                true ? <ModalBootstrap show={true}>
+                    <ReactImageZooM img={image}/>
+                </ModalBootstrap>:null
+            } */}
         </div>
     );
 };

@@ -1,0 +1,19 @@
+@import '../../scss/variable.scss';
+@import '../../scss/global.scss';
+
+.modal-header .btn-close {
+    width: 35px;
+    /* font-size: 20px; */
+    height: 35px;
+    background-color: $black_op;
+    border: none;
+    border-radius: 20px;
+}
+
+.modal-header .btn-close:hover {
+    background-color: $black_op2;
+}
+
+.modal-header .btn-close::before {
+    content: "X";
+}
