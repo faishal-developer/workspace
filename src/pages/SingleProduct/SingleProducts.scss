@@ -7,6 +7,7 @@
         display: flex;
         justify-content: space-around;
         .images{
+            margin-right: 20px;
             figure{
                 display: flex;
                 align-items: center;
@@ -40,6 +41,77 @@
                 }
             }
         }
+        .data{
+            max-width: 550px;
+            justify-content: space-evenly;
+
+            h5{
+                margin-bottom: 10px;
+            }
+            .price{
+                font-size: 20px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                margin: 10px 0;
+                del{
+                    margin-right:20px;
+                }
+                p{
+                    margin:0;
+                    margin-right: 20px;
+                }
+
+                .save{
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+
+            .sizes{
+                margin:10px 0;
+                h5{
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+            .colors{
+                margin:20px 0;
+                h5{
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+            .add-to-cart{
+                
+                .sizes{
+                    border:1px solid $pal-green;
+                    display: inline-block;
+                    border-radius: 3px;
+                    .button {
+                        margin: 0;
+                        padding: 2px 12px;
+                        font-size: 15px;
+                        border-radius: 0px;
+                        font-weight: 600;
+                        border: none;
+                    }
+                }
+                .ml_10{
+                    margin-left: 10px;
+                }
+            }
+            
+        }
+    }
+
+    .desc{
+        margin: 20px 0;
+
+        h6{
+            font-size: 20px;
+            font-weight: bold;
+        }
     }
 }
 
@@ -52,6 +124,9 @@
                     width: 400px;
                 }
             }
+            .data{
+                max-width: 450px;
+            }
         }
     }
 }
@@ -63,6 +138,19 @@
                     height: 300px;
                     width: 300px;
                 }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .singleProducts{
+        .main{
+            flex-direction: column;
+            .images{
+                
+            }
+            .data{
+                margin-top: 30px;
             }
         }
     }

@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import fakeData from '../../Components/MainBox/fakeData.json'
-import { cal_discounted_price } from '../../helper/CommonFunction';
+import { cal_discounted_price, capitalize, pagetitle } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
 import Commonbutton from '../../Components/Button/Button.view';
 import './SingleProducts.scss';
 import BP from '../../scss/CommonClass';
-import ModalBootstrap from '../../Components/Modal/Modal.view';
 import ReactImageZooM from '../../Components/react-image-zoom/React_image_zoom.view';
+import SizeSelectBtn from '../../Components/sizeSelectBtn/sizeSelectBtn.view';
 
 //todo:dynamically color change by product color selection (grayscale)
-const SingleProduct = () => {
+const SingleProduct = (props) => {
     let { name, discount, price, sizes, color, desc, images } = fakeData[1];
     const { t } = useTranslation();
     const [cart,setCart] = useState(1);
     const [image,setImage] = useState(images[0]);
-    const [mouseOver,setMouseOver] = useState(false);
 
-    
+    useEffect(()=>{
+        pagetitle(props.pageTitle)
+    },[])
     return (
         <div className={`singleProducts ${BP.container_sm}`}>
             <div className='main'>
                 <div className='images'>
-                    <figure onMouseOut={()=>setMouseOver(false)} onMouseOver={()=>setMouseOver(true)} className='Show'>
+                    <figure  className='Show'>
                         {/* <img src={image} alt={name}/> */}
                         <ReactImageZooM img={image} />
                     </figure>
@@ -37,7 +38,8 @@ const SingleProduct = () => {
                     </div>
                 </div>
                 <div className='data'>
-                    <h5>{name}</h5>
+                    <h5>{capitalize(name)}</h5>
+                    <p > Category: <span className='pal-green'>{capitalize('Laser Cut & Engraving')}</span></p>
                     <div className='price'>
                         {
                             Number(discount) > 0 ? (
@@ -48,7 +50,7 @@ const SingleProduct = () => {
                         <p>
                             {
                                 Number(discount) > 0 ? (
-                                    <p>Save Tk.{price - Math.floor(cal_discounted_price(price, discount))}</p>
+                                    <p className='save'>Save Tk.{price - Math.floor(cal_discounted_price(price, discount))}</p>
                                 ) : null
                             }
                         </p>
@@ -56,37 +58,22 @@ const SingleProduct = () => {
                     {
                         sizes.length >= 1 ? (
                             <div className='sizes'>
-                                <h6>Select Size</h6>
-                                <div className='buttons'>
-                                    {sizes.map((size) => <Commonbutton
-                                        onClick={() => { }}
-                                        className="button"
-                                        btnText={size}
-                                        isLoading={false}
-                                        disabled={false}
-                                    />)}
-                                </div>
+                                <h5>Select Sizes</h5>
+                                <SizeSelectBtn sData='m' clickHandler={()=>{}} data={sizes} />
                             </div>
                         ) : null
                     }
                     {
                         color.length >= 1 ? (
                             <div className='colors'>
-                                <h6>Select Size</h6>
-                                <div className='buttons'>
-                                    {color.map((c) => <Commonbutton
-                                        onClick={() => { }}
-                                        className="button"
-                                        btnText={c}
-                                        isLoading={false}
-                                        disabled={false}
-                                    />)}
-                                </div>
+                                <h5>Select Color</h5>
+                                <SizeSelectBtn sData='red' clickHandler={() => { }} data={color} />
                             </div>
                         ) : null
                     }
                     <div className='add-to-cart'>
-                        <Commonbutton
+                        <SizeSelectBtn clickHandler={()=>{}} data={['-',cart,'+']}/>
+                        {/* <Commonbutton
                             onClick={() => { }}
                             className="button"
                             btnText={'-'}
@@ -100,24 +87,20 @@ const SingleProduct = () => {
                             onClick={() => { }}
                             className="button"
                             btnText={"+"}
-                        />
+                        /> */}
                         <Commonbutton
                             onClick={() => { }}
-                            className="button"
+                            className="button ml_10"
                             btnText={"+Add To Cart"}
                         />
                     </div>
                 </div>
             </div>
             <div className='desc'>
-                <h6>Description</h6>
+                <h6>Description:</h6>
                 <p>{desc}</p>
             </div>
-            {/* {
-                true ? <ModalBootstrap show={true}>
-                    <ReactImageZooM img={image}/>
-                </ModalBootstrap>:null
-            } */}
+            
         </div>
     );
 };

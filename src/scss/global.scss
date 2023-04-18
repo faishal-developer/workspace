@@ -66,6 +66,37 @@ figure{
 .m_r_10px{
     margin-right: 10px;
 }
+
+.button {
+    border: 1px solid $pal-green;
+    color: $pal-green;
+    border-radius: 3px;
+}
+
+.button:hover {
+    background-color: $pal-green;
+    color: $white;
+}
+
+.pal-green{
+    color:$pal-green;
+}
+.red{
+    background-color: red !important;
+    color:$light
+}
+.orange{
+    background-color: orange !important;
+    color:$light
+}
+.yellow{
+    background-color: yellow !important;
+    color:$light
+}
+.green{
+    background-color: green !important;
+    color:$light
+}
 // .m_r_10px:last-child{
 //     margin-right: 0px;
 // }

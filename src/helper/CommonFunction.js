@@ -55,3 +55,15 @@ export const cal_discounted_price = (price,discount) =>{
     let discounted =  Math.floor(price - price*discount/100);
     return discounted ;
 }
+
+
+//todo: if it is working
+export const capitalize = (string) =>{
+    let strArray = string.split(' ');
+    let firstWord = strArray[0].split('');
+    firstWord[0] = firstWord[0].toUpperCase();
+    firstWord = firstWord.join('');
+    strArray[0] = firstWord;
+    strArray = strArray.join(' ');
+    return strArray;
+}
