@@ -4,6 +4,17 @@
 // .black{
 //     color: $btn_color;
 // }
+.fixed-cart{
+    position: fixed;
+    background-color: $pal-green;
+    height: 40px;
+    padding: 17px 3px 0 17px;
+    text-align: center;
+    border-radius: 3px;
+    top:50%;
+    right:0;
+    z-index: 10;
+}
 
 .offcanvas-start{
     max-width: 60%;

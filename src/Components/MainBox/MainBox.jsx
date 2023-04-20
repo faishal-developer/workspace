@@ -6,17 +6,20 @@ import './Static/MainBox.scss'
 import jsonData from './fakeData.json'
 import { stickyPosition } from '../../helper/CommonFunction';
 import CardsCarousel from '../cardCarousel/CardsCarousel.view';
+import { useTranslation } from 'react-i18next';
 
 const icons={...iconList};
 const MainBox = (props) => {
     const {className} = props;
     const [data,setData] = useState([]);
+    const { t } = useTranslation();
 
    useEffect(()=>{
         setData(jsonData);
        stickyPosition("icons", "p_sticky40")
 
     },[])
+    const products = t('products');
     return (
         <div className={`${className} main_box`}>
             <div className='banner'>banner</div>
@@ -42,12 +45,12 @@ const MainBox = (props) => {
                     }
                 </div>
                 <div className='card_carousel'>
-                    <CardsCarousel heading="Discounted Products" data={data} className='popular' />
-                    <CardsCarousel heading="Popular Products" data={data} className='popular' />
-                    <CardsCarousel heading="Latest Products" data={data} className='Latest' />
-                    <CardsCarousel heading="Laser Cut & Engraving" data={data} className='Latest' />
-                    <CardsCarousel heading="3D Modeling" data={data} className='Latest' />
-                    <CardsCarousel heading="DTF/Cloths" data={data} className='Latest' />
+                    <CardsCarousel heading={`${t('Discounted')} ${products}`} data={data} className='popular' />
+                    <CardsCarousel heading={`${t('Popular')} ${products}`} data={data} className='popular' />
+                    <CardsCarousel heading={`${t('latest')} ${products}`} data={data} className='Latest' />
+                    <CardsCarousel heading={`${t('lasercut')} ${products}`} data={data} className='Latest' />
+                    <CardsCarousel heading={`${t('3dModel')} ${products}`} data={data} className='Latest' />
+                    <CardsCarousel heading={`${t('dtf')} ${products}`} data={data} className='Latest' />
                 </div>
             </div>
             

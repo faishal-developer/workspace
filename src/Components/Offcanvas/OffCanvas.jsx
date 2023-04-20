@@ -4,12 +4,12 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import '../../scss/global.scss';
 
 function CustomOffcanvas(props) {
-    const {show, handleClose} = props;
+    const { show, handleClose, placement, backdrop } = props;
 
 
     return (
         <>
-            <Offcanvas  show={show} onHide={handleClose}>
+            <Offcanvas placement={placement ?? 'start'} backdrop={backdrop ?? true}  show={show} onHide={handleClose}>
                 {/* <Offcanvas.Header closeButton> */}
                     {/* <Offcanvas.Title>Offcanvas</Offcanvas.Title> */}
                 {/* </Offcanvas.Header> */}

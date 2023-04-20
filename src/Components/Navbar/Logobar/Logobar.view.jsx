@@ -6,7 +6,10 @@ import { useTranslation } from 'react-i18next';
 import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 import CustomOffcanvas from '../../Offcanvas/OffCanvas';
 import NavbarUtils from '../NavbarUtils';
+import CartIcon from '../../cartIcon/cartIcon.view';
 
+
+//todo:change cart icon
 const Logobar = () => {
     const { t } = useTranslation();
     const [show,setShow] = useState(false);
@@ -39,8 +42,9 @@ const Logobar = () => {
                     <div>
                         <ul className='list'>
                             <li>
-                                <FontAwesome icon={iconList.cart}/>
-                                <span className='text'>{t("cart")}</span>
+                                {/* <FontAwesome icon={iconList.cart}/>
+                                <span className='text'>{t("cart")}</span> */}
+                                <CartIcon productNum={30} p={t("cart")}/>
                             </li>
                             <li>
                                 <FontAwesome icon={iconList.heart} />

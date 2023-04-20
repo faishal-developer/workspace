@@ -7,8 +7,12 @@ import './SingleProducts.scss';
 import BP from '../../scss/CommonClass';
 import ReactImageZooM from '../../Components/react-image-zoom/React_image_zoom.view';
 import SizeSelectBtn from '../../Components/sizeSelectBtn/sizeSelectBtn.view';
+import CardsCarousel from '../../Components/cardCarousel/CardsCarousel.view';
 
 //todo:dynamically color change by product color selection (grayscale)
+//todo: implement scroll to top functionality
+const responsive = {sl:6,ld:6,l:6,lt:5,t:3,lm:3,m:2};
+
 const SingleProduct = (props) => {
     let { name, discount, price, sizes, color, desc, images } = fakeData[1];
     const { t } = useTranslation();
@@ -18,6 +22,8 @@ const SingleProduct = (props) => {
     useEffect(()=>{
         pagetitle(props.pageTitle)
     },[])
+
+    const products = t('products');
     return (
         <div className={`singleProducts ${BP.container_sm}`}>
             <div className='main'>
@@ -63,14 +69,14 @@ const SingleProduct = (props) => {
                             </div>
                         ) : null
                     }
-                    {
+                    {/* {
                         color.length >= 1 ? (
                             <div className='colors'>
                                 <h5>Select Color</h5>
                                 <SizeSelectBtn sData='red' clickHandler={() => { }} data={color} />
                             </div>
                         ) : null
-                    }
+                    } */}
                     <div className='add-to-cart'>
                         <SizeSelectBtn clickHandler={()=>{}} data={['-',cart,'+']}/>
                         {/* <Commonbutton
@@ -94,12 +100,19 @@ const SingleProduct = (props) => {
                             btnText={"+Add To Cart"}
                         />
                     </div>
+                    <div className='desc'>
+                        <h6>Description:</h6>
+                        <p>{desc}</p>
+                    </div>
                 </div>
             </div>
-            <div className='desc'>
-                <h6>Description:</h6>
-                <p>{desc}</p>
-            </div>
+            <CardsCarousel responsive={responsive} heading={`${t('similar')} ${products}`} data={fakeData} className='popular' />
+            <CardsCarousel responsive={responsive} heading={`${t('Discounted')} ${products}`}  data={fakeData} className='popular' />
+            <CardsCarousel responsive={responsive} heading={`${t('Popular')} ${products}`}  data={fakeData} className='popular' />
+            <CardsCarousel responsive={responsive} heading={`${t('latest')} ${products}`}  data={fakeData} className='Latest' />
+            <CardsCarousel responsive={responsive} heading={`${t('lasercut')} ${products}`} data={fakeData} className='Latest' />
+            <CardsCarousel responsive={responsive} heading={`${t('3dModel')} ${products}`}  data={fakeData} className='Latest' />
+            <CardsCarousel responsive={responsive} heading={`${t('dtf')} ${products}`}  data={fakeData} className='Latest' />
             
         </div>
     );

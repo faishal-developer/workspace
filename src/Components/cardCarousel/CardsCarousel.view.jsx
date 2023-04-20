@@ -6,7 +6,7 @@ import Commonbutton from '../Button/Button.view';
 
 const CardsCarousel = (props) => {
     const {heading,data} = props;
-    const responsive = {
+    const responsive = props.responsive ?? {
         sl:5,
         ld:5,
         l:5,
