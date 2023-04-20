@@ -19,7 +19,7 @@ const CartIcon = ({productNum,p}) => {
                 <span className='text'>{p}</span>
             </span>
             {
-                show ? <CustomOffcanvas show handleClose />:null
+                show ? <CustomOffcanvas placement='end' show handleClose />:null
             }
         </span>
     );
