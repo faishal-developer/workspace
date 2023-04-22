@@ -1,0 +1,19 @@
+.cart{
+    width: 100%;
+    
+    .cart-product{
+        .body{
+            display: flex;
+            justify-content: space-between;
+            figure{
+                max-width: 150px;
+                max-height: 150px;
+
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}
