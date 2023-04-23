@@ -16,7 +16,6 @@ const Footer = () => {
    
     const data=(activeId)=>{
         const newData= filterCategory(activeId, Category(t), ()=>{});
-        console.log('newData',newData);
         return newData;
     }
 

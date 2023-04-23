@@ -11,7 +11,6 @@ export const RouteRestriction = (props) => {
     ) : (
         <>
             <Outlet/>
-            {console.log('outlet working')}
         </>
     )
 }

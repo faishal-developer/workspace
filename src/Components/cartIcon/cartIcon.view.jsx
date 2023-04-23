@@ -11,14 +11,14 @@ const CartIcon = ({productNum,p,...props}) => {
     const [show,setShow] = useState(false);
 
     return (
-        <span >
+        <span className='cart-icon'>
             <span className='cart' onClick={() => setShow(true)}>
                 <FontAwesome icon={iconList.cart} />
                 <span className='num'>{productNum}</span>
                 <span className='text'>{p}</span>
             </span>
             <CustomOffcanvas show={show} placement="end" handleClose={()=>setShow(false)}>
-                <div className={BP.container}>
+                <div className={`${BP.container} canvas-header`}>
                     <span onClick={() => setShow(false)}>{<FontAwesome icon={iconList.cros} />}</span>
                     <p>{"Cart"}</p>
                 </div> 

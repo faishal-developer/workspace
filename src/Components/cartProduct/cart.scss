@@ -1,19 +1,83 @@
+@import '../../scss/variable.scss';
+
 .cart{
     width: 100%;
+    position: relative;
     
     .cart-product{
+        // :last-child{
+        //     margin-bottom: 15px;
+        // }
+        // background-color: $pal-ash;
+        padding: 5px;
+        margin:10px 0;
         .body{
             display: flex;
             justify-content: space-between;
+
+            .data{
+                p{
+                    margin: 0px;
+                    // display: flex;
+                    // justify-content: space-evenly;
+                    a{
+                        text-decoration: none;
+                        color:$pal-green;
+                    }
+                    del{
+                        margin-right: 10px;
+                    }
+                }
+                .high-light{
+                    font-weight: 500;
+                    margin-right: 10px;
+                }
+            }
             figure{
-                max-width: 150px;
-                max-height: 150px;
+                width: 130px;
+                height: 130px;
 
                 img{
                     max-width: 100%;
                     max-height: 100%;
                 }
             }
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+            // margin-top: 10px;
+
+            svg{
+                color:$delete;
+            }
+        }
+    }
+    .cart-product:last-child{
+        margin-bottom: 25px;
+    }
+    .place-order{
+        background-color: $pal-green;
+        position: fixed;
+        padding: 8px;
+        width: 100%;
+        bottom: 0;
+        font-weight: 600;
+        
+        p{
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        button{
+            margin-left: 50px;
+            border: 1px solid $white;
+            color: $white;
+            background-color: $pal-green;
+        }
+        button:hover{
+            border: 1px solid $light;
+            color: $black;
+            // background-color: $pal-ash;
         }
     }
 }

@@ -39,7 +39,6 @@ export const stickyPosition=(id,className,id2)=>{
             },100);
             height = stickyElementOfff.offsetTop + stickyElementOfff.offsetHeight;
         }
-        id === 'search_bar' && console.log(height-400<=scrollPosition, height,scrollPosition,isTrue);
         
         if (isTrue && rect.top <= scrollPosition) {
             stickyElement.classList.add(className);
