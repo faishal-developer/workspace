@@ -5,19 +5,18 @@
     position: relative;
     
     .cart-product{
-        // :last-child{
-        //     margin-bottom: 15px;
-        // }
-        // background-color: $pal-ash;
         padding: 5px;
         margin:10px 0;
+        
         .body{
             display: flex;
             justify-content: space-between;
+            font-size: 14px;
 
             .data{
                 p{
                     margin: 0px;
+                    font-weight: 300;
                     // display: flex;
                     // justify-content: space-evenly;
                     a{
@@ -29,8 +28,9 @@
                     }
                 }
                 .high-light{
-                    font-weight: 500;
+                    font-weight: 400;
                     margin-right: 10px;
+                    font-size: 15px;
                 }
             }
             figure{
@@ -47,6 +47,8 @@
             display: flex;
             justify-content: space-between;
             // margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
 
             svg{
                 color:$delete;
@@ -68,16 +70,26 @@
             display: inline-block;
             margin-bottom: 0;
         }
-        button{
+        .button{
             margin-left: 50px;
             border: 1px solid $white;
             color: $white;
             background-color: $pal-green;
+            a{
+                color: $white;
+                text-decoration: none;
+                font-weight: 400;
+                font-size: 15px;
+                padding: 3px 8px;
+            }
+            a:hover {
+                color: $black;
+                // background-color: $pal-ash;
+            }
         }
-        button:hover{
+        .button:hover{
             border: 1px solid $light;
-            color: $black;
-            // background-color: $pal-ash;
         }
+        
     }
 }
