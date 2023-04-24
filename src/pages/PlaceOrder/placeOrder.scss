@@ -6,6 +6,7 @@
     margin-top: 20px;
 
     .checkout-info{
+        margin-top: 12px;
         width: 45%;
         margin-right: 40px;
         h6{
@@ -110,4 +111,17 @@
     .summary{
         margin-top: -10px;
     }
+}
+
+@media only screen and (max-width: 767px){
+    .place-order{
+        flex-direction: column;
+        .checkout-info{
+            width: 100%;
+        }
+        .cart-overview {
+            width: 100%;
+        }
+    }
+
 }

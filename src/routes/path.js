@@ -6,5 +6,7 @@ export const path ={
     aboutUs:"/about",
     contactUs:"/contact",
     single_products:`/products`,
-    order:`/place-order`
+    order:`/place-order`,
+    login:`/login`,
+    register:`/register`,
 };

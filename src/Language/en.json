@@ -31,6 +31,35 @@
         "all":"All",
         "subcat":"Sub Category"
     },
+    "placeorder": {
+        "checkout": "Checkout Info",
+        "contact": "Contact Info",
+        "shipping": "Shipping Info",
+        "payable": "Total payable amount",
+        "breakdown": "Breakdown",
+        "ship": "Shipping: ",
+        "payment": "Payment Options",
+        "order": "Confirm Order",
+        "cartOverView": "Cart OverView",
+        "price": "Price",
+        "size": "Sizes",
+        "quantity": "Quantity",
+        "subTotal": "Subtotal",
+        "addAnotherSize": "+ Add Another Size",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "address": "Detailed Address",
+        "city": "City/Village",
+        "upazilla": "Upazilla/Thana",
+        "district": "District",
+        "altPhone": "Alt. Phone",
+        "note": "Note For Us",
+        "total":"Total: "
+    },
+    "auth":{
+        "password":"Password"
+    },
     "footer":{
         "about":"ABOUT US",
         "terms":"TERMS & CONDITIONS",

@@ -15,14 +15,14 @@ const PlaceOrder = (props) => {
         <div className={`${BP.container} place-order`}>
             <div className='checkout-info'>
                 <div className='header'>
-                    <h3>Checkout Info</h3>
+                    <h3>{t('placeorder.checkout')}</h3>
                 </div>
                 <form autoComplete='off'>
                     <div>
                         <div className='input'>
-                            <h6>Contact Info</h6>
+                            <h6>{t('placeorder.contact')}</h6>
                             <InputField
-                                placeHolder="Full Name"
+                                placeHolder={t('placeorder.fullName')}
                                 textType="text"
                                 inputName="name"
                                 asterisk={true}
@@ -36,7 +36,7 @@ const PlaceOrder = (props) => {
                             />
                             <div className='grid-item'>
                                 <InputField
-                                    placeHolder="Email"
+                                    placeHolder={t('auth.password')}
                                     textType="email"
                                     inputName="email"
                                     asterisk={true}
@@ -49,7 +49,7 @@ const PlaceOrder = (props) => {
                                 // requiredMessageLabel={addProjectFormik.touched.title || addProjectFormik.isSubmitting ? addProjectFormik.errors.title : ""}
                                 />
                                 <InputField
-                                    placeHolder="Phone Number"
+                                    placeHolder={t('placeorder.phone')}
                                     textType="text"
                                     inputName="phone"
                                     asterisk={true}
@@ -63,9 +63,9 @@ const PlaceOrder = (props) => {
                                 />
                             </div>
                             <div className='ship-info'>
-                                <h6 className=''>Shipping Info</h6>
+                                <h6 className=''> {t('placeorder.shipping')}</h6>
                                 <InputField
-                                    placeHolder="Detailed Address"
+                                    placeHolder={t('placeorder.address')}
                                     textType="text"
                                     inputName="address"
                                     asterisk={true}
@@ -79,7 +79,7 @@ const PlaceOrder = (props) => {
                                 />
                                 <div className='info-flex2'>
                                     <InputField
-                                        placeHolder="City/Village"
+                                        placeHolder={t('placeorder.city')}
                                         textType="text"
                                         inputName="city"
                                         asterisk={true}
@@ -92,7 +92,7 @@ const PlaceOrder = (props) => {
                                     // requiredMessageLabel={addProjectFormik.touched.title || addProjectFormik.isSubmitting ? addProjectFormik.errors.title : ""}
                                     />
                                     <InputField
-                                        placeHolder="Upazilla/Thana"
+                                        placeHolder={t('placeorder.upazilla')}
                                         textType="text"
                                         inputName="upazilla"
                                         asterisk={true}
@@ -109,7 +109,7 @@ const PlaceOrder = (props) => {
                                 <div className='info-flex1'>
                                     
                                     <InputField
-                                        placeHolder="District"
+                                        placeHolder={t('placeorder.district')}
                                         textType="text"
                                         inputName="district"
                                         asterisk={true}
@@ -122,7 +122,7 @@ const PlaceOrder = (props) => {
                                     // requiredMessageLabel={addProjectFormik.touched.title || addProjectFormik.isSubmitting ? addProjectFormik.errors.title : ""}
                                     />
                                     <InputField
-                                        placeHolder="Alt. Phone"
+                                        placeHolder={t('placeorder.altPhone')}
                                         textType="text"
                                         inputName="phone_2"
                                         asterisk={true}
@@ -137,9 +137,9 @@ const PlaceOrder = (props) => {
                                 </div>
                                 
                                 <InputField
-                                    placeHolder="Note For Us"
+                                    placeHolder={t('placeorder.note')}
                                     textType="text"
-                                    inputName="address"
+                                    inputName="note"
                                     asterisk={false}
                                     whiteSpace={false}
                                 // onBlur={addProjectFormik.handleBlur}
@@ -154,34 +154,34 @@ const PlaceOrder = (props) => {
                     </div>
                 </form>
                 <div className={`${BP.card} summary`}>
-                    <p className='header'>Total payable amount</p>
+                    <p className='header'>{t('placeorder.payable')}</p>
                     <h3>{`${t('money')} ${1295}`}</h3>
-                    <h6>Breakdown</h6>
-                    <p>Total:<span className='pal-green'>{t('money')} {1200}</span> </p>
-                    <p>Shipping: <span className='pal-green'>{t('money')} {95}</span></p>
+                    <h6>{t('placeorder.breakdown')}</h6>
+                    <p>{t('placeorder.total')}<span className='pal-green'>{t('money')} {1200}</span> </p>
+                    <p>{t('placeorder.ship')} <span className='pal-green'>{t('money')} {95}</span></p>
                 </div>
                 <div className='payment'>
-                    <h6>Payment Options</h6>
+                    <h6>{t('placeorder.payment')}</h6>
                     {/* todo: implement later */}
                     <Commonbutton
                         type="button"
                         onClick={() => { }}
                         className="button"
-                        btnText="Confirm Order"
+                        btnText={t('placeorder.order')}
                         isLoading={false}
                         disabled={false}
                     />
                 </div>
             </div>
             <div className={`${BP.card} cart-overview cart-two`}>
-                <h3>Cart Overview</h3>
+                <h3>{t('placeorder.cartOverView')}</h3>
                 <Cart>
                     <div className={`${BP.card} summary`}>
-                        <p className='header'>Total payable amount</p>
+                        <p className='header'>{t('placeorder.payable')}</p>
                         <h3>{`${t('money')} ${1295}`}</h3>
-                        <h6>Breakdown</h6>
-                        <p>Total:<span className='pal-green'>{t('money')} {1200}</span> </p>
-                        <p>Shipping: <span className='pal-green'>{t('money')} {95}</span></p>
+                        <h6>{t('placeorder.breakdown')}</h6>
+                        <p>{t('placeorder.total')}<span className='pal-green'>{t('money')} {1200}</span> </p>
+                        <p>{t('placeorder.ship')} <span className='pal-green'>{t('money')} {95}</span></p>
                     </div> 
                 </Cart>
             </div>
