@@ -14,7 +14,8 @@ let BP = {
     g3: 'g-3' ,
     row_c_m3:'row-cols-md-3',
     row_c_l5: 'row-cols-lg-5',
-    dnone:'op_0'
+    dnone:'op_0',
+    card:'card'
 
 }
 export default BP;
