@@ -1,5 +1,5 @@
 import './static/card.scss'
-import { cal_discounted_price, stringSlicer } from '../../helper/CommonFunction';
+import { cal_discounted_price, changeRoute, stringSlicer } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
 import LazyLoader from '../LazyLoader/LazyLoader.view';
 import { useNavigate } from "react-router-dom";
@@ -9,11 +9,11 @@ import useCardLogic from './card.presenter';
 import { path } from '../../routes/path';
 import Commonbutton from '../Button/Button.view';
 
+// todo:make full card clickable . But when click on wish or cart button stop propagation will work
 function CardView(props) {
     const { name, images,price,discount,_id } = props.product;
     const { t } = useTranslation();
     const history = useNavigate();
-    const {changeRoute} = useCardLogic();
 
     return (
         <div className={`custom_card ${props.border}`}>

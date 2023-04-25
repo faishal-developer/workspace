@@ -7,6 +7,8 @@ import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 import CustomOffcanvas from '../../Offcanvas/OffCanvas';
 import NavbarUtils from '../NavbarUtils';
 import CartIcon from '../../cartIcon/cartIcon.view';
+import { Link } from 'react-router-dom';
+import { path } from '../../../routes/path';
 
 
 //todo:change cart icon
@@ -19,22 +21,26 @@ const Logobar = () => {
         <div className={`${BS.container}`}>
             <div className='logobar'>
                 <div className='logo'>
-                    <div>
-                        <img src={siteConfig.company_logo1} alt="customPoint"/>
-                    </div>
-                    <p className='Custom'>{siteConfig.company_name}</p>
+                    <Link to={path.home}>
+                        <div>
+                            <img src={siteConfig.company_logo1} alt="customPoint" />
+                        </div>
+                        <p className='Custom'>{siteConfig.company_name}</p>
+                    </Link>
                 </div>
                 <div className='right_bar'>
                     <div className='shop'>
                         {
                             NavbarUtils(t).map((el,i)=>(
-                                <p 
-                                    className={`shop_p ${i===index && 'active'}`}
-                                    onClick={()=>setIndex(i)}
-                                    key={el}
-                                >
-                                    {el}
-                                </p>
+                                <Link to={el.link}>
+                                    <p
+                                        className={`shop_p ${i === index && 'active'}`}
+                                        onClick={() => setIndex(i)}
+                                        key={el.data}
+                                    >
+                                        {el.data}
+                                    </p>
+                                </Link>
                             ))
                         }
                         {/* <p className='shop_p'>{t('design')}</p> */}
@@ -65,13 +71,15 @@ const Logobar = () => {
                         <div className='shop'>
                             {
                                 NavbarUtils(t).map((el, i) => (
-                                    <p
-                                        className={`shop_p ${i === index && 'active'}`}
-                                        onClick={() => setIndex(i)}
-                                        key={el}
-                                    >
-                                        {el}
-                                    </p>
+                                    <Link to={el.link}>
+                                        <p
+                                            className={`shop_p ${i === index && 'active'}`}
+                                            onClick={() => setIndex(i)}
+                                            key={el.data}
+                                        >
+                                            {el.data}
+                                        </p>
+                                    </Link>
                                 ))
                             }
                         </div>

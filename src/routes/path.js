@@ -9,4 +9,7 @@ export const path ={
     order:`/place-order`,
     login:`/login`,
     register:`/register`,
+    help:`/help`,
+    custom_design:'/custom-design',
+    d_library:"design-library"
 };

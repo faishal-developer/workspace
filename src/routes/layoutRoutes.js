@@ -13,7 +13,7 @@ const AboutUs = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "AboutUs" */ "../pages/AboutUs/AboutUs"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 const ContactUs = React.lazy(() => {
-    return Promise.all([import(/*webpackChunkName: "contactUs" */ '../pages/PlaceOrder/PlaceOrder.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+    return Promise.all([import(/*webpackChunkName: "contactUs" */ '../pages/ContactUs/ContactUs.js'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 const SingleProduct = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "singleProducts" */ "../pages/SingleProduct/SingleProduct.view"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
@@ -32,18 +32,19 @@ const Registration = React.lazy(() => {
 
 
 export const private_routes = [
-    { path: `${path.aboutUs}`, Component: <AboutUs pageTitle={`Default ${SiteName}`} />, Layout: <CommonLayout /> },
-    { path: `${path.contactUs}`, Component: <ContactUs pageTitle={`Contact ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.order}`, Component: <PlaceOrder pageTitle={`Orders ${SiteName}`} />, Layout: <CommonLayout /> },
 ]
 
 export const public_routes = [
+    
     // { path: `${process.env.PUBLIC_URL}${path.login}`, Component: <Login pageTitle={`Login ${SiteName}`} />, Layout: <TheAuthLayout /> },
     
 ]
 
 // ************ Example for public private route *********** //
 export const public_private_routes = [
+    { path: `${path.aboutUs}`, Component: <AboutUs pageTitle={`About Us ${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.contactUs}`, Component: <ContactUs pageTitle={`Contact ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.home}`, Component: <Home pageTitle={`Home |${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.single_products +'/:productId'}`, Component: <SingleProduct pageTitle={`products |${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.login}`, Component: <Login pageTitle={`Login |${SiteName}`} />, Layout: <CommonLayout /> },

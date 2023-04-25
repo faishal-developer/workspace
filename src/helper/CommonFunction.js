@@ -78,3 +78,7 @@ export const NumberByLang = (num, t) => {
     })
     return newArray.join('')
 }
+
+export const changeRoute = (navigate, url) => {
+    return navigate(url);
+}

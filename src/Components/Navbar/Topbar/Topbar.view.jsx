@@ -4,6 +4,8 @@ import '../static/Navbar.scss'
 import BP from '../../../scss/CommonClass';
 import FontAwesome,{iconList} from '../../FontAwesome/FontAwesome';
 import Language from '../../Language/Language';
+import { Link } from 'react-router-dom';
+import { path } from '../../../routes/path';
 
 const Topbar = () => {
     const { t } = useTranslation();
@@ -16,14 +18,17 @@ const Topbar = () => {
                         <span className='electric'>
                             <FontAwesome icon={iconList.Bolt} />
                         </span>
+                        {/* todo: load special items and enable page loader */}
                         {t('exclusive')}
                     </p>
                 </div>
                 <div className='menues'>
                     <ul>
                         <li className='bulk'>
-                            <span>{<FontAwesome icon={iconList.Car}/>}</span>
-                            {t('order_bulk')}
+                            <Link className='bulk' to={path.contactUs}>
+                                <span>{<FontAwesome icon={iconList.Car} />}</span>
+                                {t('order_bulk')}
+                            </Link>
                         </li>
                         <li className='language'>
                             {t('language')}
@@ -31,12 +36,16 @@ const Topbar = () => {
                             <Language/>
                         </li>
                         <li className='help'>
-                            <span className='mr_4'><FontAwesome icon={iconList.cir_question} /></span>
-                            {t('help')}
+                            <Link to={path.help}>
+                                <span className='mr_4'><FontAwesome icon={iconList.cir_question} /></span>
+                                {t('help')}
+                            </Link>
                         </li>
                         <li>
-                            <span className='mr_4'><FontAwesome icon={iconList.login} /></span>
-                            {t('login')}
+                            <Link to={path.login}>
+                                <span className='mr_4'><FontAwesome icon={iconList.login} /></span>
+                                {t('login')}
+                            </Link>
                         </li>
                     </ul>
                 </div>

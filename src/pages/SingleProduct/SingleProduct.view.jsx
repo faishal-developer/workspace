@@ -49,10 +49,10 @@ const SingleProduct = (props) => {
                     <div className='price'>
                         {
                             Number(discount) > 0 ? (
-                                <del>{`${t("money")} ${price}`}</del>
+                                <del>{`${t("money")} ${NumberByLang(price,t)}`}</del>
                             ) : null
                         }
-                        <p>{`${t("money")} ${Math.floor(cal_discounted_price(price, discount))}`}</p>
+                        <p>{`${t("money")} ${NumberByLang(Math.floor(cal_discounted_price(price, discount)),t)}`}</p>
                         <p>
                             {
                                 Number(discount) > 0 ? (
