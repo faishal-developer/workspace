@@ -4,7 +4,7 @@ import { pagetitle, scrollToTop } from '../../helper/CommonFunction';
 
 const AboutUs = (props) => {
     pagetitle(props.pageTitle);
-    //scrollToTop();
+    scrollToTop();
     return (
         <div>
             <Link to="/contact">this is about us section</Link> 

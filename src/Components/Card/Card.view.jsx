@@ -23,7 +23,7 @@ function CardView(props) {
                         discount?(
                             <div className='discount'>
                                 <p>{discount}%</p>
-                                <p>OFF</p>
+                                <p>{t('singleProduct.off')}</p>
                             </div>
                         ) : null
                     }
@@ -48,7 +48,7 @@ function CardView(props) {
                             type="button"
                             onClick={props.onClick}
                             className="button"
-                            btnText="Add To Cart"
+                            btnText={t('singleProduct.addToCart')}
                             isLoading={false}
                             disabled={false}
                         />

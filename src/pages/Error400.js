@@ -2,7 +2,7 @@ import React from 'react';
 import { pagetitle, scrollToTop } from '../helper/CommonFunction';
 
 const Error400 = (props) => {
-    //scrollToTop();
+    scrollToTop();
     pagetitle(props.pageTitle)
     return (
         <div>

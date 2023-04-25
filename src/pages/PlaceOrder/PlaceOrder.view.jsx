@@ -10,7 +10,7 @@ import Commonbutton from '../../Components/Button/Button.view';
 const PlaceOrder = (props) => {
     pagetitle(props.pageTitle);
     const { t } = useTranslation();
-    //scrollToTop();
+    scrollToTop();
 
     return (
         <div className={`${BP.container} place-order`}>

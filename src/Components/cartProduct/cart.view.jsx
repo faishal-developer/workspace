@@ -8,7 +8,6 @@ import Commonbutton from '../Button/Button.view';
 import { Link, useLocation } from 'react-router-dom';
 import { path } from '../../routes/path';
 
-//todo: check if bp.container works or not
 const Cart = (props) => {
     const [show,setShow] = useState(false);
     const data = fakedata.slice(1,5);

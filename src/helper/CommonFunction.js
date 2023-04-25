@@ -56,7 +56,6 @@ export const cal_discounted_price = (price,discount) =>{
 }
 
 
-//todo: if it is working
 export const capitalize = (string) =>{
     let strArray = string.split(' ');
     let firstWord = strArray[0].split('');
@@ -68,5 +67,14 @@ export const capitalize = (string) =>{
 }
 
 export const scrollToTop=()=>{
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
+}
+
+export const NumberByLang = (num, t) => {
+    let numArray = Number(num).toString().split('');
+    let newArray = [];
+    numArray.forEach(n => {
+        newArray.push(t(`number.${n}`))
+    })
+    return newArray.join('')
 }

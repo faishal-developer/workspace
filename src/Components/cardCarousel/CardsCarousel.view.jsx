@@ -3,9 +3,11 @@ import CustomCarousel from '../../Carousel/Carousel';
 import CardView from '../Card/Card.view';
 import './cardCarousel.scss';
 import Commonbutton from '../Button/Button.view';
+import { useTranslation } from 'react-i18next';
 
 const CardsCarousel = (props) => {
     const {heading,data} = props;
+    const { t } = useTranslation();
     const responsive = props.responsive ?? {
         sl:5,
         ld:5,
@@ -24,7 +26,7 @@ const CardsCarousel = (props) => {
                         type="button"
                         onClick={props.onClick}
                         className="button"
-                        btnText="View All"
+                        btnText={t('ViewAll')}
                         isLoading={false}
                         disabled={false}
                     />

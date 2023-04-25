@@ -57,6 +57,14 @@
         "note": "Note For Us",
         "total":"Total: "
     },
+    "singleProduct": {
+        "off": "OFF",
+        "addToCart": "Add To Cart",
+        "category": "Category:",
+        "size": "Select Sizes",
+        "desc": "Description:",
+        "save":"Save TK."
+    },
     "auth": {
         "password": "password",
         "register": "Register",

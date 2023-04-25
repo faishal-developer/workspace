@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import fakeData from '../../Components/MainBox/fakeData.json'
-import { cal_discounted_price, capitalize, pagetitle, scrollToTop } from '../../helper/CommonFunction';
+import { NumberByLang, cal_discounted_price, capitalize, pagetitle, scrollToTop } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
 import Commonbutton from '../../Components/Button/Button.view';
 import './SingleProducts.scss';
@@ -10,13 +10,12 @@ import SizeSelectBtn from '../../Components/sizeSelectBtn/sizeSelectBtn.view';
 import CardsCarousel from '../../Components/cardCarousel/CardsCarousel.view';
 
 //todo:dynamically color change by product color selection (grayscale)
-//todo: implement scroll to top functionality
 const responsive = {sl:6,ld:6,l:6,lt:5,t:3,lm:3,m:2};
 
 const SingleProduct = (props) => {
     let { name, discount, price, sizes, desc, images } = fakeData[1];
     const { t } = useTranslation();
-    //scrollToTop();
+    scrollToTop();
     const [cart,setCart] = useState(1);
     const [image,setImage] = useState(images[0]);
 
@@ -46,7 +45,7 @@ const SingleProduct = (props) => {
                 </div>
                 <div className='data'>
                     <h5>{capitalize(name)}</h5>
-                    <p > Category: <span className='pal-green'>{capitalize('Laser Cut & Engraving')}</span></p>
+                    <p >{t('singleProduct.category')} <span className='pal-green'>{capitalize('Laser Cut & Engraving')}</span></p>
                     <div className='price'>
                         {
                             Number(discount) > 0 ? (
@@ -57,7 +56,7 @@ const SingleProduct = (props) => {
                         <p>
                             {
                                 Number(discount) > 0 ? (
-                                    <p className='save'>Save Tk.{price - Math.floor(cal_discounted_price(price, discount))}</p>
+                                    <p className='save'>{t('singleProduct.save')}{price - Math.floor(cal_discounted_price(price, discount))}</p>
                                 ) : null
                             }
                         </p>
@@ -65,7 +64,7 @@ const SingleProduct = (props) => {
                     {
                         sizes.length >= 1 ? (
                             <div className='sizes'>
-                                <h5>Select Sizes</h5>
+                                <h5>{t('singleProduct.size')}</h5>
                                 <SizeSelectBtn sData='m' clickHandler={()=>{}} data={sizes} />
                             </div>
                         ) : null
@@ -79,7 +78,7 @@ const SingleProduct = (props) => {
                         ) : null
                     } */}
                     <div className='add-to-cart'>
-                        <SizeSelectBtn clickHandler={()=>{}} data={['-',cart,'+']}/>
+                        <SizeSelectBtn clickHandler={()=>{}} data={['-',NumberByLang(cart,t),'+']}/>
                         {/* <Commonbutton
                             onClick={() => { }}
                             className="button"
@@ -98,11 +97,11 @@ const SingleProduct = (props) => {
                         <Commonbutton
                             onClick={() => { }}
                             className="button ml_10"
-                            btnText={"+Add To Cart"}
+                            btnText={t('singleProduct.addToCart')}
                         />
                     </div>
                     <div className='desc'>
-                        <h6>Description:</h6>
+                        <h6>{t('singleProduct.desc')}</h6>
                         <p>{desc}</p>
                     </div>
                 </div>

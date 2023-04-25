@@ -6,11 +6,10 @@ import AsideBar from '../../Components/AsideBar/AsideBar';
 import MainBox from '../../Components/MainBox/MainBox';
 import BP from '../../scss/CommonClass';
 
-//todo: implement scroll to top for every page
 const Home = (props) => {
     pagetitle(props.pageTitle);
     const {t} = useTranslation();
-    //scrollToTop();
+    scrollToTop();
     
     return (
         <div className={`home-container ${BP.container} `}>
