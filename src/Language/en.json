@@ -57,8 +57,15 @@
         "note": "Note For Us",
         "total":"Total: "
     },
-    "auth":{
-        "password":"Password"
+    "auth": {
+        "password": "password",
+        "register": "Register",
+        "login": "Login",
+        "r_google": "Register with google",
+        "r_facebook": "Facebook",
+        "allReady_R": "Allready registerd? Go back to login page.",
+        "l_google": "Login with Google",
+        "not_r": "Not registerd yet?Please register now."
     },
     "footer":{
         "about":"ABOUT US",

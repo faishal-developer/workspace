@@ -1,5 +1,5 @@
 import React from 'react';
-import { pagetitle } from '../../helper/CommonFunction';
+import { pagetitle, scrollToTop } from '../../helper/CommonFunction';
 import {useTranslation} from "react-i18next"
 import './Home.scss';
 import AsideBar from '../../Components/AsideBar/AsideBar';
@@ -10,6 +10,7 @@ import BP from '../../scss/CommonClass';
 const Home = (props) => {
     pagetitle(props.pageTitle);
     const {t} = useTranslation();
+    //scrollToTop();
     
     return (
         <div className={`home-container ${BP.container} `}>

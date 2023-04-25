@@ -2,8 +2,6 @@ import React from 'react';
 import {path} from "./path";
 import siteConfig from "../Config/siteConfig";
 import CommonLayout from '../Layouts/CommonLayout';
-import Registration from '../pages/Login/Registration.view';
-import Login from '../pages/Login/Login.view';
 
 let DelayTime = siteConfig.lazy_suspense_delay;
 let SiteName = `| ${siteConfig.company_name}`;
@@ -22,6 +20,12 @@ const SingleProduct = React.lazy(() => {
 });
 const PlaceOrder = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "singleProducts" */ "../pages/PlaceOrder/PlaceOrder.view.jsx"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+});
+const Login = React.lazy(() => {
+    return Promise.all([import(/*webpackChunkName: "singleProducts" */ '../pages/Login/Login.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+});
+const Registration = React.lazy(() => {
+    return Promise.all([import(/*webpackChunkName: "singleProducts" */ '../pages/Login/Registration.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 
 

@@ -1,6 +1,9 @@
 import React from 'react';
+import { pagetitle, scrollToTop } from '../helper/CommonFunction';
 
-const Error400 = () => {
+const Error400 = (props) => {
+    //scrollToTop();
+    pagetitle(props.pageTitle)
     return (
         <div>
             this is error 400

@@ -66,3 +66,7 @@ export const capitalize = (string) =>{
     strArray = strArray.join(' ');
     return strArray;
 }
+
+export const scrollToTop=()=>{
+    // window.scrollTo(0, 0);
+}

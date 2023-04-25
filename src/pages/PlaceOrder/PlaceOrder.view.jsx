@@ -1,7 +1,7 @@
 import React from 'react';
 import InputField from '../../Components/InputFeild/InputFeild.view';
 import BP from '../../scss/CommonClass';
-import { pagetitle } from '../../helper/CommonFunction';
+import { pagetitle, scrollToTop } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
 import Cart from '../../Components/cartProduct/cart.view'
 import './placeOrder.scss';
@@ -10,6 +10,7 @@ import Commonbutton from '../../Components/Button/Button.view';
 const PlaceOrder = (props) => {
     pagetitle(props.pageTitle);
     const { t } = useTranslation();
+    //scrollToTop();
 
     return (
         <div className={`${BP.container} place-order`}>

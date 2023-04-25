@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import fakeData from '../../Components/MainBox/fakeData.json'
-import { cal_discounted_price, capitalize, pagetitle } from '../../helper/CommonFunction';
+import { cal_discounted_price, capitalize, pagetitle, scrollToTop } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
 import Commonbutton from '../../Components/Button/Button.view';
 import './SingleProducts.scss';
@@ -14,8 +14,9 @@ import CardsCarousel from '../../Components/cardCarousel/CardsCarousel.view';
 const responsive = {sl:6,ld:6,l:6,lt:5,t:3,lm:3,m:2};
 
 const SingleProduct = (props) => {
-    let { name, discount, price, sizes, color, desc, images } = fakeData[1];
+    let { name, discount, price, sizes, desc, images } = fakeData[1];
     const { t } = useTranslation();
+    //scrollToTop();
     const [cart,setCart] = useState(1);
     const [image,setImage] = useState(images[0]);
 

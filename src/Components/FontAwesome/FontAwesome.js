@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope,faBolt,faCar,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash} from '@fortawesome/free-solid-svg-icons';
-import { faTwitter, faFacebook,faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter, faFacebook,faLinkedin, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 
 
@@ -30,6 +30,7 @@ export const iconList={
     truck:faTruck,
     facebook:faFacebook,
     twitter:faTwitter,
+    google:faGoogle,
     linkedin:faLinkedin,
     trash:faTrash
 }
