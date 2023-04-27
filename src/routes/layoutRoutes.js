@@ -45,10 +45,10 @@ export const public_routes = [
 export const public_private_routes = [
     { path: `${path.aboutUs}`, Component: <AboutUs pageTitle={`About Us ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.contactUs}`, Component: <ContactUs pageTitle={`Contact ${SiteName}`} />, Layout: <CommonLayout /> },
-    { path: `${path.home}`, Component: <Home pageTitle={`Home |${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.home}`, Component: <Home pageTitle={`Home ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.single_products +'/:productId'}`, Component: <SingleProduct pageTitle={`products |${SiteName}`} />, Layout: <CommonLayout /> },
-    { path: `${path.login}`, Component: <Login pageTitle={`Login |${SiteName}`} />, Layout: <CommonLayout /> },
-    { path: `${path.register}`, Component: <Registration pageTitle={`Registration |${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.login}`, Component: <Login pageTitle={`Login ${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.register}`, Component: <Registration pageTitle={`Registration ${SiteName}`} />, Layout: <CommonLayout /> },
     
     // {path: `${process.env.PUBLIC_URL}${path.registration}`, Component: <Signup pageTitle={`Sign Up ${SiteName}`}/>, Layout: <TheAuthLayout/> },
 ]

@@ -115,6 +115,10 @@ figure{
 //     margin-right: 0px;
 // }
 
+.animate{
+    animation: slideBlock 200ms;
+}
+
 @keyframes slideaway {
     from {
         display: block;

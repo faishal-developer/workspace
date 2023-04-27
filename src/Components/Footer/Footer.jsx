@@ -7,6 +7,7 @@ import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
 import FooterUtils from './Footer.utils';
 import { Category } from '../AsideBar/UtilsAsideBar';
 import './static/Footer.scss'
+import { path } from '../../routes/path';
 
 const paymentMethods=[{name:"paypal"}]
 const delivary=[{}]
@@ -22,7 +23,9 @@ const Footer = () => {
     return (
         <footer id='footer' className='footer'>
             <div className='subscription'>
-                <p>{t('footer.getIn')}</p>
+                <Link to={path.contactUs}>
+                    <p>{t('footer.getIn')}</p>
+                </Link>
             </div>
             <div className='three_sec'>
                 <div className='section'>
@@ -58,19 +61,29 @@ const Footer = () => {
             <div className='social_link'>
                 <ul>
                     <li className='facebook'>
-                        <FontAwesome icon={iconList.facebook}/>
+                        <a target='_blan' href='https://web.facebook.com/profile.php?id=100089740422511'>
+                            <FontAwesome icon={iconList.facebook} />
+                        </a>
                     </li>
                     <li className='twitter'>
-                        <FontAwesome icon={iconList.twitter}/>
+                        <a href='https://twitter.com' target='_blan'>
+                            <FontAwesome icon={iconList.twitter} />
+                        </a>
                     </li>
                     <li className='linkedin'>
-                        <FontAwesome icon={iconList.linkedin}/>
+                        <a href='https://www.linkedin.com/in/md-faishal-4bb8b3219/' target='_blan'>
+                            <FontAwesome icon={iconList.linkedin} />
+                        </a>
                     </li>
                 </ul>
             </div>
             <div className='sub_items'>
                 <div className='foot_item items'>
-                    <h6 className='company_name'>{siteConfig.company_name}</h6>
+                    <h6 className='company_name'>
+                        <Link to={path.home}>
+                            {siteConfig.company_name}
+                        </Link>
+                    </h6>
                     {
                         FooterUtils(t).map((v,i)=>(
                             <p key={v.name}>

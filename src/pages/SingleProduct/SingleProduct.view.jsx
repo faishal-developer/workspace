@@ -27,7 +27,7 @@ const SingleProduct = (props) => {
     return (
         <div className={`singleProducts ${BP.container_sm}`}>
             <div className='main'>
-                <div className='images'>
+                <div className='images animate'>
                     <figure  className='Show'>
                         {/* <img src={image} alt={name}/> */}
                         <ReactImageZooM img={image} />
@@ -43,7 +43,7 @@ const SingleProduct = (props) => {
                         }
                     </div>
                 </div>
-                <div className='data'>
+                <div className='data animate'>
                     <h5>{capitalize(name)}</h5>
                     <p >{t('singleProduct.category')} <span className='pal-green'>{capitalize('Laser Cut & Engraving')}</span></p>
                     <div className='price'>

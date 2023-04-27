@@ -5,6 +5,7 @@ import './cartIcon.scss'
 import CustomOffcanvas from '../Offcanvas/OffCanvas';
 import Cart from '../cartProduct/cart.view';
 import BP from '../../scss/CommonClass';
+import '../cartProduct/cart.scss';
 
 const CartIcon = ({productNum,p,...props}) => {
     const { t } = useTranslation();
@@ -22,7 +23,7 @@ const CartIcon = ({productNum,p,...props}) => {
                     <span onClick={() => setShow(false)}>{<FontAwesome icon={iconList.cros} />}</span>
                     <p>{"Cart"}</p>
                 </div> 
-                <Cart/>
+                <Cart setShow={setShow}/>
             </CustomOffcanvas>
         </span>
     );

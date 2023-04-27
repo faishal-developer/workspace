@@ -95,9 +95,11 @@ const Logobar = () => {
                                 {t("cart")}
                             </p>
                             <p>
+                                {/* nexttodo: it will open a popup like cart */}
                                 <FontAwesome icon={iconList.heart} />
                                 {t("wish")}
                             </p>
+                            {/* nexttodo:linking to profile page */}
                             <p className='user'><FontAwesome icon={iconList.user} />{t('profile')}</p>
                         </div>
                     </div>

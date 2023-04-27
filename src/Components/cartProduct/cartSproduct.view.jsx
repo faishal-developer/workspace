@@ -14,7 +14,7 @@ const CartSproduct = () => {
     let quantity = 2;
 
     return (
-        <div className='cart-product card'>
+        <div className='cart-product card animate'>
             <div className='body'>
                 <div className="data">
                     <p className='high-light'><Link to={path.single_products+"/"+data._id}>{data.name}</Link></p>

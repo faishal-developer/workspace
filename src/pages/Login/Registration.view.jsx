@@ -14,7 +14,7 @@ const Registration = (props) => {
     const { t } = useTranslation();
 
     return (
-        <div className={`${BP.card} auth-layout`}>
+        <div className={`${BP.card} auth-layout animate`}>
             <form>
                 <div className='login'>
                     <InputField

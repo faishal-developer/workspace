@@ -14,7 +14,7 @@ const PlaceOrder = (props) => {
 
     return (
         <div className={`${BP.container} place-order`}>
-            <div className='checkout-info'>
+            <div className='checkout-info animate'>
                 <div className='header'>
                     <h3>{t('placeorder.checkout')}</h3>
                 </div>
@@ -174,7 +174,7 @@ const PlaceOrder = (props) => {
                     />
                 </div>
             </div>
-            <div className={`${BP.card} cart-overview cart-two`}>
+            <div className={`${BP.card} cart-overview cart-two animate`}>
                 <h3>{t('placeorder.cartOverView')}</h3>
                 <Cart>
                     <div className={`${BP.card} summary`}>

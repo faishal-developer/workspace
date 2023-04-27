@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
 import BP from '../../scss/CommonClass';
 import fakedata from '../MainBox/fakeData.json';
@@ -7,13 +7,15 @@ import './cart.scss';
 import Commonbutton from '../Button/Button.view';
 import { Link, useLocation } from 'react-router-dom';
 import { path } from '../../routes/path';
+import { useTranslation } from 'react-i18next';
 
 const Cart = (props) => {
-    const [show,setShow] = useState(false);
     const data = fakedata.slice(1,5);
+    const {t} = useTranslation();
     const location = useLocation();
-
-
+    useEffect(()=>{
+        console.log(location.pathname)
+    },[location])
     return (
         <div className='cart'>
             <div>
@@ -25,8 +27,8 @@ const Cart = (props) => {
             </div>
             {
                 location.pathname!==path.order ? (
-                    <div className='place-order'>
-                        <p>Total:{500}</p>
+                    <div className='place_order'>
+                        <p>Total: {t('money')}{500}</p>
                         {/* <Commonbutton
                             type="button"
                             onClick={() => { }}
@@ -35,7 +37,9 @@ const Cart = (props) => {
                             isLoading={false}
                             disabled={false}
                         /> */}
-                        <span className='button'><Link to={path.order}>Place Order</Link></span>
+                        <span className='button'>
+                            <Link onClick={()=>props.setShow(false)} to={path.order}>Place Order</Link>
+                        </span>
                     </div>
                 ): props.children
             }
