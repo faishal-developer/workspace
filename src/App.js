@@ -1,23 +1,24 @@
+import React,{useEffect} from "react";
 import logo from './logo.svg';
 import './scss/global.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from "./Store/testSlice";
 
 function App() {
+  const myTemporaryData = useSelector((state) => state.testSlice);
+  const dispatch= useDispatch();
   return (
     <div className="black">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='temporary'>
+        <button onClick={()=>dispatch(increment())}>+</button>
+        { }
+        <button onClick={() => dispatch(decrement())}>-</button>
+      </div>
+      <div className='permanent'>
+        <button>+</button>
+        { myTemporaryData.value}
+        <button>-</button>
+      </div>
     </div>
   );
 }

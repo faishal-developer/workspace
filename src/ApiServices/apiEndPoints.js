@@ -1,5 +1,5 @@
 export const Endpoints={
-    base:`https://rickandmortyapi.com/api`,
+    base: process.env.REACT_APP_BASE_URL,
     
     charecter:`/character`,
     SingleCh:(id)=>`/character/${id}`,

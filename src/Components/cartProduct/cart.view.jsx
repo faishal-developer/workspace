@@ -21,7 +21,7 @@ const Cart = (props) => {
             <div>
                 {
                     data.length? (
-                        data.map((sData)=><CartSproduct/>)
+                        data.map((sData)=><CartSproduct key={sData._id}/>)
                     ) : <p>No Product added to Cart</p>
                 }
             </div>

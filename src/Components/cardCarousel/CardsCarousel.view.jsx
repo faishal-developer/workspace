@@ -35,7 +35,7 @@ const CardsCarousel = (props) => {
             <CustomCarousel responsive={responsive}>
                 {
                     data? data.map((product)=>(
-                        <CardView product={product} border='border_green m_r_10px' />
+                        <CardView key={product._id} product={product} border='border_green m_r_10px' />
                     )):null
                 }
             </CustomCarousel>

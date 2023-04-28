@@ -10,17 +10,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../src/scss/global.scss'
+import { Provider } from 'react-redux';
+// import { PersistGate } from 'redux-persist/integration/react';
+import { temporaryStore } from './Store/Store';
 
-
+console.log(process.env.REACT_APP_BASE_URL)
 localStorage.setItem("userData",true);
 localStorage.setItem("isDeveloper",false);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/'>
-      <ToastContainer/>
-      <MainRoutes/>
-    </BrowserRouter>
+    <Provider store={temporaryStore}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+        <BrowserRouter basename='/'>
+          <ToastContainer />
+          <MainRoutes />
+          {/* <App/> */}
+        </BrowserRouter>
+      {/* </PersistGate> */}
+    </Provider>
   </React.StrictMode>
 );
 

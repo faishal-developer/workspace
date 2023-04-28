@@ -8,7 +8,8 @@ const SizeSelectBtn = (props) => {
     return (
         <span className='sizes'>
             <span className='buttons'>
-                {data.map((size) => <Commonbutton
+                {data.map((size,i) => <Commonbutton
+                    key={i}
                     onClick={()=>clickHandler(size)}
                     className={sData === size ? "active button "+size : "button size "+size}
                     btnText={size}

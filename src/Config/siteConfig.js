@@ -9,7 +9,8 @@ const siteConfig = {
     company_favicon: favicon,
     company_slogan: '',
     user_default_profile_pic: user_default_profile_pic,
-    lazy_suspense_delay: 100
+    lazy_suspense_delay: 100,
+    defaultLang:'en'
 }
 
 export default siteConfig;

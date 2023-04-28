@@ -38,6 +38,7 @@ const MainBox = (props) => {
                     {
                         data.length >= 1 ? (data.map((el, i) => (
                             <CardView
+                                key={i}
                                 product={el}
                                 border='border_green'
                             />

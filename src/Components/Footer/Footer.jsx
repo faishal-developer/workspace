@@ -35,7 +35,7 @@ const Footer = () => {
                         <ul>
                             {
                                 paymentMethods.map((v,i)=>(
-                                    <li>{v.img}</li>
+                                    <li key={i}>{v.img}</li>
                                 ))
                             }
                         </ul>
@@ -86,7 +86,7 @@ const Footer = () => {
                     </h6>
                     {
                         FooterUtils(t).map((v,i)=>(
-                            <p key={v.name}>
+                            <p key={i}>
                                 <Link to={v.value}>{v.name}</Link>
                             </p>
                         ))
@@ -96,7 +96,7 @@ const Footer = () => {
                     <h6 >{t('aside.cloth')}</h6>
                     {
                         data(3).map((v,i)=>(
-                            <p key={v.name}>
+                            <p key={i}>
                                 <Link to={v.value}>{v}</Link>
                             </p>
                         ))
@@ -106,7 +106,7 @@ const Footer = () => {
                     <h6 >{t('aside.3d')}</h6>
                     {
                         data(2).map((v,i)=>(
-                            <p key={v.name}>
+                            <p key={i}>
                                 <Link to={v.value}>{v}</Link>
                             </p>
                         ))
@@ -116,7 +116,7 @@ const Footer = () => {
                     <h6 >{t('aside.laser')}</h6>
                     {
                         data(1).map((v,i)=>(
-                            <p key={v.name}>
+                            <p key={i}>
                                 <Link to={v.value}>{v}</Link>
                             </p>
                         ))

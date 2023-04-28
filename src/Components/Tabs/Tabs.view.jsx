@@ -10,7 +10,7 @@ const Tabs = (props) => {
             {
                 isChildrenExist(children)?
                 isChildrenExist(children).map((item,current)=>(
-                    <div className={item.props.label===active?"d-block" : null}>
+                    <div key={current} className={item.props.label===active?"d-block" : null}>
                         {item}
                     </div>
                 )):null

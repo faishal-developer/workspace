@@ -1,0 +1,27 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+    value: 0,
+    isOpen: false
+};
+
+export const testSlice = createSlice({
+    name: 'testSlice',
+    initialState,
+    reducers: {
+        increment: (state) => {
+            console.log("working");
+            state.value += 1;
+        },
+        decrement: (state) => {
+            state.value -= 1;
+        },
+        setDrawer: (state) => {
+            state.isOpen = !state.isOpen;
+        },
+    },
+});
+
+export const { increment, decrement, setDrawer } = testSlice.actions;
+
+export default testSlice.reducer;

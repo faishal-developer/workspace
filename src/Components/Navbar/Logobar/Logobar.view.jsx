@@ -32,11 +32,11 @@ const Logobar = () => {
                     <div className='shop'>
                         {
                             NavbarUtils(t).map((el,i)=>(
-                                <Link to={el.link}>
+                                <Link key={el.data} to={el.link}>
                                     <p
                                         className={`shop_p ${i === index && 'active'}`}
                                         onClick={() => setIndex(i)}
-                                        key={el.data}
+                                        
                                     >
                                         {el.data}
                                     </p>
@@ -71,11 +71,11 @@ const Logobar = () => {
                         <div className='shop'>
                             {
                                 NavbarUtils(t).map((el, i) => (
-                                    <Link to={el.link}>
+                                    <Link key={el.data} to={el.link}>
                                         <p
                                             className={`shop_p ${i === index && 'active'}`}
                                             onClick={() => setIndex(i)}
-                                            key={el.data}
+                                            
                                         >
                                             {el.data}
                                         </p>
