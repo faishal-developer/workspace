@@ -5,18 +5,23 @@ import siteConfig from '../../Config/siteConfig';
 import useasideDropDown from '../AsideBar/asideDropDown/asideDropDown.presenter';
 import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
 import FooterUtils from './Footer.utils';
-import { Category } from '../AsideBar/UtilsAsideBar';
+// import { Category } from '../AsideBar/UtilsAsideBar';
 import './static/Footer.scss'
 import { path } from '../../routes/path';
+import { useSelector } from 'react-redux';
+import SubCatSkeleton from '../skeleton/subCatSkeleton.view';
 
 const paymentMethods=[{name:"paypal"}]
 const delivary=[{}]
 const Footer = () => {
+    const Category = useSelector((state) => state.catSlice.cat);
+    const SubCategories = useSelector((state) => state.SubcatSlice.SubCategories);
     const {t} = useTranslation();
     const { filterCategory } = useasideDropDown();
    
     const data=(activeId)=>{
-        const newData= filterCategory(activeId, Category(t), ()=>{});
+        const newData = filterCategory(activeId, { SubCategories, setSubcats:()=>{}, setSubcat:()=>{} });
+        // const newData= filterCategory(activeId, Category(t), ()=>{});
         return newData;
     }
 
@@ -92,36 +97,40 @@ const Footer = () => {
                         ))
                     }
                 </div>
-                <div className='sub_item items'>
-                    <h6 >{t('aside.cloth')}</h6>
-                    {
-                        data(3).map((v,i)=>(
-                            <p key={i}>
-                                <Link to={v.value}>{v}</Link>
-                            </p>
+                {
+                    Category.length?(
+                        Category.map((cat)=>(
+                            <>
+                                <div className='sub_item items'>
+                                    <h6 >{cat.name}</h6>
+                                    {
+                                        data(cat._id)?.splice(0, 10).map((v, i) => (
+                                            <p key={i}>
+                                                <Link to={path.home + `?s_cat=${v._id}`}>{v.name}</Link>
+                                            </p>
+                                        ))
+                                    }
+                                </div>
+                                {
+                                    data(cat._id).length>10 && (
+                                        <div className='sub_item items'>
+                                            <h6 >{cat.name}</h6>
+                                            {
+                                                data(cat._id)?.splice(10, 20).map((v, i) => (
+                                                    <p key={i}>
+                                                        <Link to={path.home+`?s_cat=${v._id}`}>{v.name}</Link>
+                                                    </p>
+                                                ))
+                                            }
+                                        </div>
+                                    )
+                                }
+                            </>
                         ))
-                    }
-                </div>
-                <div className='sub_item items'>
-                    <h6 >{t('aside.3d')}</h6>
-                    {
-                        data(2).map((v,i)=>(
-                            <p key={i}>
-                                <Link to={v.value}>{v}</Link>
-                            </p>
-                        ))
-                    }
-                </div>
-                <div className='sub_item items'>
-                    <h6 >{t('aside.laser')}</h6>
-                    {
-                        data(1).map((v,i)=>(
-                            <p key={i}>
-                                <Link to={v.value}>{v}</Link>
-                            </p>
-                        ))
-                    }
-                </div>
+                    ):(
+                        <SubCatSkeleton/>
+                    )
+                }
             </div>
             <div className='nav_items'>
                 <p>{t('shop')}</p>

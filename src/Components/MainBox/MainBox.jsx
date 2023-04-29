@@ -22,7 +22,7 @@ const MainBox = (props) => {
     const products = t('products');
     return (
         <div className={`${className} main_box`}>
-            <div className='banner'>banner</div>
+            {/* <div className='banner'>banner</div> */}
             <SearchBar />
             <div >
                 <div id="icons" className='icons'>

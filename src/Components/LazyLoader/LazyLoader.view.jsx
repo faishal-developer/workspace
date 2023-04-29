@@ -10,7 +10,7 @@ const LazyLoader = (props) => {
             scroll={true}
             offset={100}
             height={props.height || 200}
-            debounce={0}
+            debounce={80}
             placeholder={props.placeholder || <img src={placeholder} alt="placeholder"/>}
         >
             {props.children}

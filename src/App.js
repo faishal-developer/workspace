@@ -3,13 +3,15 @@ import logo from './logo.svg';
 import './scss/global.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment } from "./Store/testSlice";
+import CategorySkeleton from "./Components/skeleton/CategorySkeleton.view";
+import SubCatSkeleton from "./Components/skeleton/subCatSkeleton.view";
 
 function App() {
   const myTemporaryData = useSelector((state) => state.testSlice);
   const dispatch= useDispatch();
   return (
     <div className="black">
-      <div className='temporary'>
+      {/* <div className='temporary'>
         <button onClick={()=>dispatch(increment())}>+</button>
         { }
         <button onClick={() => dispatch(decrement())}>-</button>
@@ -18,7 +20,8 @@ function App() {
         <button>+</button>
         { myTemporaryData.value}
         <button>-</button>
-      </div>
+      </div> */}
+      <SubCatSkeleton/>
     </div>
   );
 }

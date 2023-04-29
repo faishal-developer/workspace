@@ -115,6 +115,10 @@
                         color: $white;
                         cursor: pointer;
                     }
+                    .active{
+                        background-color: $pal-green;
+                        color: $white;
+                    }
                 }
             }
         }

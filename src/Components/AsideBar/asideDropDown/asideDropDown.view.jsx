@@ -2,37 +2,78 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next"
 import data from "../tempJson.json";
 import '../static/asideBar.scss'
-import { Category } from '../UtilsAsideBar';
+// import { Category } from '../UtilsAsideBar';
 import useasideDropDown from './asideDropDown.presenter';
 import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 import BP from '../../../scss/CommonClass';
 import { widthDetector } from '../../../helper/CommonFunction';
+import useHome from '../../../pages/Home/Home.Presenter';
+import { useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
+import CategorySkeleton from '../../skeleton/CategorySkeleton.view';
+import SubCatSkeleton from '../../skeleton/subCatSkeleton.view';
 
 const AsideDropDown = () => {
+    const Category = useSelector((state) => state.catSlice.cat);
+    const SubCategories = useSelector((state) => state.SubcatSlice.SubCategories);
     const { t } = useTranslation();
-    const [activeId,setActiveId] = useState(0);
-    const {filterCategory} = useasideDropDown();
-    const [subCat,setSubcat] = useState([])
+    const [activeId,setActiveId] = useState('');
+    const { filterCategory, Cat_click_handler } = useasideDropDown();
+    const [subCats,setSubcats] = useState([])
+    const [subCat,setSubcat] = useState('')
     const [showSubCat,setShowSubCat] = useState(false);
+    const { get_categories, get_Subcategories } = useHome();
+    const [catLoader, setCatLoader] = useState(true);
+    const [subCatLoader, setSubCatLoader] = useState(true);
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    useEffect(() => {
+        get_categories({ setCatLoader });
+        get_Subcategories(setSubCatLoader);
+    }, [])
+    
     useEffect(()=>{
-        filterCategory(activeId,Category(t),setSubcat);
-    },[activeId])
+        filterCategory(activeId, { SubCategories, setSubcats, setSubcat });
+    },[activeId,SubCategories])
     return (
         <div className='aside_main'>
-            <div className='circles'>
-                {
-                    Category(t).length>=1 ? Category(t).map((el,i)=>(
-                        <div 
-                            onClick={()=>setActiveId(el.id)}
-                            key={i}
-                            className={`circle ${el.bg_color} ${activeId===el.id?"active":''}`}
+            {
+                catLoader?(
+                    <CategorySkeleton/>
+                ) :(
+                    Category.length?
+                    <div className='circles'>
+                        <div
+                            onClick={() =>
+                                Cat_click_handler(
+                                    { id: "", setId: setActiveId },
+                                    { query: "", navigate },
+                                    ''
+                                )}
+                            className={`circle ${activeId === "" ? "active" : 'bg_green'}`}
                         >
-                            {el.name}
+                            all
                         </div>
-                    )):null
-                }
-            </div>
+                        {
+                            Category.length >= 1 ? Category.map((el, i) => (
+                                <div
+                                    onClick={() =>
+                                        Cat_click_handler(
+                                            { id: el._id, setId: setActiveId },
+                                            { query: "cat=" + el._id, navigate },
+                                            ''
+                                        )}
+                                    key={i}
+                                    className={`circle bg_green ${activeId === el._id ? "active" : ''}`}
+                                >
+                                    {el.name}
+                                </div>
+                            )) : null
+                        }
+                            </div> : <h6 className='text-danger ms-4'>No Data Found</h6>
+                )
+            }
             <div className='sub_cat'>
                 <p onClick={() => setShowSubCat(!showSubCat)}>
                     {t('aside.subcat')}
@@ -46,13 +87,30 @@ const AsideDropDown = () => {
                         }
                     </span>
                 </p>
-                <ul className={!showSubCat && widthDetector(767, 0) ? BP.dnone :''}>
-                    {
-                        subCat? subCat.map((el,i)=>(
-                            <li key={i} className={'item'}>{el}</li>
-                        )):null
-                    }
-                </ul>
+                {
+                    subCatLoader?(
+                        <SubCatSkeleton/>
+                    ) :(
+                        <ul className={!showSubCat && widthDetector(767, 0) ? BP.dnone : ''}>
+                            {
+                                subCats.length ? subCats.map((el, i) => (
+                                    <li
+                                        onClick={() =>
+                                            Cat_click_handler(
+                                                { id: el._id, setId: setSubcat },
+                                                { query: "s_cat=" + el._id, navigate },
+                                                ''
+                                            )}
+                                        key={i} className={subCat === el._id ? "item active" : 'item'}
+                                    >
+                                        {el.name}
+                                    </li>
+                                )) : <h6 className='text-danger'>No Data Found</h6>
+                            }
+                        </ul>
+                    )
+                }
+                
             </div>
         </div>
     );

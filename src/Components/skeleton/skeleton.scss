@@ -19,3 +19,31 @@
 
     // }
 }
+
+.cat_skeleton{
+    display: flex;
+    width: 100%;
+    .placeholder-glow{
+        margin:5px;
+        width: 60px;
+
+        .placeholder {
+            height: 60px;
+            border-radius: 30px;
+            background-color:#EEE;
+            opacity: 1;
+        }
+    }
+}
+
+.sub-cat-skeleton{
+    .placeholder-glow{
+        margin: 10px 5px;
+        .placeholder{
+            height: 20px;
+            border-radius: 15px;
+            background-color: #EEE;
+            opacity: 1;
+        }
+    }
+}

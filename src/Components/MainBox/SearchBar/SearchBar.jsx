@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { stickyPosition } from '../../../helper/CommonFunction';
 import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 
-const keyword=["key ring","portrait","shopies","map","busket","Dummy","family","3d","Cloth","laser cutting"];
+const keyword=["key ring","portrait","dimlight","penbox","giftbox","crest","Name Plate","3d","Cloth","laser cutting"];
 const SearchBar = () => {
+
     useEffect(()=>{
         stickyPosition("search_bar", "p_sticky0")
     },[])

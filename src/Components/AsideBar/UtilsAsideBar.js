@@ -7,7 +7,11 @@ export const themes=(t)=>{
     ]
 };
 
-export const Category=(t)=>{
+export const Category=(t,categoris,sub_categories)=>{
+    let cats = [];
+    // categoris.forEach(cat => {
+        
+    // });
     return [
         { name: t('aside.all'), id: 0, value: [...data[0].cloths, ...data[1].laser, ...data[2].TD_printed], bg_color:'bg_green'},
         { name: t('aside.cloth'), id: 3, value: data[0].cloths, bg_color:'bg_green'},
