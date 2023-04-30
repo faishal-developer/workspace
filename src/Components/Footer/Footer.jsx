@@ -100,7 +100,7 @@ const Footer = () => {
                 {
                     Category.length?(
                         Category.map((cat)=>(
-                            <>
+                            <React.Fragment key={cat._id}>
                                 <div className='sub_item items'>
                                     <h6 >{cat.name}</h6>
                                     {
@@ -125,7 +125,7 @@ const Footer = () => {
                                         </div>
                                     )
                                 }
-                            </>
+                            </React.Fragment>
                         ))
                     ):(
                         <SubCatSkeleton/>

@@ -28,13 +28,12 @@ export const getService=(url,{thenCB,catchCB,finallyCB})=>{
 
 export const PostPutPatch=(url,body,{thenCB,catchCB,finallyCB,method})=>{
     const requestHeader= authHeader();
-    console.log(method);
     axios[method](Endpoints.base + url,body, {
         headers: requestHeader
     })
         .then((res)=>thenCB(res))
         .catch((err)=>catchCB(err))
-        .finally(()=>{finallyCB && finallyCB();console.log("working")});
+        .finally(()=>{finallyCB && finallyCB();});
 }
 
 export const deleteService = (url, { thenCB, catchCB, finallyCB }) => {

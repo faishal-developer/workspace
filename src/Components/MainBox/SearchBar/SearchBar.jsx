@@ -1,9 +1,15 @@
-import React, { useEffect } from 'react';
-import { stickyPosition } from '../../../helper/CommonFunction';
+import React, { useEffect, useState } from 'react';
+import { addQueryParams, stickyPosition } from '../../../helper/CommonFunction';
 import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useMainBox from '../MainBox.presenter';
 
-const keyword=["key ring","portrait","dimlight","penbox","giftbox","crest","Name Plate","3d","Cloth","laser cutting"];
+const keyword=["keyring","portrait","dim light","pen holder","giftbox","crest","Name Plate","3d","Cloth","laser"];
 const SearchBar = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [searchTxt,setSearchTxt] = useState('');
+    const { handleSearch ,handleChange} = useMainBox();
 
     useEffect(()=>{
         stickyPosition("search_bar", "p_sticky0")
@@ -12,8 +18,13 @@ const SearchBar = () => {
         <div  className='search_bar'>
             <div>
                 <div id="search_bar" className='search'>
-                    <input type="text" />
-                    <span className='src_btn'>
+                    <input 
+                        type="text" 
+                        value={searchTxt} 
+                        onChange={(e) => handleChange(e,setSearchTxt)}
+                        onKeyDown={handleSearch}
+                    />
+                    <span className='src_btn' onClick={()=>handleSearch(false,searchTxt)}>
                         <FontAwesome icon={iconList.search} />
                     </span>
                     <span className='drop_down'></span>
@@ -23,7 +34,12 @@ const SearchBar = () => {
                         <div className='keyword'>
                             {
                                 keyword?.map((el, i) => (
-                                    <p key={i}>{el}</p>
+                                    <p 
+                                        key={i}
+                                        onClick={() => addQueryParams(navigate,location,{key:'key',value:el})}
+                                    >
+                                        {el}
+                                    </p>
                                 ))
                             }
                         </div>

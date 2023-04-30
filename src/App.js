@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment } from "./Store/testSlice";
 import CategorySkeleton from "./Components/skeleton/CategorySkeleton.view";
 import SubCatSkeleton from "./Components/skeleton/subCatSkeleton.view";
+import CardSkeleton from "./Components/skeleton/CardSkeleton.view";
 
 function App() {
   const myTemporaryData = useSelector((state) => state.testSlice);
@@ -21,7 +22,7 @@ function App() {
         { myTemporaryData.value}
         <button>-</button>
       </div> */}
-      <SubCatSkeleton/>
+      <CardSkeleton/>
     </div>
   );
 }
