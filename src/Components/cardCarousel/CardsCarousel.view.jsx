@@ -4,8 +4,10 @@ import CardView from '../Card/Card.view';
 import './cardCarousel.scss';
 import Commonbutton from '../Button/Button.view';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 
 const CardsCarousel = (props) => {
+    const location = useLocation();
     const {heading,data} = props;
     const { t } = useTranslation();
     const responsive = props.responsive ?? {
@@ -21,7 +23,7 @@ const CardsCarousel = (props) => {
         <div className={`${props.className} cardsCarousel`}>
             <div className='head_btn'>
                 <h4>{heading}</h4>
-                <span>
+                <Link to={`${location.pathname+props.query}`}>
                     <Commonbutton
                         type="button"
                         onClick={props.onClick}
@@ -30,7 +32,7 @@ const CardsCarousel = (props) => {
                         isLoading={false}
                         disabled={false}
                     />
-                </span>
+                </Link>
             </div>
             <CustomCarousel responsive={responsive}>
                 {

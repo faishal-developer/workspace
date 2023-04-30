@@ -25,12 +25,11 @@ const useMainBox = () => {
 
     const getProducts = ({ query, body }, { setData, setLoader, setMTotal })=>{
         setLoader(true)
-        console.log(query);
         PostPutPatch(Endpoints.products+`?${query}`,body,{
             thenCB:(res)=>{
-                setData(res.data.products);
-                setMTotal(res.data.total)
-                console.log(res.data)
+                setData(res.data);
+                setMTotal && setMTotal(res.data.total);
+                console.log(res.data);
             },
             catchCB:(err)=>{toast.error("Something Went Wrong")},
             finallyCB: () => { setLoader(false)},
