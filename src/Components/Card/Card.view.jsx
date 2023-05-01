@@ -47,7 +47,8 @@ function CardView(props) {
                         </span>
                         <Commonbutton
                             type="button"
-                            onClick={props.onClick}
+                            //todo: onClick={props.onClick}
+                            onclickCallback={() => changeRoute(history, path.single_products + `/${_id}`)}
                             className="button"
                             btnText={t('singleProduct.addToCart')}
                             isLoading={false}

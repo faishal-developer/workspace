@@ -19,15 +19,13 @@ import Skeleton from 'react-loading-skeleton';
 const responsive = {sl:6,ld:6,l:6,lt:5,t:3,lm:3,m:2};
 
 const SingleProduct = (props) => {
-    const { getProduct, sProduct, sLoader } = useSingleProduct();
-    const { t } = useTranslation();
-    pagetitle(props.pageTitle)
     scrollToTop();
-    const [cart,setCart] = useState(1);
+    pagetitle(props.pageTitle)
+    const { getProduct, handleCart, sizeEr, sProduct, sLoader, handleAddtoCartBtn, cart, sizeHandler,size } = useSingleProduct();
+    const { t } = useTranslation();
     let { name, discount, price, sizes, desc, images } = sProduct;
     const [image,setImage] = useState('');
-    const { popular, handleAddtoCartBtn, initialCall2, popularLoader, latest, latestLoader, discounted, discountedLoader} = useMainBox();
-
+    const { popular, initialCall2, popularLoader, latest, latestLoader, discounted, discountedLoader} = useMainBox();
     const { productId } = useParams();
 
     useEffect(()=>{
@@ -93,14 +91,15 @@ const SingleProduct = (props) => {
                                 sizes.length >= 1 ? (
                                     <div className='sizes'>
                                         <h5>{t('singleProduct.size')}</h5>
-                                        <SizeSelectBtn sData='m' clickHandler={() => { }} data={sizes} />
+                                        <SizeSelectBtn sData={size} clickHandler={sizeHandler} data={sizes} />
+                                        {sizeEr && <p className='text-danger mb-0'>Please Select Size</p>}
                                     </div>
                                 ) : null
                             }
                             <div className='add-to-cart'>
-                                <SizeSelectBtn clickHandler={handleAddtoCartBtn} data={['-', NumberByLang(cart, t), '+']} />
+                                <SizeSelectBtn clickHandler={(v)=>handleAddtoCartBtn(v)} data={['-', NumberByLang(cart, t), '+']} />
                                 <Commonbutton
-                                    onClick={() => { }}
+                                    onclickCallback={handleCart}
                                     className="button ml_10"
                                     btnText={t('singleProduct.addToCart')}
                                 />
