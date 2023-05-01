@@ -8,6 +8,7 @@ import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
 import useCardLogic from './card.presenter';
 import { path } from '../../routes/path';
 import Commonbutton from '../Button/Button.view';
+import { useEffect } from 'react';
 
 // todo:make full card clickable . But when click on wish or cart button stop propagation will work
 function CardView(props) {

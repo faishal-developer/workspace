@@ -13,9 +13,7 @@ const Cart = (props) => {
     const data = fakedata.slice(1,5);
     const {t} = useTranslation();
     const location = useLocation();
-    useEffect(()=>{
-        console.log(location.pathname)
-    },[location])
+    
     return (
         <div className='cart'>
             <div>

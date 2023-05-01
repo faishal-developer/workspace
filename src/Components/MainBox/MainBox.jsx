@@ -3,62 +3,33 @@ import CardView from '../Card/Card.view';
 import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
 import SearchBar from './SearchBar/SearchBar';
 import './Static/MainBox.scss'
-import { scrollToTop, stickyPosition } from '../../helper/CommonFunction';
 import CardsCarousel from '../cardCarousel/CardsCarousel.view';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 import useMainBox from './MainBox.presenter';
 import CardSkeleton from '../skeleton/CardSkeleton.view';
 import Pagination from '../Pagination/CustomPagination.view';
-import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { stickyPosition } from '../../helper/CommonFunction';
 
 const icons={...iconList};
 const MainBox = (props) => {
+    const location = useLocation();
     // const Category = useSelector((state) => state.catSlice.cat);
     const {className} = props;
-    const [data,setData] = useState([]);
     const { t } = useTranslation();
-    const [page,setPage] = useState(1);
-    const [mLimit,setMLimit] = useState(20);
-    const [mTotal,setMTotal] = useState(0)
-    const [fLoader,setFLoader] = useState(true);
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const cat_ids = queryParams.get('cat');
-    const subcat_ids = queryParams.get('s_cat');
-    const keyword = queryParams.get('key');
-    const ispopular = queryParams.get('popular');
-    const islatest = queryParams.get('latest');
-    const isdiscounted = queryParams.get('discounted');
-    const { getProducts, queryMaker } = useMainBox();
-    const [popular,setPopular] = useState([]);
-    const [popularLoader,setPopularLoader] = useState(true)
-    const [latest,setLatest] = useState([]);
-    const [latestLoader,setLatestLoader] = useState(true)
-    const [discounted,setDiscounted] = useState([]);
-    const [discountedLoader,setDiscountedLoader] = useState(true)
+    const {
+        data, page, setPage, mLimit, mTotal, fLoader, popular, popularLoader, latest, latestLoader, discounted, discountedLoader, initialCall, initialCall2
+    } = useMainBox();
 
     useEffect(()=>{
-        //todo:view all click korle popular latest manage
-        let body = queryMaker({cat_ids:[cat_ids],subcat_ids:[subcat_ids],keyword})
-        let query = `limit=${mLimit}&page=${page}`
-        if(ispopular)query+=`&ispopular=true`;
-        if(islatest)query+=`&isLatest=true`;
-        if (isdiscounted) query +=`&discounted=true`;
-        getProducts({ query, body }, { setData:(data)=>setData(data.products), setLoader:setFLoader,setMTotal });
-        scrollToTop()
-    },[location.search,page])
-
-   useEffect(()=>{
-       stickyPosition("icons", "p_sticky40")
-       const pQuery = `limit=${10}&page=${1}&ispopular=true`
-       getProducts({ query: pQuery, body: {} }, { setData: setPopular, setLoader: setPopularLoader });
-       const dQuery = `limit=${10}&page=${1}&discounted=true`
-       getProducts({ query: dQuery, body: {} }, { setData: setDiscounted, setLoader: setDiscountedLoader });
-       const lQuery = `limit=${10}&page=${1}&islatest=true`
-       getProducts({ query: lQuery, body: {} }, { setData: setLatest, setLoader: setLatestLoader });
+        stickyPosition("icons", "p_sticky40")
+        initialCall2();
     },[])
-    useEffect(()=>{console.log(page)},[page])
+
+    useEffect(()=>{
+        initialCall();
+    },[page,location.search])
+   
     const products = t('products');
     return (
         <div className={`${className} main_box`}>
@@ -82,7 +53,7 @@ const MainBox = (props) => {
                             onPageChange={(p)=>{}}
                             currentPage={page}
                             setCurrentPage={setPage}
-                            totalPage={Math.ceil(mTotal / mLimit)}
+                            totalPage={Math.ceil(mTotal / mLimit)||0}
                         >
                                 <div className='cards mb-3'>
                                     {

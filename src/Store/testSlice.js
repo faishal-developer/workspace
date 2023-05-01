@@ -10,7 +10,6 @@ export const testSlice = createSlice({
     initialState,
     reducers: {
         increment: (state) => {
-            console.log("working");
             state.value += 1;
         },
         decrement: (state) => {

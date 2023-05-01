@@ -86,7 +86,6 @@ export const changeRoute = (navigate, url) => {
 export const addQueryParams = (navigate,location,{key,value}) =>{
     let newLocation = location.pathname;
     let newSearch = location.search && location.search.split('?')[1];
-    console.log('working1',newSearch);
     newSearch = newSearch.split('&')?.filter(s=>s?.split('=')[0]!==key).join('&');
     newLocation += newSearch ? '?'+newSearch+'&'+key+"="+value : '?'+key+"="+value;
 

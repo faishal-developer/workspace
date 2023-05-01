@@ -61,3 +61,22 @@
         margin-right: px;
     }
 }
+
+.s_card_images{
+    width: 300px;
+    .images{
+        display: flex;
+        margin-top: 8px;
+        span{
+            width:70px ;
+            margin-right: 10px;
+        }
+    }
+}
+
+.s_Product_skeleton{
+    min-width: 400px;
+    span{
+        margin-bottom: 10px;
+    }
+}

@@ -5,6 +5,7 @@ import './cardCarousel.scss';
 import Commonbutton from '../Button/Button.view';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
+import { path } from '../../routes/path';
 
 const CardsCarousel = (props) => {
     const location = useLocation();
@@ -23,7 +24,7 @@ const CardsCarousel = (props) => {
         <div className={`${props.className} cardsCarousel`}>
             <div className='head_btn'>
                 <h4>{heading}</h4>
-                <Link to={`${location.pathname+props.query}`}>
+                <Link to={`${path.home+props.query}`}>
                     <Commonbutton
                         type="button"
                         onClick={props.onClick}

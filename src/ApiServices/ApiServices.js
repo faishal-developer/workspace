@@ -23,7 +23,7 @@ export const getService=(url,{thenCB,catchCB,finallyCB})=>{
     })
         .then((res)=>thenCB(res))
         .catch((err)=>catchCB(err))
-        .finally(()=>finallyCB);
+        .finally(()=>finallyCB());
 }
 
 export const PostPutPatch=(url,body,{thenCB,catchCB,finallyCB,method})=>{

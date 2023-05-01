@@ -10,7 +10,7 @@ const SizeSelectBtn = (props) => {
             <span className='buttons'>
                 {data.map((size,i) => <Commonbutton
                     key={i}
-                    onClick={()=>clickHandler(size)}
+                    onClick={()=>{clickHandler(size);console.log(size)}}
                     className={sData === size ? "active button "+size : "button size "+size}
                     btnText={size}
                     isLoading={false}

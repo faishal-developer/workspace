@@ -14,7 +14,6 @@ import { Provider } from 'react-redux';
 // import { PersistGate } from 'redux-persist/integration/react';
 import { temporaryStore } from './Store/Store';
 
-console.log(process.env.REACT_APP_BASE_URL)
 localStorage.setItem("userData",true);
 localStorage.setItem("isDeveloper",false);
 const root = ReactDOM.createRoot(document.getElementById('root'));
