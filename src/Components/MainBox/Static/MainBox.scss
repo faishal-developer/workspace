@@ -24,11 +24,13 @@
                     border-radius: 15px;
                     width: 50%;
                     padding: 2px 15px;
-                    border: 2px solid $pal-green;
+                    border: 1px solid $pal-green;
+                    background-color: $white;
+                    color: $black;
                 }
             
                 input:focus {
-                    outline: 3px solid $pal-ash;
+                    outline: 2px solid $pal-ash;
                 }
             
                 .src_btn {

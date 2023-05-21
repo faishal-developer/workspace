@@ -1,32 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
-import BP from '../../scss/CommonClass';
-import fakedata from '../MainBox/fakeData.json';
+import React, { useEffect } from 'react';
 import CartSproduct from './cartSproduct.view';
 import './cart.scss';
-import Commonbutton from '../Button/Button.view';
 import { Link, useLocation } from 'react-router-dom';
 import { path } from '../../routes/path';
 import { useTranslation } from 'react-i18next';
+import useCart from './cart.presenter';
+import CartScardSkeleton from '../skeleton/cartScard.view';
 
 const Cart = (props) => {
-    const data = fakedata.slice(1,5);
     const {t} = useTranslation();
     const location = useLocation();
-    
+    const {data,getData,loader,cart,getTotal}= useCart();
+
+    useEffect(()=>{
+        getData();
+    },[])
     return (
         <div className='cart'>
             <div>
                 {
-                    data.length? (
-                        data.map((sData)=><CartSproduct key={sData._id}/>)
-                    ) : <p>No Product added to Cart</p>
+                    loader ? (<div className='my-3'><CartScardSkeleton/></div>):(
+                        data?.length? (
+                            data.map((sData,i)=><CartSproduct cart={cart[i]} data={data[i]} loader={loader} key={sData._id} />)
+                        ) : <p className='text-danger'>No Product added to Cart</p>
+                    )
                 }
             </div>
             {
                 location.pathname!==path.order ? (
                     <div className='place_order'>
-                        <p>Total: {t('money')}{500}</p>
+                        <p>Total: {t('money')}{getTotal()}</p>
                         {/* <Commonbutton
                             type="button"
                             onClick={() => { }}

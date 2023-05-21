@@ -4,6 +4,9 @@
 // .black{
 //     color: $btn_color;
 // }
+body{
+    background-color: $white;
+}
 .fixed-cart{
     position: fixed;
     background-color: $pal-green;
@@ -95,22 +98,7 @@ figure{
 .pal-green{
     color:$pal-green;
 }
-.red{
-    background-color: red !important;
-    color:$light
-}
-.orange{
-    background-color: orange !important;
-    color:$light
-}
-.yellow{
-    background-color: yellow !important;
-    color:$light
-}
-.green{
-    background-color: green !important;
-    color:$light
-}
+
 // .m_r_10px:last-child{
 //     margin-right: 0px;
 // }

@@ -27,7 +27,7 @@
     .three_sec{
         display: flex;
         justify-content: space-between;
-        color: $white;
+        color: $light;
         align-items: center;
 
         .section{
@@ -78,8 +78,8 @@
     }
 
     .sub_items{
-        background-color: $black;
-        color: $white;
+        background-color: $bg-black;
+        color: $light;
         display: flex;
         justify-content: space-around;
         // grid-template-columns: repeat(4,1fr);
@@ -97,7 +97,7 @@
             p{
                 margin-bottom: 0;
                 a{
-                    color: $white;
+                    color: $light;
                     text-decoration: none;
                     opacity: 0.8;
                 }

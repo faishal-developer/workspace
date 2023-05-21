@@ -100,7 +100,7 @@ const useMainBox = () => {
         getProducts({ query: lQuery, body: {} }, { setData: (data) => setLatest(data[0]), setLoader: setLatestLoader });
     }
 
-    return{
+    return {
         handleChange,handleSearch,getProducts,queryMaker,data,setData,page,setPage,mLimit,setMLimit,mTotal,setMTotal,fLoader,setFLoader,popular,popularLoader,latest,latestLoader,discounted,discountedLoader,initialCall,initialCall2
     }
 };

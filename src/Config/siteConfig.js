@@ -10,7 +10,8 @@ const siteConfig = {
     company_slogan: '',
     user_default_profile_pic: user_default_profile_pic,
     lazy_suspense_delay: 100,
-    defaultLang:'en'
+    defaultLang:'en',
+    delivery_charge:95
 }
 
 export default siteConfig;

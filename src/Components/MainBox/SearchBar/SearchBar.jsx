@@ -27,7 +27,7 @@ const SearchBar = () => {
                     <span className='src_btn' onClick={()=>handleSearch(false,searchTxt)}>
                         <FontAwesome icon={iconList.search} />
                     </span>
-                    <span className='drop_down'></span>
+                    {/* <span className='drop_down'></span> */}
                 </div>
                 {
                     keyword.length>=1? (

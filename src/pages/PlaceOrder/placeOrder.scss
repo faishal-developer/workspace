@@ -6,6 +6,7 @@
     margin-top: 20px;
 
     .checkout-info{
+        color:$light;
         margin-top: 12px;
         width: 45%;
         margin-right: 40px;
@@ -54,7 +55,10 @@
         width: 45%;
         padding: 10px;
         background-color: $pal-ash;
-
+        .card{
+            background-color: $white;
+            color:$black;
+        }
         h3{
             font-size: 22px;
             font-weight: 500;
@@ -75,6 +79,7 @@
 .summary {
     padding: 12px;
     margin-top: 30px;
+    background-color: $white;
 
     .header {
         font-size: 15px;

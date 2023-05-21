@@ -80,3 +80,16 @@
         margin-bottom: 10px;
     }
 }
+.cartsCard{
+    display: flex;
+    padding:5px;
+    margin-top: 10px;
+    border: 1px solid $black_op;
+    border-radius: 3px;
+    .half{
+        width:45%;
+    }
+    .half:first-child{
+        margin-right: 10px;
+    }
+}

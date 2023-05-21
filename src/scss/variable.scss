@@ -1,8 +1,28 @@
 .dark-theme {
-    --bg-color: #191E2B;
-    --white:#262A2B;
-    --black:#E8E6E3;
-   
+    --black: #CECAC4;
+    // --white: #E8E6E3;
+    --white: #181A1B;
+    --th-green: #00FD00;
+    --th-skyblue: #00B1B3;
+    --th-secondary: #5900ff;
+    --th-blue: #0033FF;
+    --th-primary: #2787c7;
+    --th-light-red: #6C5D00;
+
+    // --th-light-red:#D20055;
+    --th-red: #D20055;
+    --light: #B7B1A9;
+    // --palete-green:#66FF99;
+    --palete-green: #00866D;
+    --palete-skyblue: #007070;
+    // --palete-ash:#E8E6E3;
+    --palete-ash: #007070;
+    --palete-yellow-text: #f57224;
+    --bg-black:#1E2122;
+
+    --palete-ash-op: #99ffff36;
+    --palete-yellow-op: #6B5D09;
+    --palete-skyblue-opacity: #00707094;
 }
 
 .light-theme {
@@ -29,6 +49,7 @@
      --palete-ash-op:#99ffff36;
      --palete-yellow-op:#f1dc60;
      --palete-skyblue-opacity:#6ee8cc94;
+     --bg-black:#262A2B;
 }
 
 
@@ -57,6 +78,7 @@ $twitter:#229CEE;
 $black_op: rgba(0, 0, 0, 0.068);
 $black_op2:rgba(0, 0, 0, 0.171);
 $delete:#EB5757;
+$bg-black:var(--bg-black);
 
 
 

@@ -5,11 +5,13 @@ import testSlice from './testSlice';
 import catSlice from './Cat_slice';
 import SubcatSlice from './Sub_catSlice';
 import testSlice2 from './testSlice2';
+import cartSlice from './cartSlice';
 
 const rootReducer = combineReducers({
         testSlice,
         catSlice,
-        SubcatSlice
+        SubcatSlice,
+        cartSlice
 })
 // const storageReducer = combineReducers({
 //     testSlice2

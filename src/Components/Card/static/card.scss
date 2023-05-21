@@ -62,6 +62,7 @@
             align-items: flex-end;
             justify-content: center;
             text-align: center;
+            color:$light;
             p{
                 margin: 0;
                 font-size: 14px;
@@ -89,6 +90,7 @@
                 color:$pal-green;
                 width: 150px;
                 border-radius: 3px;
+                background-color: $white;
             }
             .button:hover{
                 background-color: $pal-green;

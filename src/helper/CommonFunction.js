@@ -92,3 +92,11 @@ export const addQueryParams = (navigate,location,{key,value}) =>{
     // location.search ? newLocation += location.search+'&'+queryParams : newLocation+='?'+queryParams;
     navigate(newLocation);
 }
+
+export const getTotal = (newData) => {
+    let t = 0;
+    newData.forEach((el, i) => {
+        t += cal_discounted_price(el.price, el.discount) * el.quantity;
+    });
+    return t;
+}

@@ -8,7 +8,7 @@ import { create_data } from '../../Store/Cat_slice';
 
 //todo:find tomany error
 const useHome = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const get_categories=({setCatLoader})=>{
         setCatLoader(true);
