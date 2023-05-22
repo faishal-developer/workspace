@@ -16,6 +16,7 @@ const InputField = (props) => {
         setInputType(inputType === "password" ? "text" : "password");
     };
 
+    
     return (
         <div className="input-block">
             <label htmlFor="">

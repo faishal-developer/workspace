@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import InputField from '../../Components/InputFeild/InputFeild.view';
 import BP from '../../scss/CommonClass';
-import { getTotal, pagetitle, scrollToTop } from '../../helper/CommonFunction';
+import { NumberByLang, getTotal, pagetitle, scrollToTop } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
 import Cart from '../../Components/cartProduct/cart.view'
 import './placeOrder.scss';
@@ -20,8 +20,18 @@ const PlaceOrder = (props) => {
     // const { getTotal }= useCart();
     const {  submitFormik, validateFormik }= usePlaceOrder();
 
-    let formik = useFormik({
-        initialValues: {},
+    let formFormik = useFormik({
+        initialValues: {
+            name:'',
+            email:'',
+            phone:'',
+            phone_2:'',
+            address:'',
+            city:'',
+            district:'',
+            upazilla:'',
+            note:'',
+        },
         validateOnChange: true,
         validateOnBlur: true,
         validate: validateFormik,
@@ -48,26 +58,26 @@ const PlaceOrder = (props) => {
                                 inputName="name"
                                 asterisk={true}
                                 whiteSpace={false}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.name}
-                                onchangeCallback={formik.handleChange}
-                                inputClassName={formik.touched.name && formik.errors.name ? " is-invalid" : ""}
-                                requiredMessage={formik.touched.name && formik.errors.name}
-                                requiredMessageLabel={formik.touched.name || formik.isSubmitting ? formik.errors.name : ""}
+                                onBlur={formFormik.handleBlur}
+                                value={formFormik.values.name}
+                                onchangeCallback={formFormik.handleChange}
+                                inputClassName={formFormik.touched.name && formFormik.errors.name ? " is-invalid" : ""}
+                                requiredMessage={formFormik.touched.name && formFormik.errors.name}
+                                requiredMessageLabel={formFormik.touched.name || formFormik.isSubmitting ? formFormik.errors.name : ""}
                             />
                             <div className='grid-item'>
                                 <InputField
-                                    placeHolder={t('auth.password')}
+                                    placeHolder={t('placeorder.email')}
                                     textType="email"
                                     inputName="email"
                                     asterisk={true}
                                     whiteSpace={false}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.email}
-                                    onchangeCallback={formik.handleChange}
-                                    inputClassName={formik.touched.email && formik.errors.email ? " is-invalid" : ""}
-                                    requiredMessage={formik.touched.email && formik.errors.email}
-                                    requiredMessageLabel={formik.touched.email || formik.isSubmitting ? formik.errors.email : ""}
+                                    onBlur={formFormik.handleBlur}
+                                    value={formFormik.values.email}
+                                    onchangeCallback={formFormik.handleChange}
+                                    inputClassName={formFormik.touched.email && formFormik.errors.email ? " is-invalid" : ""}
+                                    requiredMessage={formFormik.touched.email && formFormik.errors.email}
+                                    requiredMessageLabel={formFormik.touched.email || formFormik.isSubmitting ? formFormik.errors.email : ""}
                                 />
                                 <InputField
                                     placeHolder={t('placeorder.phone')}
@@ -75,12 +85,12 @@ const PlaceOrder = (props) => {
                                     inputName="phone"
                                     asterisk={true}
                                     whiteSpace={false}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.phone}
-                                    onchangeCallback={formik.handleChange}
-                                    inputClassName={formik.touched.phone && formik.errors.phone ? " is-invalid" : ""}
-                                    requiredMessage={formik.touched.phone && formik.errors.phone}
-                                    requiredMessageLabel={formik.touched.phone || formik.isSubmitting ? formik.errors.phone : ""}
+                                    onBlur={formFormik.handleBlur}
+                                    value={formFormik.values.phone}
+                                    onchangeCallback={formFormik.handleChange}
+                                    inputClassName={formFormik.touched.phone && formFormik.errors.phone ? " is-invalid" : ""}
+                                    requiredMessage={formFormik.touched.phone && formFormik.errors.phone}
+                                    requiredMessageLabel={formFormik.touched.phone || formFormik.isSubmitting ? formFormik.errors.phone : ""}
                                 />
                             </div>
                             <div className='ship-info'>
@@ -91,12 +101,12 @@ const PlaceOrder = (props) => {
                                     inputName="address"
                                     asterisk={true}
                                     whiteSpace={false}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.address}
-                                    onchangeCallback={formik.handleChange}
-                                    inputClassName={formik.touched.address && formik.errors.address ? " is-invalid" : ""}
-                                    requiredMessage={formik.touched.address && formik.errors.address}
-                                    requiredMessageLabel={formik.touched.address || formik.isSubmitting ? formik.errors.address : ""}
+                                    onBlur={formFormik.handleBlur}
+                                    value={formFormik.values.address}
+                                    onchangeCallback={formFormik.handleChange}
+                                    inputClassName={formFormik.touched.address && formFormik.errors.address ? " is-invalid" : ""}
+                                    requiredMessage={formFormik.touched.address && formFormik.errors.address}
+                                    requiredMessageLabel={formFormik.touched.address || formFormik.isSubmitting ? formFormik.errors.address : ""}
                                 />
                                 <div className='info-flex2'>
                                     <InputField
@@ -105,12 +115,12 @@ const PlaceOrder = (props) => {
                                         inputName="city"
                                         asterisk={true}
                                         whiteSpace={false}
-                                        onBlur={formik.handleBlur}
-                                        value={formik.values.city}
-                                        onchangeCallback={formik.handleChange}
-                                        inputClassName={formik.touched.city && formik.errors.city ? " is-invalid" : ""}
-                                        requiredMessage={formik.touched.city && formik.errors.city}
-                                        requiredMessageLabel={formik.touched.city || formik.isSubmitting ? formik.errors.city : ""}
+                                        onBlur={formFormik.handleBlur}
+                                        value={formFormik.values.city}
+                                        onchangeCallback={formFormik.handleChange}
+                                        inputClassName={formFormik.touched.city && formFormik.errors.city ? " is-invalid" : ""}
+                                        requiredMessage={formFormik.touched.city && formFormik.errors.city}
+                                        requiredMessageLabel={formFormik.touched.city || formFormik.isSubmitting ? formFormik.errors.city : ""}
                                     />
                                     <InputField
                                         placeHolder={t('placeorder.upazilla')}
@@ -118,12 +128,12 @@ const PlaceOrder = (props) => {
                                         inputName="upazilla"
                                         asterisk={true}
                                         whiteSpace={false}
-                                        onBlur={formik.handleBlur}
-                                        value={formik.values.upazilla}
-                                        onchangeCallback={formik.handleChange}
-                                        inputClassName={formik.touched.upazilla && formik.errors.upazilla ? " is-invalid" : ""}
-                                        requiredMessage={formik.touched.upazilla && formik.errors.upazilla}
-                                        requiredMessageLabel={formik.touched.upazilla || formik.isSubmitting ? formik.errors.upazilla : ""}
+                                        onBlur={formFormik.handleBlur}
+                                        value={formFormik.values.upazilla}
+                                        onchangeCallback={formFormik.handleChange}
+                                        inputClassName={formFormik.touched.upazilla && formFormik.errors.upazilla ? " is-invalid" : ""}
+                                        requiredMessage={formFormik.touched.upazilla && formFormik.errors.upazilla}
+                                        requiredMessageLabel={formFormik.touched.upazilla || formFormik.isSubmitting ? formFormik.errors.upazilla : ""}
                                     />
                                     
                                 </div>
@@ -135,12 +145,12 @@ const PlaceOrder = (props) => {
                                         inputName="district"
                                         asterisk={true}
                                         whiteSpace={false}
-                                        onBlur={formik.handleBlur}
-                                        value={formik.values.district}
-                                        onchangeCallback={formik.handleChange}
-                                        inputClassName={formik.touched.district && formik.errors.district ? " is-invalid" : ""}
-                                        requiredMessage={formik.touched.district && formik.errors.district}
-                                        requiredMessageLabel={formik.touched.district || formik.isSubmitting ? formik.errors.district : ""}
+                                        onBlur={formFormik.handleBlur}
+                                        value={formFormik.values.district}
+                                        onchangeCallback={formFormik.handleChange}
+                                        inputClassName={formFormik.touched.district && formFormik.errors.district ? " is-invalid" : ""}
+                                        requiredMessage={formFormik.touched.district && formFormik.errors.district}
+                                        requiredMessageLabel={formFormik.touched.district || formFormik.isSubmitting ? formFormik.errors.district : ""}
                                     />
                                     <InputField
                                         placeHolder={t('placeorder.altPhone')}
@@ -148,12 +158,12 @@ const PlaceOrder = (props) => {
                                         inputName="phone_2"
                                         asterisk={true}
                                         whiteSpace={false}
-                                        onBlur={formik.handleBlur}
-                                        value={formik.values.phone_2}
-                                        onchangeCallback={formik.handleChange}
-                                        inputClassName={formik.touched.phone_2 && formik.errors.phone_2 ? " is-invalid" : ""}
-                                        requiredMessage={formik.touched.phone_2 && formik.errors.phone_2}
-                                        requiredMessageLabel={formik.touched.phone_2 || formik.isSubmitting ? formik.errors.phone_2 : ""}
+                                        onBlur={formFormik.handleBlur}
+                                        value={formFormik.values.phone_2}
+                                        onchangeCallback={formFormik.handleChange}
+                                        inputClassName={formFormik.touched.phone_2 && formFormik.errors.phone_2 ? " is-invalid" : ""}
+                                        requiredMessage={formFormik.touched.phone_2 && formFormik.errors.phone_2}
+                                        requiredMessageLabel={formFormik.touched.phone_2 || formFormik.isSubmitting ? formFormik.errors.phone_2 : ""}
                                     />
                                 </div>
                                 
@@ -163,12 +173,12 @@ const PlaceOrder = (props) => {
                                     inputName="note"
                                     asterisk={false}
                                     whiteSpace={false}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.note}
-                                    onchangeCallback={formik.handleChange}
-                                    inputClassName={formik.touched.note && formik.errors.note ? " is-invalid" : ""}
-                                    requiredMessage={formik.touched.note && formik.errors.note}
-                                    requiredMessageLabel={formik.touched.note || formik.isSubmitting ? formik.errors.note : ""}
+                                    onBlur={formFormik.handleBlur}
+                                    value={formFormik.values.note}
+                                    onchangeCallback={formFormik.handleChange}
+                                    inputClassName={formFormik.touched.note && formFormik.errors.note ? " is-invalid" : ""}
+                                    requiredMessage={formFormik.touched.note && formFormik.errors.note}
+                                    requiredMessageLabel={formFormik.touched.note || formFormik.isSubmitting ? formFormik.errors.note : ""}
                                 />
                             </div>
                         </div>
@@ -176,17 +186,17 @@ const PlaceOrder = (props) => {
                 </form>
                 <div className={`${BP.card} summary`}>
                     <p className='header'>{t('placeorder.payable')}</p>
-                    <h3>{`${t('money')} ${getTotal(state)+siteConfig.delivery_charge}`}</h3>
+                    <h3>{`${t('money')} ${NumberByLang(getTotal(state)+siteConfig.delivery_charge,t)}`}</h3>
                     <h6>{t('placeorder.breakdown')}</h6>
-                    <p>{t('placeorder.total')}<span className='pal-green'>{t('money')} {getTotal(state)}</span> </p>
-                    <p>{t('placeorder.ship')} <span className='pal-green'>{t('money')} {siteConfig.delivery_charge}</span></p>
+                    <p>{t('placeorder.total')}<span className='pal-green'>{t('money')} {NumberByLang(getTotal(state),t)}</span> </p>
+                    <p>{t('placeorder.ship')} <span className='pal-green'>{t('money')} {NumberByLang(siteConfig.delivery_charge,t)}</span></p>
                 </div>
                 <div className='payment'>
                     <h6>{t('placeorder.payment')}</h6>
                     {/* todo: implement later */}
                     <Commonbutton
                         type="button"
-                        onclickCallback={formik.handleSubmit}
+                        onclickCallback={formFormik.handleSubmit}
                         className="button"
                         btnText={t('placeorder.order')}
                         isLoading={false}
@@ -199,10 +209,10 @@ const PlaceOrder = (props) => {
                 <Cart>
                     <div className={`${BP.card} summary`}>
                         <p className='header'>{t('placeorder.payable')}</p>
-                        <h3>{`${t('money')} ${getTotal(state)+siteConfig.delivery_charge}`}</h3>
+                        <h3>{`${t('money')} ${NumberByLang(getTotal(state) + siteConfig.delivery_charge, t)}`}</h3>
                         <h6>{t('placeorder.breakdown')}</h6>
-                        <p>{t('placeorder.total')}<span className='pal-green'>{t('money')} {getTotal(state)}</span> </p>
-                        <p>{t('placeorder.ship')} <span className='pal-green'>{t('money')} {siteConfig.delivery_charge}</span></p>
+                        <p>{t('placeorder.total')}<span className='pal-green'>{t('money')} {NumberByLang(getTotal(state), t)}</span> </p>
+                        <p>{t('placeorder.ship')} <span className='pal-green'>{t('money')} {NumberByLang(siteConfig.delivery_charge,t)}</span></p>
                     </div> 
                 </Cart>
             </div>

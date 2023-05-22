@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next"
-import data from "../tempJson.json";
 import '../static/asideBar.scss'
 // import { Category } from '../UtilsAsideBar';
 import useasideDropDown from './asideDropDown.presenter';
@@ -22,16 +21,18 @@ const AsideDropDown = () => {
     const [subCats,setSubcats] = useState([])
     const [subCat,setSubcat] = useState('')
     const [showSubCat,setShowSubCat] = useState(false);
-    const { get_categories, get_Subcategories } = useHome();
+    // const { get_categories, get_Subcategories } = useHome();
     const [catLoader, setCatLoader] = useState(true);
     const [subCatLoader, setSubCatLoader] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
 
     useEffect(() => {
-        get_categories({ setCatLoader });
-        get_Subcategories(setSubCatLoader);
-    }, [])
+        if(Category.length)setCatLoader(false);
+    }, [Category])
+    useEffect(() => {
+        if(SubCategories.length)setSubCatLoader(false);
+    }, [SubCategories])
     
     useEffect(()=>{
         filterCategory(activeId, { SubCategories, setSubcats, setSubcat });

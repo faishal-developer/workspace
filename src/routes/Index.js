@@ -9,11 +9,14 @@ import siteConfig from "../Config/siteConfig";
 import {config} from "../Config/baseConfig";
 import Maintenance from "../pages/Maintanance";
 import CustomPageLoader from "../Components/CustomPageLoader/Index";
+import useHome from '../pages/Home/Home.Presenter';
 
 const MainRoutes = () => {
     const maintenance = config.maintenance;
     const isDeveloper = localStorage.getItem(Developer)
     const jwt_token = JSON.parse(localStorage.getItem(userData));
+    const { get_categories, get_Subcategories } = useHome();
+
 
     // Favicon icon set...
     useEffect(() => {
@@ -26,7 +29,10 @@ const MainRoutes = () => {
         link.href = siteConfig.company_favicon;
         
     }, []);
-
+    useEffect(() => {
+        get_categories({ setCatLoader:()=>{} });
+        get_Subcategories(()=>{});
+    }, [])
     return maintenance && isDeveloper !== 'true' ? (
         <Maintenance />
     ) : (

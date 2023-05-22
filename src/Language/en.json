@@ -55,7 +55,8 @@
         "district": "District",
         "altPhone": "Alt. Phone",
         "note": "Note For Us",
-        "total":"Total: "
+        "total":"Total: ",
+        "payment_comment": "Please pay with bikash in 01871808814. Then provide phone number(bikash number) and transaction id"
     },
     "singleProduct": {
         "off": "OFF",

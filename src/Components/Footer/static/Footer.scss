@@ -79,7 +79,7 @@
 
     .sub_items{
         background-color: $bg-black;
-        color: $light;
+        color: $white-ac;
         display: flex;
         justify-content: space-around;
         // grid-template-columns: repeat(4,1fr);
@@ -97,7 +97,7 @@
             p{
                 margin-bottom: 0;
                 a{
-                    color: $light;
+                    color: $white-ac;
                     text-decoration: none;
                     opacity: 0.8;
                 }

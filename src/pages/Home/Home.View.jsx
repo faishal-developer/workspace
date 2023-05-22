@@ -5,8 +5,6 @@ import './Home.scss';
 import AsideBar from '../../Components/AsideBar/AsideBar';
 import MainBox from '../../Components/MainBox/MainBox';
 import BP from '../../scss/CommonClass';
-import useHome from './Home.Presenter';
-import { useSelector } from 'react-redux';
 
 const Home = (props) => {
     pagetitle(props.pageTitle);
