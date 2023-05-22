@@ -191,6 +191,37 @@ const PlaceOrder = (props) => {
                     <p>{t('placeorder.total')}<span className='pal-green'>{t('money')} {NumberByLang(getTotal(state),t)}</span> </p>
                     <p>{t('placeorder.ship')} <span className='pal-green'>{t('money')} {NumberByLang(siteConfig.delivery_charge,t)}</span></p>
                 </div>
+                <div className={`${BP.card} summary`}>
+                    <p>{t('placeorder.payment_comment')}</p>
+                </div>
+                <div>
+                    <InputField
+                        placeHolder={t('placeorder.bikash')}
+                        textType="text"
+                        inputName="bikash_number"
+                        asterisk={false}
+                        whiteSpace={false}
+                        onBlur={formFormik.handleBlur}
+                        value={formFormik.values.bikash_number}
+                        onchangeCallback={formFormik.handleChange}
+                        inputClassName={formFormik.touched.bikash_number && formFormik.errors.bikash_number ? " is-invalid" : ""}
+                        requiredMessage={formFormik.touched.bikash_number && formFormik.errors.bikash_number}
+                        requiredMessageLabel={formFormik.touched.bikash_number || formFormik.isSubmitting ? formFormik.errors.bikash_number : ""}
+                    />
+                    <InputField
+                        placeHolder={t('placeorder.transaction_id')}
+                        textType="text"
+                        inputName="transaction_id"
+                        asterisk={false}
+                        whiteSpace={false}
+                        onBlur={formFormik.handleBlur}
+                        value={formFormik.values.transaction_id}
+                        onchangeCallback={formFormik.handleChange}
+                        inputClassName={formFormik.touched.transaction_id && formFormik.errors.transaction_id ? " is-invalid" : ""}
+                        requiredMessage={formFormik.touched.transaction_id && formFormik.errors.transaction_id}
+                        requiredMessageLabel={formFormik.touched.transaction_id || formFormik.isSubmitting ? formFormik.errors.transaction_id : ""}
+                    />
+                </div>
                 <div className='payment'>
                     <h6>{t('placeorder.payment')}</h6>
                     {/* todo: implement later */}

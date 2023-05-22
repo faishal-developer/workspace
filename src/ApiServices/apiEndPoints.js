@@ -5,6 +5,9 @@ export const Endpoints={
     create_products:`/products/create`,
     single_products:`/products`,
 
+    create_user:'/users/create',
+    get_user:(id)=>`/users/${id}`,
+
     get_categories:`/categories`,
 
     getSub_cat:`/subcategories/multiple`,

@@ -10,6 +10,8 @@ const usePlaceOrder = () => {
         if(!values.phone)errors.phone="Please provide a phone number";
         if(values.phone_2?.length<11 || values.phone_2?.length>14)errors.phone_2 = "Please provide a valid phone_2 Number";
         if(!values.phone_2)errors.phone_2="Please provide a phone_2 number";
+        if(values.bikash_number?.length<11 || values.bikash_number?.length>14)errors.bikash_number = "Please provide a valid bikash Number";
+        if(!values.bikash_number)errors.bikash_number="Please provide a bikash number";
         if (values.address?.trim().length < 4) errors.address = "address should be atleast 4 charecter";
         if (!values.address)errors.address="Please provide a address";
         if (values.city?.trim().length < 4) errors.city = "city should be atleast 4 charecter";
