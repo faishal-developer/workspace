@@ -1,0 +1,15 @@
+.container{
+    position: relative;
+}
+.inner{
+    /* position: sticky;
+    top: 0; */
+    position: relative;
+    overflow-y: auto;
+        max-height: 2000vh;
+}
+.sticky{
+        position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}

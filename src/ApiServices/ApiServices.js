@@ -31,8 +31,8 @@ export const PostPutPatch=(url,body,{thenCB,catchCB,finallyCB,method})=>{
     axios[method](Endpoints.base + url,body, {
         headers: requestHeader
     })
-        .then((res)=>thenCB(res))
-        .catch((err)=>catchCB(err))
+        .then((res)=>thenCB && thenCB(res))
+        .catch((err)=>catchCB && catchCB(err))
         .finally(()=>{finallyCB && finallyCB();});
 }
 

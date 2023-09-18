@@ -88,6 +88,14 @@
         width: 14px;
         height: 11px;
     }
+        input[type="password"]::-ms-reveal {
+            display: none;
+        }
+    
+        /* For WebKit-based browsers like Chrome and Safari */
+        input[type="password"]::-webkit-inner-spin-button {
+            display: none;
+        }
 }
 
 .right-input-text {

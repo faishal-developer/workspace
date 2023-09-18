@@ -70,8 +70,10 @@
     },
     "auth": {
         "password": "password",
+        "re_password":"Retype password",
         "register": "Register",
         "login": "Login",
+        "logout":"Logout",
         "r_google": "Register with google",
         "r_facebook": "Facebook",
         "allReady_R": "Allready registerd? Go back to login page.",

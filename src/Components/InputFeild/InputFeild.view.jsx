@@ -59,6 +59,7 @@ const InputField = (props) => {
                 :
                 (
                     <span dangerouslySetInnerHTML={{ __html: "&nbsp;" }} />
+                    
                 )
             }
             {props.textType === "password" && (

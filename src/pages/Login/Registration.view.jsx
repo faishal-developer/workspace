@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BP from '../../scss/CommonClass';
 import InputField from '../../Components/InputFeild/InputFeild.view';
 import { pagetitle } from '../../helper/CommonFunction';
@@ -8,14 +8,20 @@ import FontAwesome, { iconList } from '../../Components/FontAwesome/FontAwesome'
 import { path } from '../../routes/path';
 import { Link } from 'react-router-dom';
 import './auth.scss';
+import { useLogin } from './Login.logic';
+import useFireBase from '../../Config/useFireBase';
+import PasswordStrengthMeter from '../../Components/passWordStrength/passwordStrength';
 
 const Registration = (props) => {
+    const [googleSigninLoader,setGoogleSigninLoader] = useState();
     pagetitle(props.pageTitle);
     const { t } = useTranslation();
+    const {googleSignin} = useFireBase();
+    const {registrationFormik,registrationLoader} = useLogin()
 
     return (
         <div className={`${BP.card} auth-layout animate`}>
-            <form>
+            <form onSubmit={registrationFormik.handleSubmit}>
                 <div className='login'>
                     <InputField
                         placeHolder={t('placeorder.fullName')}
@@ -23,25 +29,12 @@ const Registration = (props) => {
                         inputName="name"
                         asterisk={true}
                         whiteSpace={false}
-                    // onBlur={addProjectFormik.handleBlur}
-                    // value={addProjectFormik.values.title}
-                    // onchangeCallback={addProjectFormik.handleChange}
-                    // inputClassName={addProjectFormik.touched.title && addProjectFormik.errors.title ? " is-invalid" : ""}
-                    // requiredMessage={addProjectFormik.touched.title && addProjectFormik.errors.title}
-                    // requiredMessageLabel={addProjectFormik.touched.title || addProjectFormik.isSubmitting ? addProjectFormik.errors.title : ""}
-                    />
-                    <InputField
-                        placeHolder={t('placeorder.phone')}
-                        textType="phone"
-                        inputName="phone"
-                        asterisk={true}
-                        whiteSpace={false}
-                    // onBlur={addProjectFormik.handleBlur}
-                    // value={addProjectFormik.values.title}
-                    // onchangeCallback={addProjectFormik.handleChange}
-                    // inputClassName={addProjectFormik.touched.title && addProjectFormik.errors.title ? " is-invalid" : ""}
-                    // requiredMessage={addProjectFormik.touched.title && addProjectFormik.errors.title}
-                    // requiredMessageLabel={addProjectFormik.touched.title || addProjectFormik.isSubmitting ? addProjectFormik.errors.title : ""}
+                        onBlur={registrationFormik.handleBlur}
+                        value={registrationFormik.values.name}
+                        onchangeCallback={registrationFormik.handleChange}
+                        inputClassName={registrationFormik.touched.name && registrationFormik.errors.name ? " is-invalid" : ""}
+                        requiredMessage={registrationFormik.touched.name && registrationFormik.errors.name}
+                        requiredMessageLabel={registrationFormik.touched.name || registrationFormik.isSubmitting ? registrationFormik.errors.name : ""}
                     />
                     <InputField
                         placeHolder={t('placeorder.email')}
@@ -49,12 +42,12 @@ const Registration = (props) => {
                         inputName="email"
                         asterisk={true}
                         whiteSpace={false}
-                    // onBlur={addProjectFormik.handleBlur}
-                    // value={addProjectFormik.values.title}
-                    // onchangeCallback={addProjectFormik.handleChange}
-                    // inputClassName={addProjectFormik.touched.title && addProjectFormik.errors.title ? " is-invalid" : ""}
-                    // requiredMessage={addProjectFormik.touched.title && addProjectFormik.errors.title}
-                    // requiredMessageLabel={addProjectFormik.touched.title || addProjectFormik.isSubmitting ? addProjectFormik.errors.title : ""}
+                        onBlur={registrationFormik.handleBlur}
+                        value={registrationFormik.values.email}
+                        onchangeCallback={registrationFormik.handleChange}
+                        inputClassName={registrationFormik.touched.email && registrationFormik.errors.email ? " is-invalid" : ""}
+                        requiredMessage={registrationFormik.touched.email && registrationFormik.errors.email}
+                        requiredMessageLabel={registrationFormik.touched.email || registrationFormik.isSubmitting ? registrationFormik.errors.email : ""}
                     />
                     <InputField
                         placeHolder={t('auth.password')}
@@ -62,38 +55,60 @@ const Registration = (props) => {
                         inputName="password"
                         asterisk={true}
                         whiteSpace={false}
-                    // onBlur={addProjectFormik.handleBlur}
-                    // value={addProjectFormik.values.title}
-                    // onchangeCallback={addProjectFormik.handleChange}
-                    // inputClassName={addProjectFormik.touched.title && addProjectFormik.errors.title ? " is-invalid" : ""}
-                    // requiredMessage={addProjectFormik.touched.title && addProjectFormik.errors.title}
-                    // requiredMessageLabel={addProjectFormik.touched.title || addProjectFormik.isSubmitting ? addProjectFormik.errors.title : ""}
+                        onBlur={registrationFormik.handleBlur}
+                        value={registrationFormik.values.password}
+                        onchangeCallback={registrationFormik.handleChange}
+                        inputClassName={registrationFormik.touched.password && registrationFormik.errors.password ? " is-invalid" : ""}
+                        requiredMessage={registrationFormik.touched.password && registrationFormik.errors.password}
+                        requiredMessageLabel={registrationFormik.touched.password || registrationFormik.isSubmitting ? registrationFormik.errors.password : ""}
+                    />
+                    <InputField
+                        placeHolder={t('auth.re_password')}
+                        textType="password"
+                        inputName="re_password"
+                        asterisk={true}
+                        whiteSpace={false}
+                        onBlur={registrationFormik.handleBlur}
+                        value={registrationFormik.values.re_password}
+                        onchangeCallback={registrationFormik.handleChange}
+                        inputClassName={registrationFormik.touched.re_password && registrationFormik.errors.re_password ? " is-invalid" : ""}
+                        requiredMessage={registrationFormik.touched.re_password && registrationFormik.errors.re_password}
+                        requiredMessageLabel={registrationFormik.touched.re_password || registrationFormik.isSubmitting ? registrationFormik.errors.re_password : ""}
                     />
                 </div>
+                {
+                    registrationFormik.values.password && (
+                        <span className='slow_animation'>
+                            <PasswordStrengthMeter password={registrationFormik.values.password} />
+                        </span>
+                    )
+                }
                 <Commonbutton
                     type="submit"
-                    onClick={() => { }}
+                    // onClick={() => { }}
                     className="button login-btn"
+                    disabled_className="btn-disabled login-btn"
                     btnText={` ${t('auth.register')}`}
-                    isLoading={false}
-                    disabled={false}
+                    isLoading={registrationLoader}
+                    disabled={registrationLoader}
                 />
             </form>
             <div className='social'>
                 <Commonbutton
                     type="button"
-                    onClick={() => { }}
+                    onclickCallback={() => {googleSignin(setGoogleSigninLoader) }}
                     className="button login-btn google-btn"
+                    disabled_className="btn-disabled"
                     btnText={(
                         <span >
                             <span className='google'><FontAwesome icon={iconList.google} /></span>
                             <span> {t('auth.r_google')}</span>
                         </span>
                     )}
-                    isLoading={false}
-                    disabled={false}
+                    isLoading={googleSigninLoader}
+                    disabled={googleSigninLoader}
                 />
-                <Commonbutton
+                {/* <Commonbutton
                     type="button"
                     onClick={() => { }}
                     className="button login-btn"
@@ -105,7 +120,7 @@ const Registration = (props) => {
                     )}
                     isLoading={false}
                     disabled={false}
-                />
+                /> */}
             </div>
             <Link to={path.login}>{t('auth.allReady_R')}</Link>
         </div>

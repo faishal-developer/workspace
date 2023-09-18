@@ -17,6 +17,7 @@ import { temporaryStore } from './Store/Store';
 localStorage.setItem("userData",true);
 localStorage.setItem("isDeveloper",false);
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <Provider store={temporaryStore}>

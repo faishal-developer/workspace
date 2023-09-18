@@ -1,17 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import testSlice from './testSlice';
 import catSlice from './Cat_slice';
 import SubcatSlice from './Sub_catSlice';
-import testSlice2 from './testSlice2';
 import cartSlice from './cartSlice';
+import userSlice from './userSlice';
 
 const rootReducer = combineReducers({
-        testSlice,
         catSlice,
         SubcatSlice,
-        cartSlice
+        cartSlice,
+        userSlice
 })
 // const storageReducer = combineReducers({
 //     testSlice2

@@ -1,15 +1,17 @@
 @import "../../../scss/variable.scss";
 
 .main_box{
+        // position: relative;
         // margin-top: 10px;
         overflow: hidden;
-        position: relative;
+        // position: relative;
     .banner{
         height: 80px;
         // width: 100%;
         background-image: linear-gradient(to right,$pal-ash,$pal-green);
     }
     .search_bar{
+        position: relative;
         padding:5px;
         padding-left: 0px;
         // animation: slideBlock 200ms;
@@ -20,6 +22,7 @@
             z-index: 1010;
             display: flex;
             justify-content: center;
+            // position: sticky;
             input {
                     border-radius: 15px;
                     width: 50%;

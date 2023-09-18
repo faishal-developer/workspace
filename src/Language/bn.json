@@ -70,6 +70,7 @@
     },
     "auth": {
         "password": "পাসওয়ার্ড",
+        "re_password":"Retype password",
         "register":"নিবন্ধন করুন",
         "login":"লগইন করুন",
         "r_google":"গুগলে নিবন্ধন করুন",

@@ -4,19 +4,20 @@ import { RouteRestriction } from "./route-restriction";
 import { private_routes, public_routes, public_private_routes } from './layoutRoutes';
 import {path as pages_path} from "./path";
 import { isDeveloper as Developer, userData } from "../Config/sessionKeys";
-import Error400 from "../pages/Error400";
+import Error400 from "../pages/NotFoundPage/Error400";
 import siteConfig from "../Config/siteConfig";
 import {config} from "../Config/baseConfig";
 import Maintenance from "../pages/Maintanance";
 import CustomPageLoader from "../Components/CustomPageLoader/Index";
 import useHome from '../pages/Home/Home.Presenter';
+import useFireBase from '../Config/useFireBase';
 
 const MainRoutes = () => {
     const maintenance = config.maintenance;
     const isDeveloper = localStorage.getItem(Developer)
     const jwt_token = JSON.parse(localStorage.getItem(userData));
     const { get_categories, get_Subcategories } = useHome();
-
+    const {onReloadSigninCheking} = useFireBase();
 
     // Favicon icon set...
     useEffect(() => {
@@ -32,6 +33,7 @@ const MainRoutes = () => {
     useEffect(() => {
         get_categories({ setCatLoader:()=>{} });
         get_Subcategories(()=>{});
+        onReloadSigninCheking()
     }, [])
     return maintenance && isDeveloper !== 'true' ? (
         <Maintenance />

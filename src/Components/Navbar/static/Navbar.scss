@@ -24,6 +24,11 @@
                     margin-bottom: 0px;
                     font-weight: bold;
                     padding: 2px 0px;
+                    img{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                    }
                 }
             }
             .menues {
@@ -160,6 +165,11 @@
             }
             .user{
                 font-size: 30px;
+                img{
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                }
             }
             
         }

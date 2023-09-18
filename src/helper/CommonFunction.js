@@ -39,8 +39,8 @@ export const stickyPosition=(id,className,id2)=>{
             },100);
             height = stickyElementOfff.offsetTop + stickyElementOfff.offsetHeight;
         }
-        
-        if (isTrue && rect.top <= scrollPosition) {
+                // console.log("working",isTrue,rect.top,scrollPosition);
+        if (isTrue && (rect.top < scrollPosition) && (scrollPosition<2450)) {
             stickyElement.classList.add(className);
         } else {
             stickyElement.classList.remove(className);

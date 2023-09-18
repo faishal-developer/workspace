@@ -5,6 +5,11 @@ export const Endpoints={
     create_products:`/products/create`,
     single_products:`/products`,
 
+    // auth
+    sign_up:'/auth/signup',
+    sign_in:"/auth/login",
+    refreash_token:"auth/refreash_token",
+
     create_user:'/users/create',
     get_user:(id)=>`/users/${id}`,
 

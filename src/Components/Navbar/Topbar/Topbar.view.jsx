@@ -6,10 +6,14 @@ import FontAwesome,{iconList} from '../../FontAwesome/FontAwesome';
 import Language from '../../Language/Language';
 import { Link } from 'react-router-dom';
 import { path } from '../../../routes/path';
+import { useSelector } from 'react-redux';
+import useFireBase from '../../../Config/useFireBase';
 
 const Topbar = () => {
     const { t } = useTranslation();
-
+    const user = useSelector(state=>state.userSlice.user);
+    const {logOut} = useFireBase();
+    
     return (
         <div className='topbar'>
             <div className={`top-Navbar ${BP.container}`}>
@@ -42,10 +46,19 @@ const Topbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to={path.login}>
-                                <span className='mr_4'><FontAwesome icon={iconList.login} /></span>
-                                {t('login')}
-                            </Link>
+                            {
+                                user.name?(
+                                    <span onClick={logOut}>
+                                        <span className='mr_4'><FontAwesome icon={iconList.logout} /></span>
+                                        {t('auth.logout')}
+                                    </span>
+                                ):(
+                                    <Link to={path.login}>
+                                        <span className='mr_4'><FontAwesome icon={iconList.login} /></span>
+                                        {t('login')}
+                                    </Link>
+                                )
+                            }
                         </li>
                     </ul>
                 </div>

@@ -9,10 +9,12 @@ import NavbarUtils from '../NavbarUtils';
 import CartIcon from '../../cartIcon/cartIcon.view';
 import { Link } from 'react-router-dom';
 import { path } from '../../../routes/path';
+import { useSelector } from 'react-redux';
 
 
 //todo:change cart icon
 const Logobar = () => {
+    const user = useSelector(state=>state.userSlice.user)
     const { t } = useTranslation();
     const [show,setShow] = useState(false);
     const [index,setIndex] = useState(0);
@@ -56,7 +58,19 @@ const Logobar = () => {
                                 <FontAwesome icon={iconList.heart} />
                                 <span className='text'>{t("wish")}</span>
                             </li>
-                            <li className='user'><FontAwesome icon={iconList.user} /></li>
+                            {
+                                user.email && (
+                                    <li className='user'>
+                                        {
+                                            user.photoURL?(
+                                                <img src={user.photoURL} alt={user.name}/>
+                                            ):(
+                                                <FontAwesome icon={iconList.user} />
+                                            )
+                                        }
+                                    </li>
+                                )
+                            }
                         </ul>
                         <ul className='bar' onClick={()=>setShow(true)}>
                             {
@@ -100,7 +114,20 @@ const Logobar = () => {
                                 {t("wish")}
                             </p>
                             {/* nexttodo:linking to profile page */}
-                            <p className='user'><FontAwesome icon={iconList.user} />{t('profile')}</p>
+                            {
+                                user.email && (
+                                    <p className='user'>
+                                        {
+                                            user.photoURL?(
+                                                <img src={user.photoURL} alt={user.name}/>
+                                            ):(
+                                                <FontAwesome icon={iconList.user} />
+                                            )
+                                        }
+                                    </p>
+                                )
+                            }
+                            {/* <p className='user'><FontAwesome icon={iconList.user} />{t('profile')}</p> */}
                         </div>
                     </div>
 

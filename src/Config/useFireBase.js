@@ -1,115 +1,121 @@
-import { getAuth, updateProfile, onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,GoogleAuthProvider ,signInWithPopup  } from "firebase/auth";
+import { useState } from "react";
 import initializeFirebaseApp from "./firebase.init";
 import { PostPutPatch } from "../ApiServices/ApiServices";
 import { Endpoints } from "../ApiServices/apiEndPoints";
+import {useDispatch} from "react-redux";
+import { clearUser, setUser } from "../Store/userSlice";
+import {toast} from "react-toastify";
+import { DeleteDataLS, createDataLS } from "../helper/localStorage";
 
 initializeFirebaseApp()
-
+//todo:read about xss attack and prevent it
+const googleProvider = new GoogleAuthProvider();
 //code started here
 const auth = getAuth();
 
 const useFireBase = () => {
-    const [user, setUser] = useState({})
+    const dispatch = useDispatch();
+    
+    // const [user, setUser] = useState({})
     const [isLoading, setIsLoading] = useState(true)
 
     const addUserOnMongodb = (body) => {
-        PostPutPatch(`${Endpoints.create_user}`,body,{
-            thenCB:(res)=>{console.log(res)},
-            catchCB:(err)=>{console.log(err)},
-            finallyCB:()=>{},
+        PostPutPatch(`${Endpoints.sign_up}`,body,{
+            thenCB:(res)=>{ 
+                dispatch(setUser(res.data.user));
+                toast.success('Signed successfully');
+                createDataLS(res.data.token,'token');
+            },
+            catchCB:(error)=>{
+                toast.error('Singup failed')
+            },
             method:'post'
         });
     }
 
     const findUserFromDb = (email, displayName) => {
         setIsLoading(true)
-
-        fetch(`https://hidden-forest-46700.herokuapp.com/users/${email}`)
-            .then(res => res.json())
-            .then(data => {
-                let modifiUser = { ...data }
-                modifiUser['displayName'] = displayName
-                let role = data?.role ? data.role : 'user'
-                modifiUser['role'] = role;
-                console.log(modifiUser);
-                setUser(modifiUser)
-            })
-            .catch(e => console.log(e.message))
-            .finally(() => setIsLoading(false))
     }
 
-    const createUserWithPassword = (email, password, name, history) => {
-        setIsLoading(true)
-        createUserWithEmailAndPassword(auth, email, password)
+    const createUserWithPassword = (values,loader) => {
+        loader(true)
+        createUserWithEmailAndPassword(auth, values.email, values.password)
             .then(res => {
-                updateProfile(auth.currentUser, {
-                    displayName: name
-                }).then((result) => {
-                    let updateUser = { ...res.user }
-                    addUserOnMongodb(email, name)
-                    updateUser['displayName'] = name
-                    setUser(updateUser)
-                    history.push('/home')
-
-                }).finally((error) => {
-                    setIsLoading(false)
-                })
-
+                addUserOnMongodb(values)
             })
             .catch(e => {
-                let error = {}
-                error.message = e.message;
-                setUser(error)
-                setIsLoading(false)
+                toast.error("signup failed")
+                // console.log(e,"from useFirebase36");
+            }).finally(()=>{
+                loader(false)
             })
     }
-    const signInWithPassword = (email, password, history, url) => {
-        setIsLoading(true)
-        signInWithEmailAndPassword(auth, email, password)
+    const signInWithPassword = (values,loader) => {
+        loader(true)
+        signInWithEmailAndPassword(auth, values.email, values.password)
             .then(res => {
-                setUser(res.user)
-                findUserFromDb(res.user.email, res.user.displayName)
-                history.push(`${url}`)
+                console.log(res);
+                addUserOnMongodb(values)
             })
             .catch(e => {
-                let error = {}
-                error.message = e.message;
-                setUser(error)
-                setIsLoading(false)
+                // console.log(e,"from useFirebase46");
+            }).finally(()=>{
+                loader(false)
             })
     }
 
     const logOut = () => {
         signOut(auth)
             .then(() => {
-                setUser({})
+                dispatch(clearUser())
             })
             .catch(e => {
                 let error = {}
-                error.message = e.message;
-                setUser(error)
+                // error.message = e.message;
+                toast.error("Logout Failed");
+                dispatch(clearUser())
             })
+            .finally(()=>{DeleteDataLS('token')})
     }
 
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                findUserFromDb(user.email, user.displayName)
-                setUser(user)
-                setIsLoading(false)
+    
+    const onReloadSigninCheking=()=>{
+        onAuthStateChanged(auth, (result) => {
+            if (result) {
+                const user = result.providerData[0];
+                addUserOnMongodb({email:user.email})
             } else {
-                setIsLoading(false)
+                
             }
         });
-    }, [])
+    }
+
+    const googleSignin=(loader)=>{
+        loader(true)
+        signInWithPopup(auth, googleProvider)
+        .then((result) => {
+          const user = result.user;
+          addUserOnMongodb({
+            name: user.displayName,
+            email:user.email,
+            photoURL:user.photoURL
+          })
+        }).catch((error) => {
+            toast.error("Signin Failed")
+        }).finally(()=>{
+            loader(false)
+        });
+    }
 
     return {
-        user,
         signInWithPassword,
         createUserWithPassword,
         logOut,
-        isLoading
+        isLoading,
+        googleSignin,
+        onReloadSigninCheking,
+
     }
 }
 
