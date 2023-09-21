@@ -16,29 +16,14 @@ import { useFormik } from 'formik';
 const PlaceOrder = (props) => {
     pagetitle(props.pageTitle);
     const { t } = useTranslation();
-    const state = useSelector((state) => state.cartSlice.products);
+    const state = useSelector((state) => state.sampleCartSlice.products);
     // const { getTotal }= useCart();
-    const {  submitFormik, validateFormik }= usePlaceOrder();
+    const { formFormik,submitFormik }= usePlaceOrder();
+    const { getData }= useCart();
 
-    let formFormik = useFormik({
-        initialValues: {
-            name:'',
-            email:'',
-            phone:'',
-            phone_2:'',
-            address:'',
-            city:'',
-            district:'',
-            upazilla:'',
-            note:'',
-        },
-        validateOnChange: true,
-        validateOnBlur: true,
-        validate: validateFormik,
-        onSubmit: submitFormik,
-    })
 
     useEffect(()=>{
+        getData();
         scrollToTop();
     },[])
     
@@ -48,7 +33,7 @@ const PlaceOrder = (props) => {
                 <div className='header'>
                     <h3>{t('placeorder.checkout')}</h3>
                 </div>
-                <form autoComplete='off'>
+                {/* <form autoComplete='off'> */}
                     <div>
                         <div className='input'>
                             <h6>{t('placeorder.contact')}</h6>
@@ -183,7 +168,7 @@ const PlaceOrder = (props) => {
                             </div>
                         </div>
                     </div>
-                </form>
+                {/* </form> */}
                 <div className={`${BP.card} summary`}>
                     <p className='header'>{t('placeorder.payable')}</p>
                     <h3>{`${t('money')} ${NumberByLang(getTotal(state)+siteConfig.delivery_charge,t)}`}</h3>

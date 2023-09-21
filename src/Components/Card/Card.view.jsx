@@ -5,16 +5,17 @@ import LazyLoader from '../LazyLoader/LazyLoader.view';
 import { useNavigate } from "react-router-dom";
 import TableSkeleton from '../skeleton/Skeleton';
 import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
-import useCardLogic from './card.presenter';
 import { path } from '../../routes/path';
 import Commonbutton from '../Button/Button.view';
-import { useEffect } from 'react';
+import { useState } from 'react';
+import AddToCartModal from './AddToCartModal.view';
 
 // todo:make full card clickable . But when click on wish or cart button stop propagation will work
 function CardView(props) {
     const { name, images,price,discount,_id } = props.product;
     const { t } = useTranslation();
     const history = useNavigate();
+    const [show,setShow] = useState(false);
 
     return (
         <div className={`custom_card ${props.border}`}>
@@ -48,7 +49,7 @@ function CardView(props) {
                         <Commonbutton
                             type="button"
                             //todo: onClick={props.onClick}
-                            onclickCallback={() => changeRoute(history, path.single_products + `/${_id}`)}
+                            onclickCallback={() => setShow(true)}
                             className="button"
                             btnText={t('singleProduct.addToCart')}
                             isLoading={false}
@@ -57,6 +58,7 @@ function CardView(props) {
                     </div>
                 </div>
             </div>
+            <AddToCartModal setShow={setShow} show={show} product={props.product}/>
         </div>
     );
 }

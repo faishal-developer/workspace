@@ -1,3 +1,4 @@
+import { useFormik } from "formik";
 
 const usePlaceOrder = () => {
     const validateFormik = (values) => {
@@ -20,16 +21,40 @@ const usePlaceOrder = () => {
         if (!values.upazilla)errors.upazilla="Please provide a upazilla";
         if (values.district?.trim().length < 4) errors.district = "district should be atleast 4 charecter";
         if (!values.district)errors.district="Please provide a district";
+        if (!values.transaction_id)errors.transaction_id="Please provide a transaction_id";
+        console.log("errors",errors,values);
         return errors
     }
 
     const submitFormik = (values) => {
         console.log("from submitFormik",values);
+        formFormik.handleReset();
     }
+
+    
+    let formFormik = useFormik({
+        initialValues: {
+            name:'',
+            email:'',
+            phone:'',
+            phone_2:'',
+            address:'',
+            city:'',
+            district:'',
+            upazilla:'',
+            note:'',
+            bikash_number:'',
+            transaction_id:''
+        },
+        validateOnChange: true,
+        validateOnBlur: true,
+        validate: validateFormik,
+        onSubmit: submitFormik,
+    })
     
 
     return {
-        submitFormik,validateFormik
+        submitFormik,validateFormik,formFormik
     }
 };
 

@@ -12,6 +12,8 @@ import { useLogin } from './Login.logic';
 import useFireBase from '../../Config/useFireBase';
 import PasswordStrengthMeter from '../../Components/passWordStrength/passwordStrength';
 
+
+//todo: after registration reset Form
 const Registration = (props) => {
     const [googleSigninLoader,setGoogleSigninLoader] = useState();
     pagetitle(props.pageTitle);

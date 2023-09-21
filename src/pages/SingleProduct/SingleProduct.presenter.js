@@ -2,8 +2,12 @@ import { useState } from "react";
 import { getService } from "../../ApiServices/ApiServices";
 import { toast } from "react-toastify";
 import { createDataLS, getDataLS, properties } from "../../helper/localStorage";
+import { useDispatch, useSelector } from "react-redux";
+import { create_cart } from "../../Store/sampleCartSlice";
 
 const useSingleProduct = () => {
+    const dispatch = useDispatch();
+    const product = useSelector(state=>state.cartSlice.cart)
     const [sProduct,setSProduct] = useState({});
     const [sLoader,setSLoader] = useState(true)
     const [cart,setCart] = useState(1);
@@ -13,7 +17,7 @@ const useSingleProduct = () => {
     const getProduct =(url)=>{
         getService(url,{
             thenCB:(res)=>{setSProduct(res.data.product)},
-            catchCB:(err)=>{console.log(err);toast.error("Something Went Wrong")},
+            catchCB:(err)=>{toast.error("Something Went Wrong")},
             finallyCB:()=>{setSLoader(false)}
         })
     }
@@ -34,20 +38,13 @@ const useSingleProduct = () => {
         }
     }
 
-    const handleCart=()=>{
+    const handleCart=(product)=>{
         if(!size){
             setSizeEr(true);
             return;
         }else{
             setSizeEr(false);
-            let cartLS = getDataLS(properties.cart) ?? [];
-            let cartObj = {}
-            cartObj.product = sProduct._id;
-            cartObj.quantity = cart;
-            cartObj.sizes=size;
-            cartObj.price = sProduct.price*cart;
-            cartLS.push(cartObj);
-            createDataLS(cartLS,properties.cart);
+            dispatch(create_cart({product:product??sProduct,cart,size}));
             toast.success("Added to cart successfully");
         }
     }

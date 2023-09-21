@@ -1,43 +1,54 @@
-import React from 'react';
-import fakeData from '../MainBox/fakeData.json';
+import React, { useState } from 'react';
 import LazyLoader from '../LazyLoader/LazyLoader.view';
 import TableSkeleton from '../skeleton/Skeleton';
 import { Link, useNavigate } from 'react-router-dom';
 import { path } from '../../routes/path';
-import { cal_discounted_price, changeRoute } from '../../helper/CommonFunction';
+import { cal_discounted_price, cal_subtotal, changeRoute } from '../../helper/CommonFunction';
 import Commonbutton from '../Button/Button.view';
 import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
+import { useDispatch } from 'react-redux';
+import { delete_cart_product } from '../../Store/sampleCartSlice';
+import AddToCartModal from '../Card/AddToCartModal.view';
 
 const CartSproduct = (props) => {
-    const {data,loader,cart} = props;
+    const dispatch = useDispatch();
+    let {data,loader} = props;
     const navigate = useNavigate();
-    let sizes= cart.sizes;
+    const [showModal,setShowModal] = useState(false);
     return (       
         <div className='cart-product card animate'>
             <div className='body'>
                 <div className="data">
-                    <p className='high-light'><Link to={path.single_products+"/"+data._id}>{data.name}</Link></p>
+                    <p className='high-light'><Link to={path.single_products+"/"+data?.product}>{data?.product_data?.name}</Link></p>
                     <p><span className='high-light'>Price:</span>
-                        {data.discount ? <del>{data.price} </del>:null}
-                        <span className='high-light'>{cal_discounted_price(data.price, data.discount)}</span>
+                        {data?.product_data?.discount ? <del>{data?.product_data?.price} </del>:null}
+                        <span className='high-light'>{cal_discounted_price(data?.product_data?.price, data?.product_data?.discount)}</span>
                     </p>
-                    <p><span className='high-light'>Size:</span>{sizes}</p>
-                    <p><span className='high-light'>Quantity:</span>{cart.quantity}</p>
+                    <p><span className='high-light'>Size:</span>{data?.product_data?.sizes}</p>
+                    <p><span className='high-light'>Quantity:</span>{data?.product_data?.quantity}</p>
                     <p><span className='high-light'>Subtotal:</span>
-                        {data.discount ? <del>{data.price*cart.quantity}</del>:null}
-                        <span className='high-light'>{cal_discounted_price(data.price, data.discount) * cart.quantity}</span>
+                        {data?.product_data?.discount ? <del>{data?.product_data?.price*data?.quantity}</del>:null}
+                        <span className='high-light'>{
+                            cal_subtotal({
+                                price:data?.product_data?.price,
+                                discount:data?.product_data?.discount,
+                                quantity:data?.quantity
+                            })
+                        }</span>
                     </p>
                 </div>
                 <figure>
-                    <LazyLoader placeholder={<TableSkeleton count={1} height={150}/>}>
-                        <img src={data.images[0]} alt={data.name}/>
-                    </LazyLoader>
+                    {/* <LazyLoader> */}
+                        <img src={data?.product_data?.images?.[0]} alt={data?.product_data?.name}/>
+                    {/* </LazyLoader> */}
                 </figure>
             </div>
             <div className='buttons'>
                 <Commonbutton
                     type="button"
-                    onclickCallback={() => { changeRoute(navigate,path.single_products+'/'+data._id) }}
+                    onclickCallback={() => { 
+                        setShowModal(true);
+                     }}
                     className="button"
                     btnText="+ Add Another Size"
                     isLoading={false}
@@ -45,7 +56,7 @@ const CartSproduct = (props) => {
                 />
                 <Commonbutton
                 type="button"
-                onClick={()=>{}}
+                onclickCallback={()=>{dispatch(delete_cart_product(data.id))}}
                 className="button delete"
                 btnText={<FontAwesome icon={iconList.trash}/>}
                 isLoading={false}
@@ -53,6 +64,8 @@ const CartSproduct = (props) => {
                 />
 
             </div>
+
+            <AddToCartModal show={showModal} setShow={setShowModal} product={data.product_data}/>
         </div>
 
 

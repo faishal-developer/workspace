@@ -24,7 +24,6 @@ const useFireBase = () => {
         PostPutPatch(`${Endpoints.sign_up}`,body,{
             thenCB:(res)=>{ 
                 dispatch(setUser(res.data.user));
-                toast.success('Signed successfully');
                 createDataLS(res.data.token,'token');
             },
             catchCB:(error)=>{
@@ -41,12 +40,12 @@ const useFireBase = () => {
     const createUserWithPassword = (values,loader) => {
         loader(true)
         createUserWithEmailAndPassword(auth, values.email, values.password)
-            .then(res => {
-                addUserOnMongodb(values)
+            .then(async res => {
+                await addUserOnMongodb(values);
+                toast.success('Signuped successfully');
             })
             .catch(e => {
                 toast.error("signup failed")
-                // console.log(e,"from useFirebase36");
             }).finally(()=>{
                 loader(false)
             })
@@ -55,11 +54,9 @@ const useFireBase = () => {
         loader(true)
         signInWithEmailAndPassword(auth, values.email, values.password)
             .then(res => {
-                console.log(res);
                 addUserOnMongodb(values)
             })
             .catch(e => {
-                // console.log(e,"from useFirebase46");
             }).finally(()=>{
                 loader(false)
             })
@@ -94,13 +91,14 @@ const useFireBase = () => {
     const googleSignin=(loader)=>{
         loader(true)
         signInWithPopup(auth, googleProvider)
-        .then((result) => {
+        .then(async(result) => {
           const user = result.user;
-          addUserOnMongodb({
+          await addUserOnMongodb({
             name: user.displayName,
             email:user.email,
             photoURL:user.photoURL
           })
+            toast.success('Signed successfully');
         }).catch((error) => {
             toast.error("Signin Failed")
         }).finally(()=>{

@@ -1,3 +1,5 @@
+import { getDataLS } from "./localStorage";
+
 export function pagetitle(title){
     document.title =title;
 };
@@ -40,7 +42,7 @@ export const stickyPosition=(id,className,id2)=>{
             height = stickyElementOfff.offsetTop + stickyElementOfff.offsetHeight;
         }
                 // console.log("working",isTrue,rect.top,scrollPosition);
-        if (isTrue && (rect.top < scrollPosition) && (scrollPosition<2450)) {
+        if (isTrue && (rect.top+40 < scrollPosition) && (scrollPosition<2450)) {
             stickyElement.classList.add(className);
         } else {
             stickyElement.classList.remove(className);
@@ -55,8 +57,14 @@ export const cal_discounted_price = (price,discount) =>{
     return discounted ;
 }
 
+export const cal_subtotal = ({price,discount,quantity}) =>{
+    let discounted =  cal_discounted_price(price,discount);
+    return discounted*quantity ;
+}
+
 
 export const capitalize = (string) =>{
+    if(typeof string !=='string')return '';
     let strArray = string.split(' ');
     let firstWord = strArray[0].split('');
     firstWord[0] = firstWord[0].toUpperCase();
@@ -94,9 +102,15 @@ export const addQueryParams = (navigate,location,{key,value}) =>{
 }
 
 export const getTotal = (newData) => {
+    if(!newData?.[0]?.product_data?.price)return 0;
     let t = 0;
     newData.forEach((el, i) => {
-        t += cal_discounted_price(el.price, el.discount) * el.quantity;
+        // t += cal_discounted_price(el.price, el.discount) * el.quantity;
+        t += cal_subtotal({price:el.product_data.price, discount:el.product_data.discount,quantity:el.quantity});
     });
     return t;
+}
+
+export const getCartFromLocalStorage=()=>{
+    return getDataLS('cart')
 }

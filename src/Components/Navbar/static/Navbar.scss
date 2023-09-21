@@ -119,6 +119,7 @@
         width: 65%;
         align-items: center;
 
+        
         .shop{
             // border-left: 1px solid rgba(0, 0, 0, 0.123);
             cursor: pointer;
@@ -170,6 +171,8 @@
                     width: 40px;
                     border-radius: 50%;
                 }
+
+                
             }
             
         }
@@ -216,7 +219,14 @@
     }
 }
 
-
+.pop-over {
+    font-size: 13px;
+    color: $black;
+    // padding: 5px;
+    p{
+        margin: 0;
+    }
+}
 @media only screen and (max-width: 900px) and (min-width: 650px) {
     .topbar{
         .top-Navbar {

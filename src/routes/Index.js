@@ -11,6 +11,8 @@ import Maintenance from "../pages/Maintanance";
 import CustomPageLoader from "../Components/CustomPageLoader/Index";
 import useHome from '../pages/Home/Home.Presenter';
 import useFireBase from '../Config/useFireBase';
+import { useDispatch } from 'react-redux';
+import { getCartFromLocalStorage } from '../helper/CommonFunction';
 
 const MainRoutes = () => {
     const maintenance = config.maintenance;
@@ -33,7 +35,7 @@ const MainRoutes = () => {
     useEffect(() => {
         get_categories({ setCatLoader:()=>{} });
         get_Subcategories(()=>{});
-        onReloadSigninCheking()
+        onReloadSigninCheking();
     }, [])
     return maintenance && isDeveloper !== 'true' ? (
         <Maintenance />
@@ -80,7 +82,7 @@ const MainRoutes = () => {
 
                 
                 <Route path={`${pages_path.error400}`} element={<Error400 pageTitle="Error" />} />
-                <Route path="*" element={<Error400 pageTitle="Error" />} /> {/* wrong route redirects to 404 page */}
+                <Route path="*" element={<Error400 pageTitle="NotFound" />} /> {/* wrong route redirects to 404 page */}
             </Routes>
         </>
     );

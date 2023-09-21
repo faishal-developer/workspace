@@ -3,8 +3,10 @@ import catSlice from './Cat_slice';
 import SubcatSlice from './Sub_catSlice';
 import cartSlice from './cartSlice';
 import userSlice from './userSlice';
+import sampleCartSlice from './sampleCartSlice';
 
 const rootReducer = combineReducers({
+        sampleCartSlice,
         catSlice,
         SubcatSlice,
         cartSlice,

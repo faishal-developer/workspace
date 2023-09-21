@@ -112,3 +112,63 @@
 .border_green{
     border: 1px solid $pal-ash;
 }
+
+.modal{
+    .modal-title{
+        width: 90%;
+        h6{
+            text-align: center;
+        }
+    }
+
+    .body{
+        display: flex;
+        justify-content: space-around;
+        figure{
+            img{
+                max-width: 170px;
+                max-height: 170px;
+            }
+        }
+        .main-content{
+            .product-name{
+                margin-bottom: 10px;
+            }
+            .price{
+                display: flex;
+                p{
+                    margin-left: 15px;
+                    font-weight: 600;
+                    margin-bottom: 6px;
+                    &:first-child{
+                        margin-left: 0;
+                    }
+                }
+
+            }
+            .sizes{
+
+            }
+            .add-to-cart{
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .modal-footer{
+        div{
+            display: flex;
+            justify-content: space-between;
+            width:100%;
+
+            .reddish_btn{
+                border: 1px solid $delete;
+                color:$delete;
+            }
+            .reddish_btn:hover{
+                background-color: $delete;
+                color: $white;
+            }
+        }
+    }
+}

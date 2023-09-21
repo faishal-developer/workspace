@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import siteConfig from "../../../Config/siteConfig"
 import '../static/Navbar.scss'
 import BS from '../../../scss/CommonClass'
@@ -10,10 +10,13 @@ import CartIcon from '../../cartIcon/cartIcon.view';
 import { Link } from 'react-router-dom';
 import { path } from '../../../routes/path';
 import { useSelector } from 'react-redux';
+import CustomPopover from '../../popovers/PopOver';
+import { getCartFromLocalStorage } from '../../../helper/CommonFunction';
 
 
 //todo:change cart icon
 const Logobar = () => {
+    const {products:carts} = useSelector(state=>state.sampleCartSlice);
     const user = useSelector(state=>state.userSlice.user)
     const { t } = useTranslation();
     const [show,setShow] = useState(false);
@@ -52,7 +55,7 @@ const Logobar = () => {
                             <li>
                                 {/* <FontAwesome icon={iconList.cart}/>
                                 <span className='text'>{t("cart")}</span> */}
-                                <CartIcon productNum={30} p={t("cart")}/>
+                                <CartIcon productNum={carts?.length || 0} p={t("cart")}/>
                             </li>
                             <li>
                                 <FontAwesome icon={iconList.heart} />
@@ -62,11 +65,23 @@ const Logobar = () => {
                                 user.email && (
                                     <li className='user'>
                                         {
-                                            user.photoURL?(
-                                                <img src={user.photoURL} alt={user.name}/>
-                                            ):(
-                                                <FontAwesome icon={iconList.user} />
-                                            )
+                                            <CustomPopover
+                                                // title='Profile'
+                                                body={
+                                                    <span className='pop-over'>
+                                                      <p>{user.name}</p>
+                                                      <p>{user.email}</p>
+                                                    </span>
+                                                }
+                                            >
+                                                {
+                                                    user.photoURL?(
+                                                        <img src={user.photoURL} alt={user.name}/>
+                                                    ):(
+                                                        <FontAwesome icon={iconList.user} />
+                                                    )
+                                                }
+                                            </CustomPopover>
                                         }
                                     </li>
                                 )

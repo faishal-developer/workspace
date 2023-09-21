@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
-import './modalBootstrap.scss';
+// import './modalBootstrap.scss';
 
 const ModalBootstrap = (props) => {
 
@@ -19,7 +19,16 @@ const ModalBootstrap = (props) => {
                         <Modal.Title>{props.title}</Modal.Title>
                     </Modal.Header> : ""
                 }
-                {props.children}
+                <Modal.Body>
+                  {props.children}
+                </Modal.Body>
+                {
+                    props.footer?(
+                        <Modal.Footer>
+                          {props.footer}
+                        </Modal.Footer>
+                    ):''
+                }
             </Modal>
         </>
     );

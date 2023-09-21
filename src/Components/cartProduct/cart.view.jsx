@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import CartSproduct from './cartSproduct.view';
 import './cart.scss';
 import { Link, useLocation } from 'react-router-dom';
@@ -6,22 +6,26 @@ import { path } from '../../routes/path';
 import { useTranslation } from 'react-i18next';
 import useCart from './cart.presenter';
 import CartScardSkeleton from '../skeleton/cartScard.view';
+import { getTotal } from '../../helper/CommonFunction';
 
 const Cart = (props) => {
     const {t} = useTranslation();
     const location = useLocation();
-    const {data,getData,loader,cart,getTotal}= useCart();
+    const {getData,loader,cartStore:cartData}= useCart();
 
     useEffect(()=>{
         getData();
     },[])
+    // const memoizedCallBack=useMemo(()=>{
+    //     getData();
+    // },[cartData])
     return (
         <div className='cart'>
             <div>
                 {
                     loader ? (<div className='my-3'><CartScardSkeleton/></div>):(
-                        data?.length? (
-                            data.map((sData,i)=><CartSproduct cart={cart[i]} data={data[i]} loader={loader} key={sData._id} />)
+                        cartData?.length? (
+                            cartData.map((sData,i)=><CartSproduct data={cartData[i]} loader={loader} key={sData._id} />)
                         ) : <p className='text-danger'>No Product added to Cart</p>
                     )
                 }
@@ -29,7 +33,7 @@ const Cart = (props) => {
             {
                 location.pathname!==path.order ? (
                     <div className='place_order'>
-                        <p>Total: {t('money')}{getTotal()}</p>
+                        <p>Total: {t('money')}{getTotal(cartData)}</p>
                         {/* <Commonbutton
                             type="button"
                             onClick={() => { }}

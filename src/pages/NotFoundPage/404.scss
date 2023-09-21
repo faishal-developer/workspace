@@ -21,36 +21,36 @@ $font-color: #333;
             background-position: -200% 0;
         }
     }
-}
 
-.not-found-content {
-    text-align: center;
-    padding: 20px;
-}
 
-.not-found-title {
-    font-size: 6rem;
-    color: $pal-green;
-}
-
-.not-found-text {
-    font-size: 1.5rem;
-    color: $font-color;
-    margin: 20px 0;
-}
-
-.not-found-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: $pal-green;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: darken(#99FFFF, 10%);
-        color: $black
+    .not-found-content {
+        text-align: center;
+        padding: 20px;
+        .not-found-title {
+            font-size: 6rem;
+            color: $pal-green;
+        }
+    
+        .not-found-text {
+            font-size: 1.5rem;
+            color: $font-color;
+            margin: 20px 0;
+        }
+    
+        .not-found-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: $pal-green;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+    
+            &:hover {
+                background-color: darken(#99FFFF, 10%);
+                color: $black
+            }
+        }
     }
 }

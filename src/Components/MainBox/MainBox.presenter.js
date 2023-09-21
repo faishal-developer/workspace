@@ -50,7 +50,7 @@ const useMainBox = () => {
                 setData(res.data);
                 setMTotal && setMTotal(res.data);
             },
-            catchCB:(err)=>{toast.error("Something Went Wrong");console.log(err)},
+            catchCB:(err)=>{toast.error("Something Went Wrong")},
             finallyCB: () => { setLoader(false)},
             method:'post'
         })
