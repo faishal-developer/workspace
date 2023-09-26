@@ -4,6 +4,8 @@ import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useMainBox from '../MainBox.presenter';
 
+
+//todo: implement searchBar popup while writing on searchbox
 const keyword=["keyring","portrait","dim light","pen holder","giftbox","crest","Name Plate","3d","Cloth","laser"];
 const SearchBar = () => {
     const navigate = useNavigate();

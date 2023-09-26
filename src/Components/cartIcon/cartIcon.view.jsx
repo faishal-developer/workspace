@@ -7,6 +7,8 @@ import Cart from '../cartProduct/cart.view';
 import BP from '../../scss/CommonClass';
 import '../cartProduct/cart.scss';
 
+
+//todo:add translation
 const CartIcon = ({productNum,p,...props}) => {
     const { t } = useTranslation();
     const [show,setShow] = useState(false);

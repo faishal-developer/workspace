@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { getDataLS } from "../../helper/localStorage";
 import { PostPutPatch } from "../../ApiServices/ApiServices";
 import { Endpoints } from "../../ApiServices/apiEndPoints";
-import { cal_discounted_price, cal_subtotal } from "../../helper/CommonFunction";
+import { cal_discounted_price } from "../../helper/CommonFunction";
 import { useDispatch, useSelector } from "react-redux";
-import { create_data } from "../../Store/cartSlice";
 import { toast } from "react-toastify";
 import { update_cart } from "../../Store/sampleCartSlice";
 

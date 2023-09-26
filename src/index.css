@@ -30,6 +30,34 @@
   font-weight: 700;
   font-style: italic;
 } */
+/* font-family: 'Barriecito', cursive;
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'Croissant One', cursive;
+font-family: 'Dela Gothic One', cursive;
+font-family: 'Fuggles', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Martian Mono', monospace;
+font-family: 'Mooli', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Philosopher', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Russo One', sans-serif;
+font-family: 'Sacramento', cursive;
+font-family: 'Skranji', cursive;
+font-family: 'Tangerine', cursive;
+font-family: 'Tilt Prism', cursive;
+font-family: 'Tourney', cursive;
+font-family: 'Wavefont', cursive;
+font-family: 'Yeseva One', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Bebas+Neue&family=Croissant+One&family=Dela+Gothic+One&family=Fuggles&family=Great+Vibes&family=Lobster&family=Martian+Mono:wght@400;600;700&family=Mooli&family=Oswald:wght@400;600;700&family=Pacifico&family=Permanent+Marker&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Russo+One&family=Sacramento&family=Skranji&family=Tangerine:wght@400;700&family=Tilt+Prism&family=Tourney:ital,wght@0,100;0,300;0,400;1,100;1,200;1,300;1,400&family=Wavefont:wght@400;500&family=Yeseva+One&display=swap');
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif !important;
@@ -37,22 +65,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', */
-    /* monospace; */
-}
-
-/* .dark-theme{
-  --bg-color:#141414;
-  --color:rgb(77, 158, 158);
-}
-.light-theme{
-  --bg-color:rgb(77, 158, 158);
-  --color:#141414;
-}
-
-p{
-  background-color: var(--bg-color);
-  color: var(--color) ;
-} */

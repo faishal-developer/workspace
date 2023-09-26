@@ -10,6 +10,8 @@ import { useDispatch } from 'react-redux';
 import { delete_cart_product } from '../../Store/sampleCartSlice';
 import AddToCartModal from '../Card/AddToCartModal.view';
 
+
+//todo: add confirmation model to delete cart item
 const CartSproduct = (props) => {
     const dispatch = useDispatch();
     let {data,loader} = props;

@@ -14,7 +14,6 @@ import CustomPopover from '../../popovers/PopOver';
 import { getCartFromLocalStorage } from '../../../helper/CommonFunction';
 
 
-//todo:change cart icon
 const Logobar = () => {
     const {products:carts} = useSelector(state=>state.sampleCartSlice);
     const user = useSelector(state=>state.userSlice.user)
@@ -58,8 +57,10 @@ const Logobar = () => {
                                 <CartIcon productNum={carts?.length || 0} p={t("cart")}/>
                             </li>
                             <li>
-                                <FontAwesome icon={iconList.heart} />
-                                <span className='text'>{t("wish")}</span>
+                                <Link to={path.wishList}>
+                                    <FontAwesome icon={iconList.heart} />
+                                    <span className='wish-list text'>{t("wish")}</span>
+                                </Link>
                             </li>
                             {
                                 user.email && (
@@ -124,7 +125,6 @@ const Logobar = () => {
                                 {t("cart")}
                             </p>
                             <p>
-                                {/* nexttodo: it will open a popup like cart */}
                                 <FontAwesome icon={iconList.heart} />
                                 {t("wish")}
                             </p>

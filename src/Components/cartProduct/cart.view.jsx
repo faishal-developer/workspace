@@ -16,9 +16,7 @@ const Cart = (props) => {
     useEffect(()=>{
         getData();
     },[])
-    // const memoizedCallBack=useMemo(()=>{
-    //     getData();
-    // },[cartData])
+    // todo: No Product added to Cart set it middle
     return (
         <div className='cart'>
             <div>

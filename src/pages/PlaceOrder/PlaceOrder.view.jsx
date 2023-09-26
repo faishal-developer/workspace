@@ -209,7 +209,7 @@ const PlaceOrder = (props) => {
                 </div>
                 <div className='payment'>
                     <h6>{t('placeorder.payment')}</h6>
-                    {/* todo: implement later */}
+                    {/* todo:payment gateway implement later */}
                     <Commonbutton
                         type="button"
                         onclickCallback={formFormik.handleSubmit}

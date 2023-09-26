@@ -19,13 +19,16 @@ const SingleProduct = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "singleProducts" */ "../pages/SingleProduct/SingleProduct.view"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 const PlaceOrder = React.lazy(() => {
-    return Promise.all([import(/*webpackChunkName: "singleProducts" */ "../pages/PlaceOrder/PlaceOrder.view.jsx"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+    return Promise.all([import(/*webpackChunkName: "placeorder" */ "../pages/PlaceOrder/PlaceOrder.view.jsx"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 const Login = React.lazy(() => {
-    return Promise.all([import(/*webpackChunkName: "singleProducts" */ '../pages/Login/Login.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+    return Promise.all([import(/*webpackChunkName: "login" */ '../pages/Login/Login.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 const Registration = React.lazy(() => {
-    return Promise.all([import(/*webpackChunkName: "singleProducts" */ '../pages/Login/Registration.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+    return Promise.all([import(/*webpackChunkName: "Registration" */ '../pages/Login/Registration.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+});
+const WishList = React.lazy(() => {
+    return Promise.all([import(/*webpackChunkName: "wishList" */ '../pages/WishList/WishList.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 
 
@@ -49,6 +52,7 @@ export const public_private_routes = [
     { path: `${path.single_products +'/:productId'}`, Component: <SingleProduct pageTitle={`products |${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.login}`, Component: <Login pageTitle={`Login ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.register}`, Component: <Registration pageTitle={`Registration ${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.wishList}`, Component: <WishList pageTitle={`WishList ${SiteName}`} />, Layout: <CommonLayout /> },
     
     // {path: `${process.env.PUBLIC_URL}${path.registration}`, Component: <Signup pageTitle={`Sign Up ${SiteName}`}/>, Layout: <TheAuthLayout/> },
 ]

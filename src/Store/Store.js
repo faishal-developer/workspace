@@ -4,13 +4,15 @@ import SubcatSlice from './Sub_catSlice';
 import cartSlice from './cartSlice';
 import userSlice from './userSlice';
 import sampleCartSlice from './sampleCartSlice';
+import wishListSlice from './wishListSlice';
 
 const rootReducer = combineReducers({
         sampleCartSlice,
         catSlice,
         SubcatSlice,
         cartSlice,
-        userSlice
+        userSlice,
+        wishListSlice
 })
 // const storageReducer = combineReducers({
 //     testSlice2

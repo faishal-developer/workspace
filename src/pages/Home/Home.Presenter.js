@@ -6,7 +6,6 @@ import { create_data as createSubCatData } from '../../Store/Sub_catSlice';
 import { create_data } from '../../Store/Cat_slice';
 
 
-//todo:find tomany error
 const useHome = () => {
     const dispatch = useDispatch();
 
