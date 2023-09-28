@@ -30,6 +30,9 @@ const Registration = React.lazy(() => {
 const WishList = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "wishList" */ '../pages/WishList/WishList.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
+const DrawDesign = React.lazy(() => {
+    return Promise.all([import(/*webpackChunkName: "DrawDesign" */ '../pages/DrawDesign/DrawDesign.view'), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
+});
 
 
 
@@ -53,6 +56,7 @@ export const public_private_routes = [
     { path: `${path.login}`, Component: <Login pageTitle={`Login ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.register}`, Component: <Registration pageTitle={`Registration ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.wishList}`, Component: <WishList pageTitle={`WishList ${SiteName}`} />, Layout: <CommonLayout /> },
+    { path: `${path.custom_design}`, Component: <DrawDesign pageTitle={`Custom Design ${SiteName}`} />, Layout: <CommonLayout /> },
     
     // {path: `${process.env.PUBLIC_URL}${path.registration}`, Component: <Signup pageTitle={`Sign Up ${SiteName}`}/>, Layout: <TheAuthLayout/> },
 ]

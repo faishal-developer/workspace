@@ -11,7 +11,5 @@ export const path ={
     register:`/register`,
     help:`/help`,
     custom_design:'/custom-design',
-    d_library:"/design-library",
     wishList:"/wish-list",
-    print_on_demand:"/print-on-demand"
 };

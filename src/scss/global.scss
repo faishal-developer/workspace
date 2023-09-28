@@ -107,6 +107,21 @@ figure{
     animation: slideBlock 200ms;
 }
 
+.remove-button {
+    color: $delete;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+    border: 1px solid $delete;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: #ff4d4d;
+        color: $white;
+        // border:1px solid $white;
+    }
+}
+
 @keyframes slideaway {
     from {
         display: block;

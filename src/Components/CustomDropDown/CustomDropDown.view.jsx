@@ -26,6 +26,8 @@ const CustomMultiSelectDropdown = (props) => {
             <Multiselect
                 id={props.id}
                 style={props.inputStyle}
+                optionValueDecorator={props.optionValueDecorator}
+                selectedValueDecorator={props.selectedValueDecorator}
                 options={props.options} // Options to display in the dropdown
                 selectedValues={props.selectedValues} // Preselected value to persist in dropdown
                 onSelect={props.onSelect} // Function will trigger on select event

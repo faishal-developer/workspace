@@ -1,0 +1,35 @@
+@import '../../scss/variable.scss';
+
+.product_container{
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        gap:15px;
+        figure{
+            border:2px solid transparent;
+            cursor: pointer;
+            img{
+                width: 80px;
+                height: 80px;
+            }
+        }
+        figure:hover,.active{
+            border: 2px solid $pal-ash;
+            background-color: $pal-ash;
+        }
+    }
+    .error-message {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 13px;
+        color: $delete;
+        bottom: 5px;
+
+        svg {
+            position: relative;
+            top: -1px;
+            margin-right: 2px;
+        }
+    }
+}
+

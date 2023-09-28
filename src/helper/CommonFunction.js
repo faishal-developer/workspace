@@ -74,6 +74,12 @@ export const capitalize = (string) =>{
     return strArray;
 }
 
+export const removeUnderScore=(string)=>{
+    if(typeof string !=='string')return '';
+    let strArray = string.split('_');
+    return capitalize(strArray[0])+' '+strArray.splice(1).join(' ');
+}
+
 export const scrollToTop=()=>{
     window.scrollTo(0, 0);
 }
@@ -113,4 +119,9 @@ export const getTotal = (newData) => {
 
 export const getCartFromLocalStorage=()=>{
     return getDataLS('cart')
+}
+
+export function screenWidth() {
+
+  return window.innerWidth;
 }

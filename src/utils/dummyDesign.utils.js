@@ -1,0 +1,28 @@
+import logo1 from '../assets/images/design/logo1.webp'
+import logo2 from '../assets/images/design/logo2.jpg'
+import logo3 from '../assets/images/design/logo3.jpg'
+import logo4 from '../assets/images/design/logo4.webp'
+import logo5 from '../assets/images/design/logo5.webp'
+import logo6 from '../assets/images/design/logo6.jpg'
+import logo7 from '../assets/images/design/logo7.jpg'
+import logo8 from '../assets/images/design/logo8.png'
+import logo9 from '../assets/images/design/logo9.webp'
+import logo10 from '../assets/images/design/logo10.jpg'
+import logo11 from '../assets/images/design/logo11.webp'
+import logo12 from '../assets/images/design/logo12.webp'
+import logo13 from '../assets/images/design/logo13.png'
+import logo14 from '../assets/images/design/logo14.jpg'
+import logo15 from '../assets/images/design/logo15.jpg'
+import logo16 from '../assets/images/design/logo16.png'
+import logo17 from '../assets/images/design/logo17.webp'
+import logo18 from '../assets/images/design/logo18.jpg'
+import logo19 from '../assets/images/design/logo19.jpeg'
+import logo20 from '../assets/images/design/logo20.png'
+import logo21 from '../assets/images/design/logo21.png'
+import logo22 from '../assets/images/design/logo22.webp'
+import logo23 from '../assets/images/design/logo23.jpg'
+import logo24 from '../assets/images/design/logo24.jpg'
+
+
+export const dummyDesign=[logo1,logo2,logo3,logo4,logo5,logo6,logo7,logo8,logo9,logo10,logo11,logo12,logo13,logo14,logo15,logo16,logo17,logo18,logo19,logo20,logo21,logo22,logo23,logo24,
+]

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope,faBolt,faCar,faRightFromBracket,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash} from '@fortawesome/free-solid-svg-icons';
-import { faTwitter, faFacebook,faLinkedin, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope,faBolt,faCar,faRightFromBracket,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash, faTextWidth, faCloudArrowUp, faArrowsToDot, faTrashCan, faPhotoFilm, faArrowUp, faArrowDown, faArrowLeft, faArrowRight, faEye} from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faFacebook,faLinkedin, faGoogle, faProductHunt } from '@fortawesome/free-brands-svg-icons'
 
 
 
@@ -33,7 +33,18 @@ export const iconList={
     twitter:faTwitter,
     google:faGoogle,
     linkedin:faLinkedin,
-    trash:faTrash
+    trash:faTrash,
+    text:faTextWidth,
+    product:faProductHunt,
+    upload:faCloudArrowUp,
+    top:faArrowUp,
+    bottom:faArrowDown,
+    left:faArrowLeft,
+    right:faArrowRight,
+    center:faArrowsToDot,
+    delete:faTrashCan,
+    design:faPhotoFilm,
+    eye:faEye
 }
 
 export default FontAwesome;
