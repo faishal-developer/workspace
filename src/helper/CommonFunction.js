@@ -127,6 +127,7 @@ export function screenWidth() {
 }
 
 export const handleKeyWords=(keywords,text)=>{
-    // const searchedText=keywords.filter((t)=>t.toLowe)
-    return keywords.slice(0,10)
+    const regex= new RegExp(text,'gi')
+    const searchedText=keywords.filter((t)=>t.match(regex))
+    return searchedText.slice(0,10)
 }

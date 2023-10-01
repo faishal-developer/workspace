@@ -32,10 +32,10 @@ const SearchBar = () => {
                     {/* <span className='drop_down'></span> */}
                 </div>
                 {
-                    handleKeyWords(keyword).length>=1? (
+                    handleKeyWords(keyword,searchTxt).length>=1? (
                         <div className='keyword'>
                             {
-                                handleKeyWords(keyword)?.map((el, i) => (
+                                handleKeyWords(keyword,searchTxt)?.map((el, i) => (
                                     <p 
                                         key={i}
                                         onClick={() => addQueryParams(navigate,location,{key:'key',value:el})}
