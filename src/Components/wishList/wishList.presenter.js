@@ -34,11 +34,11 @@ const useWishList = () => {
                     }
                 });
                 dispatch(update_WishList(expectedData))
+                setLoader(false);
             },
             catchCB:(err)=>{
                 toast.error("Something went wrong");
             },
-            finallyCB:()=>{setLoader(false)},
             method:'post'
         })
     }

@@ -125,3 +125,8 @@ export function screenWidth() {
 
   return window.innerWidth;
 }
+
+export const handleKeyWords=(keywords,text)=>{
+    // const searchedText=keywords.filter((t)=>t.toLowe)
+    return keywords.slice(0,10)
+}

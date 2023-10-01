@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { addQueryParams, stickyPosition } from '../../../helper/CommonFunction';
+import { addQueryParams, handleKeyWords, stickyPosition } from '../../../helper/CommonFunction';
 import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useMainBox from '../MainBox.presenter';
 
 
 //todo: implement searchBar popup while writing on searchbox
-const keyword=["keyring","portrait","dim light","pen holder","giftbox","crest","Name Plate","3d","Cloth","laser"];
+const keyword=["keyring","portrait","dim light","pen holder","giftbox","crest","Name Plate","3d","Cloth","laser",'key','ring','dim','light','holder','threed','name','t-shirt','tshirt','custom','wooden','pvc','acrilic','lesar','nike','addidas','walmate','box','pencil','lether','cloths','skell','thikness skell','Stylish wooden clock','stylish wooden clock'];
 const SearchBar = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -32,10 +32,10 @@ const SearchBar = () => {
                     {/* <span className='drop_down'></span> */}
                 </div>
                 {
-                    keyword.length>=1? (
+                    handleKeyWords(keyword).length>=1? (
                         <div className='keyword'>
                             {
-                                keyword?.map((el, i) => (
+                                handleKeyWords(keyword)?.map((el, i) => (
                                     <p 
                                         key={i}
                                         onClick={() => addQueryParams(navigate,location,{key:'key',value:el})}

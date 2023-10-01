@@ -196,6 +196,9 @@
     // font-weight: bold;
     padding-left: 5px;
     cursor: pointer;
+    a{
+        text-decoration: none;
+    }
     .shop {
         .shop_p {
             font-weight: bold;
@@ -218,6 +221,11 @@
             .icon {
                 color: $lightRed;
                 margin-right: 5px;
+            }
+            a{
+                text-decoration: none;
+                // color: $lightRed;
+                color: $black;
             }
         }
     }

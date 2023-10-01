@@ -121,12 +121,13 @@ const Logobar = () => {
                                 {t('exclusive')}
                             </p>
                             <p>
-                                <FontAwesome icon={iconList.cart} />
-                                {t("cart")}
+                                <CartIcon productNum={carts?.length || 0} p={t("cart")}/>
                             </p>
                             <p>
-                                <FontAwesome icon={iconList.heart} />
-                                {t("wish")}
+                                <Link to={path.wishList}>
+                                    <FontAwesome icon={iconList.heart} />
+                                    {t("wish")}
+                                </Link>
                             </p>
                             {/* nexttodo:linking to profile page */}
                             {

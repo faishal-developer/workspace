@@ -17,8 +17,9 @@ const useDrawDesign = () => {
     const canvasAxes=()=>{
         let width=screenWidth();
         if(width>900)return {x:550,y:450}
-        else if(width>600)return {x:450,y:450}
-        else return {x:300,y:400}
+        else if(width>500)return {x:450,y:450}
+        else if(width>400)return {x:360,y:400}
+        else return {x:270,y:350}
     }
     const handleFileChange=(e)=>{
         const selectedFile = e.target.files[0];

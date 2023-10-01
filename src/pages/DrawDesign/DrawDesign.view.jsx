@@ -9,13 +9,14 @@ import { fabric } from "fabric";
 
 //on-reload dont change active box,set Background image of canvas by bg,file uploaded from local drive;
 const DrawDesign = () => {
-    const [canvas_w_h,setCanvas_w_h]=useState({x:600,y:500})
+    const [canvas_w_h,setCanvas_w_h]=useState({})
     const {
         productModalState,setProductModalState,sideBarUtils,textModalState,setTextModalState,designModalState,setDesignModalState,handleFileChange,handleFileUpload,canvasAxes,canvasRef,fabricRef,addtext,deleteSelectedObject,addImage,downloadCanvasImage,centerSelectedObject,alignSelectedObject,loadBackgroundImage
     } = useDrawDesign();
     const inputRef = useRef(null);
     
     useEffect(() => {
+        if(!canvas_w_h.x)return;
       const initFabric = () => {
         fabricRef.current = new fabric.Canvas(canvasRef.current);
         const backgroundRect = new fabric.Rect({
@@ -41,12 +42,11 @@ const DrawDesign = () => {
       return () => {
         disposeFabric();
       };
-    }, []);
+    }, [canvas_w_h]);
 
-    // useEffect(()=>{
-    //     setCanvas_w_h(canvasAxes()); 
-    //     window.addEventListener("resize", ()=>setCanvas_w_h(canvasAxes()));
-    // },[])
+    useEffect(()=>{
+        setCanvas_w_h(canvasAxes()); 
+    },[])
     return (
         <div className='draw-design-container container'>
             <div>
@@ -80,6 +80,7 @@ const DrawDesign = () => {
             </div>
             <div className='canvas'>
                 <canvas ref={canvasRef} width={canvas_w_h.x} height={canvas_w_h.y}/>
+                {console.log(canvas_w_h.x,'canvas width')}
             </div>
             
         </div>

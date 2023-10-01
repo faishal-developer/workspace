@@ -110,8 +110,6 @@ const MainBox = (props) => {
                             ):<p className='text-danger text-center'></p>
                         )
                     }
-                    {/* todo: <CardsCarousel heading={`${t('3dModel')} ${products}`} data={data} className='Latest' />
-                    <CardsCarousel heading={`${t('dtf')} ${products}`} data={data} className='Latest' /> */}
                 </div>
             </div>
             

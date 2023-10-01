@@ -38,8 +38,8 @@ const TextModal = (props) => {
                         onclickCallback={()=>{
                             addtext({
                                 fontFamily:state.data.fontFamily,
-                                fontWeight:state.data.fontWeight,
-                                fontStyle:state.data.fontStyle,
+                                fontWeight:state.data.fontWeight || 'normal',
+                                fontStyle:state.data.fontStyle || 'normal',
                                 color:state.data.color,
                             });
                             setState({...state,modal:false});
