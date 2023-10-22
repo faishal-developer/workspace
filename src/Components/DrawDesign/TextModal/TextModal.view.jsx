@@ -33,11 +33,11 @@ const TextModal = (props) => {
                         isLoading={false}
                         disabled={false}
                     />
-                    <Commonbutton
+                    <Commonbutton 
                         type="button"
                         onclickCallback={()=>{
                             addtext({
-                                fontFamily:state.data.fontFamily,
+                                fontFamily:state.data?.fontFamily || fontFamilies.Barriecito,
                                 fontWeight:state.data.fontWeight || 'normal',
                                 fontStyle:state.data.fontStyle || 'normal',
                                 color:state.data.color,

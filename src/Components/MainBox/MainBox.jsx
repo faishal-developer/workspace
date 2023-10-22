@@ -27,8 +27,13 @@ const MainBox = (props) => {
     },[])
 
     useEffect(()=>{
+        initialCall(1);
+        setPage(1);
+    },[location.search])
+
+    useEffect(()=>{
         initialCall();
-    },[page,location.search])
+    },[page])
    
     const products = t('products');
     return (

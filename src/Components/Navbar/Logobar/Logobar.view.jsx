@@ -7,11 +7,11 @@ import FontAwesome, { iconList } from '../../FontAwesome/FontAwesome';
 import CustomOffcanvas from '../../Offcanvas/OffCanvas';
 import NavbarUtils from '../NavbarUtils';
 import CartIcon from '../../cartIcon/cartIcon.view';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { path } from '../../../routes/path';
 import { useSelector } from 'react-redux';
 import CustomPopover from '../../popovers/PopOver';
-import { getCartFromLocalStorage } from '../../../helper/CommonFunction';
+// import { getCartFromLocalStorage } from '../../../helper/CommonFunction';
 
 
 const Logobar = () => {
@@ -20,7 +20,14 @@ const Logobar = () => {
     const { t } = useTranslation();
     const [show,setShow] = useState(false);
     const [index,setIndex] = useState(0);
-
+    const location = useLocation();
+    const navigate=useNavigate();
+    
+    useEffect(()=>{
+        NavbarUtils(t).forEach((item,i)=>{
+            if(item.link===location.pathname)setIndex(i);
+        })
+    },[])
     return (
         <div className={`${BS.container}`}>
             <div className='logobar'>
@@ -114,7 +121,7 @@ const Logobar = () => {
                             }
                         </div>
                         <div className='exclusive'>
-                            <p>
+                            <p onClick={()=>navigate(`${path.home}?discounted=true`)}>
                                 <span className='electric'>
                                     <FontAwesome icon={iconList.Bolt} />
                                 </span>

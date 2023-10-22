@@ -14,6 +14,7 @@ export const sampleCartSlice = createSlice({
     reducers: {
         create_cart: (state, action) => {
             const {product,cart,size} = action.payload;
+            console.log(action.payload);
             const newCart = getDataLS('cart') ?? [];
             console.log(newCart);
             let cartObj={};

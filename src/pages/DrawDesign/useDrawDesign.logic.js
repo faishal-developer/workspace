@@ -4,6 +4,7 @@ import { screenWidth } from '../../helper/CommonFunction';
 import { fabric } from 'fabric';
 
 const useDrawDesign = () => {
+      const [canvas_w_h,setCanvas_w_h]=useState({})
     const canvasRef = useRef(null);
     const fabricRef = useRef(null);
     const [productModalState,setProductModalState]=useState({modal:true,data:{}})
@@ -122,9 +123,9 @@ const useDrawDesign = () => {
     };
 
     const readUploadedFile = (file) => {
-    const reader = new FileReader();
+      const reader = new FileReader();
 
-    reader.onload = (event) => {
+      reader.onload = (event) => {
         const imageUrl = event.target.result;
 
         fabric.Image.fromURL(imageUrl, (img) => {
@@ -140,52 +141,53 @@ const useDrawDesign = () => {
             fabricRef.current.setActiveObject(img);
             fabricRef.current.renderAll();
         });
+      };
+
+      if (file) {
+          reader.readAsDataURL(file);
+      }
     };
 
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-};
-
     const loadBackgroundImage = (myImage) => {
-  const canvas = canvasRef.current;
-  const fabricCanvas = fabricRef.current;
+      const canvas = canvasRef.current;
+      const fabricCanvas = fabricRef.current;
 
-  // Check if there is an existing background image
-  const existingBackground = fabricCanvas.getObjects('image').find((obj) => obj.name === 'background');
-  if (existingBackground) {
-    fabricCanvas.remove(existingBackground);
-  }
+      //   Check if there is an existing background image
+      const existingBackground = fabricCanvas.getObjects('image').find((obj) => obj.name === 'background');
+      if   (existingBackground) {
+          fabricCanvas.remove(existingBackground);
+      } 
+    
+        fabric.Image.fromURL(myImage, (img) => {
+          // Calculate the scaling factors for width and height to fit the entire image within the canvas
+          const widthScale = canvas_w_h.x / img.width;
+          const heightScale = canvas_w_h.y / img.height;
+      
+          // Choose the smaller scaling factor to ensure the entire image fits inside the canvas
+        const scale = Math.min(widthScale, heightScale);
+        console.log(canvas.width,widthScale,heightScale,'kdkd');
+      
+        // Calculate the centered position for the image
+        const centerX = canvas_w_h.x / 2;
+        const centerY = canvas_w_h.y / 2;
+      
+        // Set the image's width, height, and position based on the scaling factor
+        img.set({
+          scaleX: scale,
+          scaleY: scale,
+          left: centerX,
+          top: centerY,
+          originX: 'center',
+          originY: 'center',
+          selectable: false, // Make the background image non-selectable
+        });
 
-  fabric.Image.fromURL(myImage, (img) => {
-    // Calculate the scaling factors for width and height to fit the entire image within the canvas
-    const widthScale = canvas.width / img.width;
-    const heightScale = canvas.height / img.height;
-
-    // Choose the smaller scaling factor to ensure the entire image fits inside the canvas
-    const scale = Math.min(widthScale, heightScale);
-
-    // Calculate the centered position for the image
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-
-    // Set the image's width, height, and position based on the scaling factor
-    img.set({
-      scaleX: scale,
-      scaleY: scale,
-      left: centerX,
-      top: centerY,
-      originX: 'center',
-      originY: 'center',
-      selectable: false, // Make the background image non-selectable
-    });
-
-    // Add the image to the canvas with a special name 'background'
-    img.set({ name: 'background' });
-    fabricCanvas.add(img);
-    fabricCanvas.renderAll();
-  });
-};
+      // Add the image to the canvas with a special name 'background'
+        img.set({ name: 'background' });
+        fabricCanvas.add(img);
+        fabricCanvas.renderAll();
+      });
+    };
 
 
 
@@ -204,7 +206,7 @@ const useDrawDesign = () => {
         {icon:iconList.eye,title:'Preview',handleClick:downloadCanvasImage},
     ]
     return {
-        productModalState,setProductModalState,sideBarUtils,textModalState,setTextModalState,designModalState,setDesignModalState,handleFileChange,handleFileUpload,canvasAxes,canvasRef,fabricRef,addtext,deleteSelectedObject,addImage,downloadCanvasImage,centerSelectedObject,alignSelectedObject,loadBackgroundImage
+        canvas_w_h,setCanvas_w_h,productModalState,setProductModalState,sideBarUtils,textModalState,setTextModalState,designModalState,setDesignModalState,handleFileChange,handleFileUpload,canvasAxes,canvasRef,fabricRef,addtext,deleteSelectedObject,addImage,downloadCanvasImage,centerSelectedObject,alignSelectedObject,loadBackgroundImage
     }
 };
 

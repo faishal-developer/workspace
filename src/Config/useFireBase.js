@@ -7,6 +7,9 @@ import {useDispatch} from "react-redux";
 import { clearUser, setUser } from "../Store/userSlice";
 import {toast} from "react-toastify";
 import { DeleteDataLS, createDataLS } from "../helper/localStorage";
+import { useLogin } from "../pages/Login/Login.logic";
+import { useNavigate } from "react-router-dom";
+import { path } from "../routes/path";
 
 initializeFirebaseApp()
 //todo:read about xss attack and prevent it
@@ -16,6 +19,7 @@ const auth = getAuth();
 
 const useFireBase = () => {
     const dispatch = useDispatch();
+    const navigate=useNavigate();
     
     // const [user, setUser] = useState({})
     const [isLoading, setIsLoading] = useState(true)
@@ -26,6 +30,7 @@ const useFireBase = () => {
             thenCB:(res)=>{ 
                 dispatch(setUser(res.data.user));
                 createDataLS(res.data.token,'token');
+                navigate(-1)
                 toast.success('Signup successfull');
             },
             catchCB:(error)=>{
@@ -42,6 +47,7 @@ const useFireBase = () => {
             },
             catchCB:(error)=>{
                 isSignin && toast.error('Singin failed')
+                navigate(-1)
             },
             method:'post'
         });

@@ -4,7 +4,7 @@ import '../static/Navbar.scss'
 import BP from '../../../scss/CommonClass';
 import FontAwesome,{iconList} from '../../FontAwesome/FontAwesome';
 import Language from '../../Language/Language';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { path } from '../../../routes/path';
 import { useSelector } from 'react-redux';
 import useFireBase from '../../../Config/useFireBase';
@@ -13,12 +13,13 @@ const Topbar = () => {
     const { t } = useTranslation();
     const user = useSelector(state=>state.userSlice.user);
     const {logOut} = useFireBase();
+    const navigate=useNavigate();
     
     return (
         <div className='topbar'>
             <div className={`top-Navbar ${BP.container}`}>
                 <div className='exclusive'>
-                    <p>
+                    <p onClick={()=>navigate(`${path.home}?discounted=true`)}>
                         <span className='electric'>
                             <FontAwesome icon={iconList.Bolt} />
                         </span>

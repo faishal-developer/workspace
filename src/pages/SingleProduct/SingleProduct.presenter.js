@@ -38,14 +38,20 @@ const useSingleProduct = () => {
         }
     }
 
-    const handleCart=(product)=>{
+    const handleCart=(product,func)=>{
         if(!size){
             setSizeEr(true);
             return;
         }else{
             setSizeEr(false);
-            dispatch(create_cart({product:product??sProduct,cart,size}));
+            console.log(sProduct,product,sProduct._id);
+            if(!product?._id && !sProduct?._id){
+                toast.error("Failed to add in cart");
+                return;
+            }
+            dispatch(create_cart({product:product?._id ? product :sProduct,cart,size}));
             toast.success("Added to cart successfully");
+            func && func(false)
         }
     }
 

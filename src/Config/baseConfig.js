@@ -9,3 +9,5 @@ export const config = {
         appId: process.env.REACT_APP_appId
     }
 };
+
+console.log(config);

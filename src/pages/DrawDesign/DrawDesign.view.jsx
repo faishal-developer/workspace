@@ -9,9 +9,8 @@ import { fabric } from "fabric";
 
 //on-reload dont change active box,set Background image of canvas by bg,file uploaded from local drive;
 const DrawDesign = () => {
-    const [canvas_w_h,setCanvas_w_h]=useState({})
     const {
-        productModalState,setProductModalState,sideBarUtils,textModalState,setTextModalState,designModalState,setDesignModalState,handleFileChange,handleFileUpload,canvasAxes,canvasRef,fabricRef,addtext,deleteSelectedObject,addImage,downloadCanvasImage,centerSelectedObject,alignSelectedObject,loadBackgroundImage
+        canvas_w_h,setCanvas_w_h,productModalState,setProductModalState,sideBarUtils,textModalState,setTextModalState,designModalState,setDesignModalState,handleFileChange,handleFileUpload,canvasAxes,canvasRef,fabricRef,addtext,deleteSelectedObject,addImage,downloadCanvasImage,centerSelectedObject,alignSelectedObject,loadBackgroundImage
     } = useDrawDesign();
     const inputRef = useRef(null);
     
@@ -22,8 +21,8 @@ const DrawDesign = () => {
         const backgroundRect = new fabric.Rect({
         left: 0,
         top: 0,
-        width: canvasRef.current.width,
-        height: canvasRef.current.height,
+        width: canvas_w_h.x,
+        height: canvas_w_h.y,
         fill: '#1E1E1E', // Set your desired background color here
         selectable: false,
         evented: false, // Make it non-interactive

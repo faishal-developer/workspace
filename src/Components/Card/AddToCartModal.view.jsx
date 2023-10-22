@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ModalBootstrap from '../Modal/Modal.view';
 import { NumberByLang, cal_discounted_price, capitalize, stringSlicer } from '../../helper/CommonFunction';
 import SizeSelectBtn from '../sizeSelectBtn/sizeSelectBtn.view';
@@ -33,8 +33,7 @@ const AddToCartModal = (props) => {
                     <Commonbutton
                         type="button"
                         onclickCallback={()=>{
-                            handleCart(product);
-                            setShow(false)
+                            handleCart(product,setShow);
                             // getData();
                         }}
                         className="button"
@@ -48,7 +47,7 @@ const AddToCartModal = (props) => {
         >
             <div className='body'>
                 <figure>
-                    <img src={product?.images[0]} alt={product?.name}/>
+                    <img src={product?.images?.[0]} alt={product?.name}/>
                 </figure>
                 <div className='main-content'>
                     <h6 className='product-name'>{stringSlicer(capitalize(product?.name),50)}</h6>
@@ -68,7 +67,7 @@ const AddToCartModal = (props) => {
                         </div>
                     </div>
                     {
-                        product?.sizes.length >= 1 ? (
+                        product?.sizes?.length >= 1 ? (
                             <div className='sizes'>
                                 <h6>{t('singleProduct.size')}</h6>
                                 <SizeSelectBtn sData={size} clickHandler={sizeHandler} data={product?.sizes} />

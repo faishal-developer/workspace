@@ -28,7 +28,7 @@ $font-color: #333;
         padding: 20px;
         .not-found-title {
             font-size: 6rem;
-            color: $pal-green;
+            color: $pal-green !important;
         }
     
         .not-found-text {

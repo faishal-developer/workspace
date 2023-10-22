@@ -68,10 +68,10 @@ const useMainBox = () => {
         return query;
     }
 
-    const initialCall=() => {
+    const initialCall=(payloadPage) => {
         //todo:view all click korle popular latest manage
         let body = queryMaker({ cat_ids: [cat_ids], subcat_ids: [subcat_ids], keyword })
-        let query = `limit=${mLimit}&page=${page}`
+        let query = `limit=${mLimit}&page=${payloadPage || page}`
         scrollToTop()
         if (ispopular) {
             query += `&ispopular=true`;

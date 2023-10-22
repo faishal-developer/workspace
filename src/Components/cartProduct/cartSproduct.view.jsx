@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LazyLoader from '../LazyLoader/LazyLoader.view';
 import TableSkeleton from '../skeleton/Skeleton';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,6 +17,7 @@ const CartSproduct = (props) => {
     let {data,loader} = props;
     const navigate = useNavigate();
     const [showModal,setShowModal] = useState(false);
+
     return (       
         <div className='cart-product card animate'>
             <div className='body'>
