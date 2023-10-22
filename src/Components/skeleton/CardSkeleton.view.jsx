@@ -6,8 +6,8 @@ const CardSkeleton = (props) => {
     return (
         <div className={`cards_skeleton ${props.container}`}>
             {
-                newArray.map(()=>(
-                    <div className={`card_skeleton ${props.card}`}>
+                newArray.map((item,i)=>(
+                    <div key={i} className={`card_skeleton ${props.card}`}>
                         <Skeleton height={120} count={1} />
                         <Skeleton height={17} count={1} />
                         <Skeleton height={17} count={1} />

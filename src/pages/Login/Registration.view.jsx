@@ -23,7 +23,7 @@ const Registration = (props) => {
 
     return (
         <div className={`${BP.card} auth-layout animate`}>
-            <form onSubmit={registrationFormik.handleSubmit}>
+            <form onSubmit={(v)=>{registrationFormik.handleSubmit(v);console.log(v)}}>
                 <div className='login'>
                     <InputField
                         placeHolder={t('placeorder.fullName')}

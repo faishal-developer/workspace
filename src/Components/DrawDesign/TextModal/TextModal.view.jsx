@@ -21,7 +21,7 @@ const TextModal = (props) => {
                 setState({...state,modal:false});
             }}
             size='lg'
-            class=''
+            className=''
             title={<h6>Select Text Styles</h6>}
             footer={(
                 <div>

@@ -62,6 +62,7 @@ export const useLogin=()=>{
     }
 
     const registrationHandle=(values)=>{
+        console.log("registrationHandle",values);
         createUserWithPassword(values,setRegistrationLoader);
     }
 

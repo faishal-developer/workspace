@@ -15,7 +15,7 @@ const DesignModal = (props) => {
             show={state.modal}
             handleClose={()=>setState({...state,modal:false})}
             size='lg'
-            class=''
+            className=''
             title={<h6>Select a design</h6>}
             footer={(
                 <div>

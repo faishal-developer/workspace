@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useCallback, useEffect, useMemo } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { RouteRestriction } from "./route-restriction";
 import { private_routes, public_routes, public_private_routes } from './layoutRoutes';
@@ -35,8 +35,9 @@ const MainRoutes = () => {
     useEffect(() => {
         get_categories({ setCatLoader:()=>{} });
         get_Subcategories(()=>{});
-        onReloadSigninCheking();
     }, [])
+
+    const stateChanged=useMemo(()=>{onReloadSigninCheking()},[]);
     return maintenance && isDeveloper !== 'true' ? (
         <Maintenance />
     ) : (

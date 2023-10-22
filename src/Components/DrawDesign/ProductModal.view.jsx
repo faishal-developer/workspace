@@ -24,7 +24,7 @@ const ProductModal = (props) => {
                 handleClose({state,setState})
             }}
             size='md'
-            class=''
+            className=''
             title={<h6>Select a Product</h6>}
             footer={(
                 <div>

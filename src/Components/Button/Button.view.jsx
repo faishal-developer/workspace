@@ -13,7 +13,9 @@ const Commonbutton = (props) => {
         >
             {
                 props.isLoading && (
-                    <i className={`fa fa-circle-o-notch fa-spin fa-fw `} aria-hidden="true" />
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
                 )
             }
             {props.btnText}

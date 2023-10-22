@@ -21,13 +21,27 @@ const useFireBase = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const addUserOnMongodb = (body) => {
+        console.log('addUserOnMongodb',body);
         PostPutPatch(`${Endpoints.sign_up}`,body,{
+            thenCB:(res)=>{ 
+                dispatch(setUser(res.data.user));
+                createDataLS(res.data.token,'token');
+                toast.success('Signup successfull');
+            },
+            catchCB:(error)=>{
+                body.name && toast.error('Singup failed')
+            },
+            method:'post'
+        });
+    }
+    const getUserFromMongodb = (body,isSignin) => {
+        PostPutPatch(`${Endpoints.sign_in}`,body,{
             thenCB:(res)=>{ 
                 dispatch(setUser(res.data.user));
                 createDataLS(res.data.token,'token');
             },
             catchCB:(error)=>{
-                toast.error('Singup failed')
+                isSignin && toast.error('Singin failed')
             },
             method:'post'
         });
@@ -38,11 +52,12 @@ const useFireBase = () => {
     }
 
     const createUserWithPassword = (values,loader) => {
+        console.log(values)
         loader(true)
         createUserWithEmailAndPassword(auth, values.email, values.password)
             .then(async res => {
+                console.log("response",values)
                 await addUserOnMongodb(values);
-                toast.success('Signuped successfully');
             })
             .catch(e => {
                 toast.error("signup failed")
@@ -54,7 +69,7 @@ const useFireBase = () => {
         loader(true)
         signInWithEmailAndPassword(auth, values.email, values.password)
             .then(res => {
-                addUserOnMongodb(values)
+                getUserFromMongodb(values,'signin')
             })
             .catch(e => {
             }).finally(()=>{
@@ -81,7 +96,8 @@ const useFireBase = () => {
         onAuthStateChanged(auth, (result) => {
             if (result) {
                 const user = result.providerData[0];
-                addUserOnMongodb({email:user.email})
+                console.log('onReloadSigninCheking');
+                getUserFromMongodb({email:user.email})
             } else {
                 
             }
@@ -93,6 +109,7 @@ const useFireBase = () => {
         signInWithPopup(auth, googleProvider)
         .then(async(result) => {
           const user = result.user;
+          console.log(googleSignin);
           await addUserOnMongodb({
             name: user.displayName,
             email:user.email,

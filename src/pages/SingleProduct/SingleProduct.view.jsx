@@ -79,13 +79,13 @@ const SingleProduct = (props) => {
                                     ) : null
                                 }
                                 <p>{`${t("money")} ${NumberByLang(Math.floor(cal_discounted_price(price, discount)), t)}`}</p>
-                                <p>
+                                <div>
                                     {
                                         Number(discount) > 0 ? (
                                             <p className='save'>{t('singleProduct.save')}{price - Math.floor(cal_discounted_price(price, discount))}</p>
                                         ) : null
                                     }
-                                </p>
+                                </div>
                             </div>
                             {
                                 sizes.length >= 1 ? (

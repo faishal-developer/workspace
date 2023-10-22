@@ -23,7 +23,7 @@ const Cart = (props) => {
                 {
                     loader ? (<div className='my-3'><CartScardSkeleton/></div>):(
                         cartData?.length? (
-                            cartData.map((sData,i)=><CartSproduct data={cartData[i]} loader={loader} key={sData._id} />)
+                            cartData.map((sData,i)=><CartSproduct data={cartData[i]} loader={loader} key={i} />)
                         ) : <p className='text-danger'>No Product added to Cart</p>
                     )
                 }

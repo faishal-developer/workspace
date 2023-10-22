@@ -18,7 +18,7 @@ const AddToCartModal = (props) => {
             show={show}
             handleClose={()=>setShow(false)}
             size='md'
-            class=''
+            className=''
             title={<h6>Product Details</h6>}
             footer={
                 <div >
@@ -59,13 +59,13 @@ const AddToCartModal = (props) => {
                             ) : null
                         }
                         <p>{`${t("money")} ${NumberByLang(Math.floor(cal_discounted_price(product?.price, product?.discount)), t)}`}</p>
-                        <p>
+                        <div>
                             {
                                 Number(product?.discount) > 0 ? (
                                     <p className='save'>{t('singleProduct.save')}{product?.price - Math.floor(cal_discounted_price(product?.price, product?.discount))}</p>
                                 ) : null
                             }
-                        </p>
+                        </div>
                     </div>
                     {
                         product?.sizes.length >= 1 ? (
