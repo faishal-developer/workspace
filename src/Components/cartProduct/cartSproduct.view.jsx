@@ -9,6 +9,7 @@ import FontAwesome, { iconList } from '../FontAwesome/FontAwesome';
 import { useDispatch } from 'react-redux';
 import { delete_cart_product } from '../../Store/sampleCartSlice';
 import AddToCartModal from '../Card/AddToCartModal.view';
+import DeleteModal from '../DeleteModal/DeleteModal.view';
 
 
 //todo: add confirmation model to delete cart item
@@ -17,6 +18,7 @@ const CartSproduct = (props) => {
     let {data,loader} = props;
     const navigate = useNavigate();
     const [showModal,setShowModal] = useState(false);
+    const [deleteModalShow,setDeleteModalShow]=useState(false);
 
     return (       
         <div className='cart-product card animate'>
@@ -59,7 +61,7 @@ const CartSproduct = (props) => {
                 />
                 <Commonbutton
                 type="button"
-                onclickCallback={()=>{dispatch(delete_cart_product(data.id))}}
+                onclickCallback={()=>setDeleteModalShow(true)}
                 className="button delete"
                 btnText={<FontAwesome icon={iconList.trash}/>}
                 isLoading={false}
@@ -67,7 +69,11 @@ const CartSproduct = (props) => {
                 />
 
             </div>
-
+            <DeleteModal
+                show={deleteModalShow}
+                setShow={setDeleteModalShow}
+                handleDelete={()=>{dispatch(delete_cart_product(data.id))}}
+            />
             <AddToCartModal show={showModal} setShow={setShowModal} product={data.product_data}/>
         </div>
 

@@ -10,6 +10,7 @@ import useWishList from './wishList.presenter';
 import AddToCartModal from '../Card/AddToCartModal.view';
 import { useTranslation } from 'react-i18next';
 import { delete_WishList_product } from '../../Store/wishListSlice';
+import DeleteModal from '../DeleteModal/DeleteModal.view';
 // import { delete_cart_product } from '../../Store/sampleCartSlice';
 // import AddToCartModal from '../Card/AddToCartModal.view';
 
@@ -21,6 +22,7 @@ const WishListSingleProduct = (props) => {
     let {data,loader} = props;
     const navigate = useNavigate();
     const [showModal,setShowModal] = useState(false);
+    const [deleteWishlistModal,setDeleteWishListModal]=useState(false);
 
     return (       
           <li key={data.id} className="wishlist-item">
@@ -52,13 +54,19 @@ const WishListSingleProduct = (props) => {
               />
               <Commonbutton
               type="button"
-              onclickCallback={()=>{dispatch(delete_WishList_product(data.id))}}
+              onclickCallback={()=>setDeleteWishListModal(true)}
               className="button remove-button"
               btnText={"Delete"}
               isLoading={false}
               disabled={false}
               />
             </div>
+            <DeleteModal
+              show={deleteWishlistModal}
+              setShow={setDeleteWishListModal}
+              handleDelete={()=>dispatch(delete_WishList_product(data.id))}
+            />
+
             <AddToCartModal show={showModal} setShow={setShowModal} product={data.product}/>
 
         </li>
