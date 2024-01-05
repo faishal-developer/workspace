@@ -8,7 +8,7 @@ const useCardLogic = () => {
 
    const changeRoute = (method,url) =>{
         return method(url);
-   }
+   } 
 
    const addToWishList=(product)=>{
         dispatch(create_WishList(product));

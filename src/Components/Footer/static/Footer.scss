@@ -20,7 +20,7 @@
             font-weight: bold;
         }
         p:hover{
-            color: $lightRed;
+            color: $white;
         }
     }
 
@@ -38,7 +38,7 @@
 
             .icon{
                 font-size: 25px;
-                color: $lightRed;
+                color: $white;
             }
         }
     }
@@ -85,7 +85,7 @@
         // grid-template-columns: repeat(4,1fr);
         padding: 10px ;
         .company_name{
-            @include textgradient($lightRed,$red);
+            @include textgradient($pal-ash,$pal-green);
             font-size: 22px;
             font-weight: bold;
         }
@@ -107,7 +107,7 @@
     .nav_items{
         background-color: $black;
         // opacity: 0.5;
-        color: $lightRed;
+        color: $white;
         display: none;
         justify-content: center;
         // display: flex;
@@ -118,9 +118,9 @@
         }
     }
     .copy_right{
-        background-color: $light;
+        background-color: black;
         opacity: 0.7;
-        color: #000;
+        color: $light;
         text-align: center;
         padding: 10px;
         p{

@@ -8,7 +8,7 @@
 
         svg {
             font-size: 20px;
-            color: $lightRed;
+            color: $white;
             cursor: pointer;
         }
 
@@ -16,10 +16,11 @@
             position: absolute;
             top: -16px;
             left: -16px;
-            background-color: $lightRed;
+            background-color: $white;
             width: 22px;
             height: 22px;
             text-align: center;
+            color: $black;
             border-radius: 50%;
         }
     }

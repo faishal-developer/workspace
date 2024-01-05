@@ -52,7 +52,7 @@ const AsideDropDown = () => {
                                     { query: "", navigate },
                                     ''
                                 )}
-                            className={`circle ${activeId === "" ? "active" : 'bg_green'}`}
+                            className={`circle ${activeId === "" ? "active" : ''}`}
                         >
                             all
                         </div>
@@ -66,7 +66,7 @@ const AsideDropDown = () => {
                                             ''
                                         )}
                                     key={i}
-                                    className={`circle bg_green ${activeId === el._id ? "active" : ''}`}
+                                    className={`circle ${activeId === el._id ? "active" : ''}`}
                                 >
                                     {el.name}
                                 </div>
@@ -92,7 +92,7 @@ const AsideDropDown = () => {
                     subCatLoader?(
                         <SubCatSkeleton/>
                     ) :(
-                        <ul className={!showSubCat && widthDetector(767, 0) ? BP.dnone : ''}>
+                        <ul className={!showSubCat && widthDetector(767, 0) ? BP.dnone : 'sub-cat-items'}>
                             {
                                 subCats.length ? subCats.map((el, i) => (
                                     <li

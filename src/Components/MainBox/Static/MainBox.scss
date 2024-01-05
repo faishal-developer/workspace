@@ -40,10 +40,10 @@
                     // transition: .1s;
                     padding: 2px 25px;
                     cursor: pointer;
-                    color: $white;
+                    color: $black;
                     font-size: 20px;
                     border-radius: 18px;
-                    background-color: $lightRed;
+                    background-color: $pal-green;
                     margin-left: 5px;
                     border: 1px solid $pal-ash;
                     // background-color: $light;
@@ -52,7 +52,7 @@
             
                 .src_btn:hover {
                     padding: 0px 23px;
-                    color: $pal-green;
+                    color: $white;
                     border: 3px solid $pal-ash;
                 }
             
@@ -72,11 +72,11 @@
             justify-content: center;
             p{
                 padding:5px;
-                background-color: $pal-trans-yellow;
+                background-color: $pal-green;
                 border-radius: 15px;
                 font-weight: 300;
                 font-size: 13px;
-                color: $light;
+                color: $white;
                 margin: 5px;
             }
         }

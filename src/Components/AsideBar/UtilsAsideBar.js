@@ -2,8 +2,9 @@ import data from './tempJson.json';
 
 export const themes=(t)=>{
     return [
-        { name: t('light'),value:"light-theme" },
-        { name: t('dark'),value:"dark-theme" },
+        { name: t('green'),value:"green-theme" },
+        { name: t('blue'),value:"blue-theme" },
+        { name: t('pink'),value:"pink-theme" },
     ]
 };
 

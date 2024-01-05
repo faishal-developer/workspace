@@ -9,11 +9,12 @@
         padding-bottom: 10px;
         .lang{
             position: relative;
-            background-color: $lightRed;
+            // background-color: $pal-green;
             border-radius: 10px;
             color:$light;
             font-weight: 500;
             padding:0 5px;
+            cursor:pointer;
             margin-right: 7px;
             .lang{
                 display: none;
@@ -41,14 +42,14 @@
         .aside_main{
             .circles{
                 padding: 0 5px;
-                margin-bottom: 1px solid $skyblue;
+                margin-bottom: 1px solid $pal-green;
                 display: flex;
                 flex-wrap: wrap;
                 div{
                     transition: .2s;
                     margin-top:10px;
                     width:60px;
-                    color: $white;
+                    color: $black;
                     height: 60px;
                     display: flex;
                     align-items: center;
@@ -56,28 +57,15 @@
                     border-radius: 50%;
                     font-weight: 500;
                     margin-right: 4px;
-                    border: 3px solid $skyblue;
+                    border: 2px solid $pal-green;
                     cursor: pointer;
-                    // background-color: $pal-green;
-                    // box-shadow: 1px 1px 3px $skyblue;
                 }
-                // div:first-child{
-                //     background-color: $pal-green;
-                // }
-                // div:nth-child(2){
-                //     background-color: $pal-ash;
-                // }
-                // div:last-child{
-                //     background-color: $lightRed;
-                // }
+                
                 div:hover, .active{
                     color:$light;
                     border: 3px solid $skyblue;
-                    // width:62px;
-                    // height: 62px;
-                    // box-shadow: 1px 1px 3px $lightRed;
-                    // inset 1px 1px 1px $lightRed
-                    background-color: $lightRed;
+                    background-color: $pal-green;
+                    color:$white;
                 }
             }
             .sub_cat{
@@ -109,6 +97,7 @@
                         // background-color: $pal-ash;
                         // border:1px solid $skyblue;
                         margin:5px 0;
+                        color:$black;
                     }
                     li:hover{
                         background-color: $pal-green;
