@@ -10,7 +10,6 @@ import {config} from "../Config/baseConfig";
 import Maintenance from "../pages/Maintanance";
 import CustomPageLoader from "../Components/CustomPageLoader/Index";
 import useHome from '../pages/Home/Home.Presenter';
-import useFireBase from '../Config/useFireBase';
 import { useDispatch } from 'react-redux';
 import { getCartFromLocalStorage } from '../helper/CommonFunction';
 
@@ -18,8 +17,6 @@ const MainRoutes = () => {
     const maintenance = config.maintenance;
     const isDeveloper = localStorage.getItem(Developer)
     const jwt_token = JSON.parse(localStorage.getItem(userData));
-    const { get_categories, get_Subcategories } = useHome();
-    const {onReloadSigninCheking} = useFireBase();
 
     // Favicon icon set...
     useEffect(() => {
@@ -32,12 +29,8 @@ const MainRoutes = () => {
         link.href = siteConfig.company_favicon;
         
     }, []);
-    useEffect(() => {
-        get_categories({ setCatLoader:()=>{} });
-        get_Subcategories(()=>{});
-    }, [])
+    
 
-    const stateChanged=useMemo(()=>{onReloadSigninCheking()},[]);
     return maintenance && isDeveloper !== 'true' ? (
         <Maintenance />
     ) : (

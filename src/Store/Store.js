@@ -1,13 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import catSlice from './Cat_slice';
-import SubcatSlice from './Sub_catSlice';
-import cartSlice from './cartSlice';
-import userSlice from './userSlice';
-import sampleCartSlice from './sampleCartSlice';
-import wishListSlice from './wishListSlice';
+
+// import sampleCartSlice from './sampleCartSlice';
 
 const rootReducer = combineReducers({
-        sampleCartSlice,
+        // sampleCartSlice,
 })
 // const storageReducer = combineReducers({
 //     testSlice2
