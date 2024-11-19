@@ -13,7 +13,7 @@ const Home = (props) => {
     return (
         <div className={`home-container ${BP.container} `}>
             <main className='main'>
-                <AsideBar className="asideBar" />
+                {/* <AsideBar className="asideBar" /> */}
                 <Outlet />
             </main>
         </div>

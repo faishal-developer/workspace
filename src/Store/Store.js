@@ -8,11 +8,6 @@ import wishListSlice from './wishListSlice';
 
 const rootReducer = combineReducers({
         sampleCartSlice,
-        catSlice,
-        SubcatSlice,
-        cartSlice,
-        userSlice,
-        wishListSlice
 })
 // const storageReducer = combineReducers({
 //     testSlice2
