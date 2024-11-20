@@ -7,7 +7,7 @@ import SProductImageSkeleton from "./Components/skeleton/SProductImageSkeleton.v
 function App() {
   
   return (
-    <div className="black">
+    <div className="black ">
       {/* <div className='temporary'>
         <button onClick={()=>dispatch(increment())}>+</button>
         { }

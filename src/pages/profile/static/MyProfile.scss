@@ -1,0 +1,92 @@
+.my-profile {
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+  
+    &__info {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+  
+      p {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        strong {
+          font-weight: bold;
+        }
+      }
+  
+      input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin-left: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    }
+  
+    &__button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+  
+    &__bookings {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  
+    &__booking {
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+  
+      p {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      &__info {
+        padding: 1rem;
+      }
+      &__booking {
+        padding: 1rem;
+      }
+    }
+  }
+  

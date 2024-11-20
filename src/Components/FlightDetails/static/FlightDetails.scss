@@ -1,0 +1,92 @@
+.flight-details {
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  
+    h2 {
+      font-size: 1.75rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+  
+    &__card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    &__info {
+      flex: 1 1 300px;
+  
+      h3 {
+        font-size: 1.5rem;
+        color: #007bff;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+  
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+  
+    &__pricing {
+      flex: 1 1 300px;
+      text-align: left;
+  
+      h4 {
+        font-size: 1.25rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+  
+        strong {
+          font-weight: bold;
+        }
+      }
+  
+      .flight-details__button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      &__card {
+        flex-direction: column;
+        text-align: center;
+      }
+  
+      &__pricing {
+        text-align: center;
+      }
+    }
+  }
+  
