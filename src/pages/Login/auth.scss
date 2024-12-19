@@ -5,9 +5,14 @@
     margin: 50px auto;
     width: 350px;
     padding: 10px;
+    // box-shadow: 1px 1px 1px gray,
+    //  -1px 1px gray;
     .login-btn {
         margin-top: 10px;
         height: 40px;
+        background-color: #0A58CA;
+        border: none;
+        color: white;
     }
     .login-btn[type="submit"]{
         width: 100%;
@@ -24,10 +29,10 @@
     }
     a{
         margin-top: 12px;
-        color: $pal-green;
+        color: #0A58CA;
     }
     a:hover{
-        color: $pal-green;
+        color: #0A58CA;
     }
     .slow_animation{
         animation: slideBlock 50ms;

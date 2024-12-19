@@ -1,0 +1,123 @@
+// LoginForm.scss
+.login-form {
+    width: 360px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .brand {
+      text-align: center;
+      margin-bottom: 20px;
+  
+      h1 {
+        font-size: 24px;
+        margin: 0;
+        letter-spacing: 2px;
+        // font-family: "Source Sans 3", serif;;
+  
+        .brand-bold {
+          font-weight: bold;
+        }
+      }
+  
+      p {
+        font-size: 16px;
+        color: #666;
+        margin: 10px 0 0;
+      }
+    }
+  
+    form {
+      .input-group {
+        position: relative;
+        margin-bottom: 15px;
+  
+        input {
+          width: 100%;
+          padding: 10px 35px 10px 10px;
+          border: 1px solid #ddd;
+          border-radius: 2px;
+          font-size: 16px;
+  
+          &:focus {
+            outline: none;
+            border-color: #333;
+          }
+        }
+  
+        .icon {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #888;
+        }
+      }
+  
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+
+        .remember{
+          font-size: 16px;
+          font-weight: 600;
+          color:#818181
+        }
+  
+        label {
+          font-size: 14px;
+          color: #333;
+  
+          input {
+            margin-right: 5px;
+          }
+        }
+  
+        .signin-btn {
+          background: #1C1C1C;
+          color: #fff;
+          border: none;
+          padding: 8px 20px;
+          border-radius: 2px;
+          cursor: pointer;
+          font-size: 14px;
+  
+          &:hover {
+            background: #333;
+          }
+        }
+      }
+    }
+  
+    .forgot-password {
+      display: block;
+      // text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #1C1C1C;
+      max-width: 150px;
+      margin-top:30px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      
+      
+      // text-decoration: underline !important;
+      
+  
+    }
+    .hr{
+      display: block;
+      margin-top: -5px;
+      width: 150px;
+      height: 1px;
+      background-color: #1C1C1C;
+    }
+  }
+  

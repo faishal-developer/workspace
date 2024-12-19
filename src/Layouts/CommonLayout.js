@@ -5,11 +5,11 @@ import CustomNavbar from '../Components/navbar/navbar.view';
 
 const CommonLayout = () => {
     return (
-        <div>
+        <div className='container-custom'>
             {/* layout working */}
             <CustomNavbar/>
             <Outlet/>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 };

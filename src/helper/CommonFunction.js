@@ -1,5 +1,6 @@
 import { getDataLS } from "./localStorage";
 
+
 export function pagetitle(title){
     document.title =title;
 };
@@ -131,3 +132,4 @@ export const handleKeyWords=(keywords,text)=>{
     const searchedText=keywords.filter((t)=>t.match(regex))
     return searchedText.slice(0,10)
 }
+

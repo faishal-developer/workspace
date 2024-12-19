@@ -4,7 +4,7 @@ import "./static/Footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer__content">
+      <div className="footer__content container">
         <div className="footer__section">
           <h3>Flight Booker</h3>
           <p>Your trusted partner for hassle-free travel bookings.</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope,faBolt,faCar,faRightFromBracket,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash, faTextWidth, faCloudArrowUp, faArrowsToDot, faTrashCan, faPhotoFilm, faArrowUp, faArrowDown, faArrowLeft, faArrowRight, faEye} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope,faBolt,faCar,faRightFromBracket,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash, faTextWidth, faCloudArrowUp, faArrowsToDot, faTrashCan, faPhotoFilm, faArrowUp, faArrowDown, faArrowLeft, faArrowRight, faEye, faLock} from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFacebook,faLinkedin, faGoogle, faProductHunt } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -13,6 +13,7 @@ export const iconList={
     t_shirt: faTShirt,
     shirt: faShirt,
     face: faFaceAngry,
+    lock:faLock,
     Envelope:faEnvelope,
     Bolt:faBolt,
     Car:faCar,
@@ -44,7 +45,7 @@ export const iconList={
     center:faArrowsToDot,
     delete:faTrashCan,
     design:faPhotoFilm,
-    eye:faEye
+    eye:faEye,
 }
 
 export default FontAwesome;

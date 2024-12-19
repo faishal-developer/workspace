@@ -2,7 +2,6 @@ import React,{useEffect} from "react";
 
 import './scss/global.scss';
 
-import SProductImageSkeleton from "./Components/skeleton/SProductImageSkeleton.view";
 
 function App() {
   
@@ -18,7 +17,6 @@ function App() {
         { myTemporaryData.value}
         <button>-</button>
       </div> */}
-      <SProductImageSkeleton/>
     </div>
   );
 }

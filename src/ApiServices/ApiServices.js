@@ -10,7 +10,7 @@ function authHeader(){
     return {
             'Content-Type': content_type,
             'Accept-Language': siteConfig.defaultLang,
-            Authorization: `Bearer ${idToken}`
+            Authorization: `${idToken}`
         };
 }
 
@@ -28,12 +28,17 @@ export const getService=(url,{thenCB,catchCB,finallyCB})=>{
 
 export const PostPutPatch=(url,body,{thenCB,catchCB,finallyCB,method})=>{
     const requestHeader= authHeader();
-    axios[method](Endpoints.base + url,body, {
-        headers: requestHeader
-    })
-        .then((res)=>thenCB && thenCB(res))
-        .catch((err)=>catchCB && catchCB(err))
-        .finally(()=>{finallyCB && finallyCB();});
+    console.log(requestHeader,Endpoints.base,url,body,method,Endpoints.base)
+    try{
+        axios[method](Endpoints.base + url,body, {
+            headers: requestHeader
+        })
+            .then((res)=>thenCB && thenCB(res))
+            .catch((err)=>catchCB && catchCB(err))
+            .finally(()=>{finallyCB && finallyCB();});
+    }catch(e){
+        console.log(e)
+    }
 }
 
 export const deleteService = (url, { thenCB, catchCB, finallyCB }) => {

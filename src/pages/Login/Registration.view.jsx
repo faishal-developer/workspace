@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import BP from '../../scss/CommonClass';
 import InputField from '../../Components/InputFeild/InputFeild.view';
 import { pagetitle } from '../../helper/CommonFunction';
 import { useTranslation } from 'react-i18next';
@@ -9,24 +8,21 @@ import { path } from '../../routes/path';
 import { Link } from 'react-router-dom';
 import './auth.scss';
 import { useLogin } from './Login.logic';
-import useFireBase from '../../Config/useFireBase';
 import PasswordStrengthMeter from '../../Components/passWordStrength/passwordStrength';
 
 
 //todo: after registration reset Form
 const Registration = (props) => {
-    const [googleSigninLoader,setGoogleSigninLoader] = useState();
     pagetitle(props.pageTitle);
     const { t } = useTranslation();
-    const {googleSignin} = useFireBase();
     const {registrationFormik,registrationLoader} = useLogin()
 
     return (
-        <div className={`${BP.card} auth-layout animate`}>
+        <div className={` auth-layout animate`}>
             <form onSubmit={(v)=>{registrationFormik.handleSubmit(v);console.log(v)}}>
                 <div className='login'>
                     <InputField
-                        placeHolder={t('placeorder.fullName')}
+                        placeHolder={'Fullname'}
                         textType="name"
                         inputName="name"
                         asterisk={true}
@@ -39,7 +35,7 @@ const Registration = (props) => {
                         requiredMessageLabel={registrationFormik.touched.name || registrationFormik.isSubmitting ? registrationFormik.errors.name : ""}
                     />
                     <InputField
-                        placeHolder={t('placeorder.email')}
+                        placeHolder={"Email"}
                         textType="email"
                         inputName="email"
                         asterisk={true}
@@ -52,7 +48,7 @@ const Registration = (props) => {
                         requiredMessageLabel={registrationFormik.touched.email || registrationFormik.isSubmitting ? registrationFormik.errors.email : ""}
                     />
                     <InputField
-                        placeHolder={t('auth.password')}
+                        placeHolder={"Password"}
                         textType="password"
                         inputName="password"
                         asterisk={true}
@@ -65,7 +61,7 @@ const Registration = (props) => {
                         requiredMessageLabel={registrationFormik.touched.password || registrationFormik.isSubmitting ? registrationFormik.errors.password : ""}
                     />
                     <InputField
-                        placeHolder={t('auth.re_password')}
+                        placeHolder={"Retype password"}
                         textType="password"
                         inputName="re_password"
                         asterisk={true}
@@ -90,15 +86,15 @@ const Registration = (props) => {
                     // onClick={() => { }}
                     className="button login-btn"
                     disabled_className="btn-disabled login-btn"
-                    btnText={` ${t('auth.register')}`}
+                    btnText={`Register`}
                     isLoading={registrationLoader}
                     disabled={registrationLoader}
                 />
             </form>
             <div className='social'>
-                <Commonbutton
+                {/* <Commonbutton
                     type="button"
-                    onclickCallback={() => {googleSignin(setGoogleSigninLoader) }}
+                    // onclickCallback={() => {googleSignin(setGoogleSigninLoader) }}
                     className="button login-btn google-btn"
                     disabled_className="btn-disabled"
                     btnText={(
@@ -107,9 +103,9 @@ const Registration = (props) => {
                             <span> {t('auth.r_google')}</span>
                         </span>
                     )}
-                    isLoading={googleSigninLoader}
-                    disabled={googleSigninLoader}
-                />
+                    // isLoading={googleSigninLoader}
+                    // disabled={googleSigninLoader}
+                /> */}
                 {/* <Commonbutton
                     type="button"
                     onClick={() => { }}
@@ -124,7 +120,7 @@ const Registration = (props) => {
                     disabled={false}
                 /> */}
             </div>
-            <Link to={path.login}>{t('auth.allReady_R')}</Link>
+            <Link to={path.signin}>Allready registered? Please go to Login Page</Link>
         </div>
     );
 };

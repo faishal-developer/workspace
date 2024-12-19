@@ -1,11 +1,18 @@
 import { useFormik } from "formik"
-import useFireBase from "../../Config/useFireBase";
 import { useState } from "react";
+import { PostPutPatch } from "../../ApiServices/ApiServices";
+import { Endpoints } from "../../ApiServices/apiEndPoints";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { path } from "../../routes/path";
+import { useDispatch } from "react-redux";
+import { create_user } from "../../Store/userCartSlice";
 
 export const useLogin=()=>{
-    const {createUserWithPassword,signInWithPassword}= useFireBase();
     const [registrationLoader,setRegistrationLoader] = useState();
     const [loginLoader,setloginLoader] = useState();
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
 
 
 
@@ -24,7 +31,29 @@ export const useLogin=()=>{
     }
 
     const loginHandle=(values)=>{
-        signInWithPassword(values,setloginLoader);
+        console.log(values)
+        setloginLoader(true)
+        PostPutPatch(
+            Endpoints.sign_in,
+            values,
+            {   
+                thenCB:(result)=>{
+                    toast.success("Login successfull")
+                    localStorage.setItem('userData',result?.data?.data?.accessToken)
+                    // let user = verifyRefreshToken(result?.data?.data?.accessToken)
+                    console.log("user",result?.data?.data.user)
+                    dispatch(create_user(result?.data?.data.user))
+                    navigate(path.flights)
+                },
+                catchCB:(error)=>{
+                    console.log(error);
+                },
+                finallyCB:()=>{
+                    setloginLoader(false)
+                },
+                method:'post'
+            }
+        )
     }
 
     const loginFormik = useFormik({
@@ -62,8 +91,26 @@ export const useLogin=()=>{
     }
 
     const registrationHandle=(values)=>{
-        console.log("registrationHandle",values);
-        createUserWithPassword(values,setRegistrationLoader);
+        values.role="user"
+        setRegistrationLoader(true);
+        PostPutPatch(
+            Endpoints.sign_up,
+            values,
+            {   
+                thenCB:(result)=>{
+                    toast.success("Registration successfull")
+                    navigate(path.signin)
+                },
+                catchCB:(error)=>{
+                    console.log(error);
+                },
+                finallyCB:()=>{
+                    setRegistrationLoader(false)
+                },
+                method:'post'
+            }
+        )
+        // createUserWithPassword(values,setRegistrationLoader);
     }
 
     const registrationFormik = useFormik({

@@ -1,62 +1,86 @@
-$primary-color: #007bff;
-$text-color: #fff;
-
-.navbar {
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $primary-color;
-  padding: 1rem;
-  color: $text-color;
+  padding: 10px 30px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #dddddda6;
 
-  &__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  &__links {
-    display: flex;
-    gap: 1.5rem;
-
-    &--active {
-      display: block;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: $primary-color;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .navbar__link {
-      color: $text-color;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  &__toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: $text-color;
-    cursor: pointer;
+  .active{
+    color: #007BFF;
+    font-weight: 500;
   }
 }
 
-// Responsive Styles
-@media (max-width: 768px) {
-  .navbar__links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
 
-  .navbar__toggle {
-    display: block;
-  }
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.navbar-title span {
+  font-weight: normal;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  margin-right: 20px;
+  font-size: 14px;
+  color: #808080  ;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #1C1C1C;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-back-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: background-color 0.3s;
+}
+
+.navbar-back-button:hover {
+  background-color: #e0e0e0;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.navbar-profile-name {
+  font-size: 14px;
+  color: #333;
 }

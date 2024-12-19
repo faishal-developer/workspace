@@ -1,6 +1,6 @@
 import React, { Suspense, useCallback, useEffect, useMemo } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { RouteRestriction } from "./route-restriction";
+import { RouteRestriction } from "./route-restriction.jsx";
 import { private_routes, public_routes, public_private_routes } from './layoutRoutes';
 import {path as pages_path} from "./path";
 import { isDeveloper as Developer, userData } from "../Config/sessionKeys";
@@ -9,9 +9,6 @@ import siteConfig from "../Config/siteConfig";
 import {config} from "../Config/baseConfig";
 import Maintenance from "../pages/Maintanance";
 import CustomPageLoader from "../Components/CustomPageLoader/Index";
-import useHome from '../pages/Home/Home.Presenter';
-import { useDispatch } from 'react-redux';
-import { getCartFromLocalStorage } from '../helper/CommonFunction';
 
 const MainRoutes = () => {
     const maintenance = config.maintenance;
