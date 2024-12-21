@@ -12,6 +12,7 @@ import { useLogin } from './Login.logic';
 import LoginForm from '../../Components/Login/Login.view';
 
 const Login = (props) => {
+    // title is too important for onpage seo
     pagetitle(props.pageTitle);
     const { t } = useTranslation();
     const {loginFormik,loginLoader} = useLogin();

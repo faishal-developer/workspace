@@ -10,11 +10,14 @@
   
   .back-button {
     background-color: #E9ECEF;
-    border: 1px solid #CED4DA;
+    border: 1px solid #b9bec4;
     border-radius: 3px;
     padding: 8px 14px;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 87px;
     color: #495057;
     transition: background-color 0.2s;
 
@@ -113,30 +116,19 @@
 
 .success-message-container {
     max-width: 1400px;
-    margin: 10px auto;
-    padding: 40px;
+    margin: 5px auto;
+    padding: 20px;
+    padding-top:10px;
     background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    // border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 3px 0px #00000033,
+     0px 0px 1px 0px #00000020;
+
     text-align: center;
   }
   
-  .back-button {
-    background-color: #f8f8f8;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 14px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    color: #333;
-    transition: background-color 0.2s;
   
-    &:hover {
-      background-color: #e8e8e8;
-    }
-  }
   
   .success-content {
     display: flex;
@@ -148,28 +140,32 @@
     font-size: 60px;
     color: #28a745;
     margin-bottom: 15px;
+    img{
+        width: 100px;
+    }
   }
   
   .success-title {
     font-size: 20px;
-    font-weight: 500;
-    color: #444;
-    margin-bottom: 10px;
+    font-weight: 400;
+    color: #9A9A9A;
+    margin-bottom: 8px;
   }
   
   .user-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 10px;
   }
   
   .view-button {
-    background-color: #000;
+    background-color: #0F0F0F;
     color: #fff;
     border: none;
     border-radius: 6px;
-    padding: 10px 20px;
+    padding: 10px ;
+    width: 312px;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;

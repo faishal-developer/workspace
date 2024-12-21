@@ -13,6 +13,7 @@ import '../src/scss/global.scss'
 import { Provider } from 'react-redux';
 // import { PersistGate } from 'redux-persist/integration/react';
 import { temporaryStore } from './Store/Store';
+import './scss/global.scss'
 
 
 localStorage.setItem("userData",true);

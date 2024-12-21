@@ -1,7 +1,11 @@
 import React from 'react';
 import './static/static.scss';
+import { pagetitle } from '../../helper/CommonFunction';
 
-const OtpForm = () => {
+const OtpForm = (props) => {
+  // title is too important for onpage seo
+  pagetitle(props.pageTitle);
+  
   return (
     <div className="otp-form-container">
       <div className="otp-form-card">

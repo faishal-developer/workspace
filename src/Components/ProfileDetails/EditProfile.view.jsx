@@ -1,6 +1,7 @@
 // ProfileForm.jsx
 import React, { useState } from "react";
 import "./static/static.scss";
+import myProfile from "../../assets/myProfile.png"
 
 const ProfileForm = () => {
   const [formData, setFormData] = useState({
@@ -19,11 +20,12 @@ const ProfileForm = () => {
   };
 
   return (
-    <div className="profile-form">
+    <div className="custom-container">
+      <div className="profile-form">
       <div className="profile-header">
         <div className="profile-photo">
           <img
-            src="https://via.placeholder.com/80"
+            src={myProfile}
             alt="profile"
             className="photo"
           />
@@ -32,47 +34,51 @@ const ProfileForm = () => {
       </div>
 
       <form>
-        <div className="form-row">
-          <label>User Name*</label>
-          <input
-            type="text"
-            name="userName"
-            value={formData.userName}
-            onChange={handleChange}
-          />
+        <div className="flex">
+          <div className="form-row">
+            <label>User Name*</label>
+            <input
+              type="text"
+              name="userName"
+              value={formData.userName}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-row">
+            <label>User ID*</label>
+            <input
+              type="text"
+              name="userId"
+              value={formData.userId}
+              onChange={handleChange}
+            />
+          </div>
         </div>
 
-        <div className="form-row">
-          <label>User ID*</label>
-          <input
-            type="text"
-            name="userId"
-            value={formData.userId}
-            onChange={handleChange}
-          />
+        <div className="flex">
+          <div className="form-row">
+            <label>Email*</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-row">
+            <label>Contact No*</label>
+            <input
+              type="text"
+              name="contactNo"
+              value={formData.contactNo}
+              onChange={handleChange}
+            />
+          </div>
         </div>
 
-        <div className="form-row">
-          <label>Email*</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="form-row">
-          <label>Contact No*</label>
-          <input
-            type="text"
-            name="contactNo"
-            value={formData.contactNo}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="form-row">
+        <div className="select">
           <label>Your Role*</label>
           <select name="role" value={formData.role} onChange={handleChange}>
             <option value="">Designation</option>
@@ -82,30 +88,33 @@ const ProfileForm = () => {
           </select>
         </div>
 
-        <div className="form-row">
-          <label>Your Default Company*</label>
-          <input
-            type="text"
-            name="defaultCompany"
-            value={formData.defaultCompany}
-            onChange={handleChange}
-          />
-        </div>
+        <div className="flex">
+          <div className="form-row">
+            <label>Your Default Company*</label>
+            <input
+              type="text"
+              name="defaultCompany"
+              value={formData.defaultCompany}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div className="form-row">
-          <label>Default Company Address*</label>
-          <input
-            type="text"
-            name="companyAddress"
-            value={formData.companyAddress}
-            onChange={handleChange}
-          />
+          <div className="form-row">
+            <label>Default Company Address*</label>
+            <input
+              type="text"
+              name="companyAddress"
+              value={formData.companyAddress}
+              onChange={handleChange}
+            />
+          </div>
         </div>
 
         <button className="save-btn" type="submit">
           Save Profile
         </button>
       </form>
+    </div>
     </div>
   );
 };

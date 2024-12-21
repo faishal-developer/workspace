@@ -1,18 +1,15 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link } from 'react-router-dom';
-import { path } from '../../routes/path';
-import useNavbar from './navbar.logic';
 import './static/navbar.scss'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './static/navbar.scss';
+import profile from "../../assets/profile.png"
+import { Link, useLocation } from 'react-router-dom';
+import { path } from '../../routes/path';
 
 const CustomNavbar = () => {
+  const [showProfile,setShowProfile]=useState(false);
+  const location = useLocation();
+
+  
   return (
     <div className="navbar-container">
       <div className="navbar-left">
@@ -20,20 +17,30 @@ const CustomNavbar = () => {
           NEXT <span>SOURCING</span>
         </h1>
         <ul className="navbar-links">
-          <li className="navbar-link active">Dashboard</li>
-          <li className="navbar-link">Sample Management</li>
+          <li className={(location.pathname.includes(path.dashboard)?"active ":"")+" navbar-link "}>
+            <Link to={path.dashboard}>Dashboard</Link>
+          </li>
+          <li className={(location.pathname.includes(path.add_user)?"active ":"")+" navbar-link "}>
+            <Link to={path.add_user}>Add User</Link>
+          </li>
           <li className="navbar-link">Report</li>
           <li className="navbar-link">Settings</li>
         </ul>
       </div>
-      <div className="navbar-right">
-        <div className="navbar-profile">
+      <div className="navbar-right relative">
+        <div className="navbar-profile" onClick={()=>setShowProfile(!showProfile)}>
           <img
-            src="https://via.placeholder.com/40"
+            src={profile}
             alt="Profile"
             className="navbar-profile-image"
           />
-          <span className="navbar-profile-name">Profile ▼</span>
+          <span className="navbar-profile-name">
+            Profile ▼
+          </span>
+          <div className={showProfile?"profile-tooltip":"hidden"}>
+            <div><Link to={path.my_profile}>My Profile</Link></div>
+            <div><Link to={path.edit_profile}>Edit Profile</Link></div>
+          </div>
         </div>
       </div>
     </div>

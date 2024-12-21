@@ -1,12 +1,13 @@
 // ProfileForm.scss
 .profile-form {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 800px;
+    padding: 30px;
+    width: 100%;
+
     margin: 0 auto;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 0px #00000033,
+     0px 0px 1px 0px #00000020;
+
   
     .profile-header {
       display: flex;
@@ -17,8 +18,9 @@
         margin-right: 20px;
   
         .photo {
-          width: 80px;
-          height: 80px;
+          width: 100px;
+          height: 100px;
+          // border:2px solid #ADB5BD;
           border-radius: 50%;
           object-fit: cover;
         }
@@ -27,25 +29,35 @@
       .upload-btn {
         background: #e0e0e0;
         padding: 6px 10px;
+        border: 1px solid #CED4DA;
         border: none;
         cursor: pointer;
         font-size: 14px;
+        width: 124px;
+        color:#495057;
+        height: 40px;
         border-radius: 4px;
   
         &:hover {
-          background: #ccc;
+          background: #e0e0e0ea;
         }
       }
     }
   
     form {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      
+      // grid-template-columns: repeat(2, 1fr);
+      .flex{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
   
       .form-row {
         display: flex;
         flex-direction: column;
+        width: 49%;
+        
   
         label {
           margin-bottom: 5px;
@@ -59,18 +71,38 @@
           font-size: 14px;
           border: 1px solid #ddd;
           border-radius: 4px;
+          background-color: white;
         }
+      }
+      .select {
+        margin-bottom: 15px;
+        label {
+          margin-bottom: 5px;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        select {
+          padding: 8px;
+          font-size: 14px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          background-color: white;
+          width: 100%;
+        }
+        
       }
   
       .save-btn {
         grid-column: span 2;
-        background: #000;
+        background: #0F0F0F;
         color: #fff;
         padding: 10px 0;
         border: none;
         cursor: pointer;
         font-size: 16px;
         border-radius: 4px;
+        width: 100%;
+        margin-top: 15px;
   
         &:hover {
           background: #333;
@@ -79,3 +111,8 @@
     }
   }
   
+  .custom-container{
+    max-width:1400px;
+    margin: 30px;
+
+  }

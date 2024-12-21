@@ -6,7 +6,7 @@
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-family: Arial, sans-serif;
+    font-family: "Source Sans 3", serif !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
     .brand {
@@ -45,7 +45,7 @@
   
           &:focus {
             outline: none;
-            border-color: #333;
+            border-color: #007bff;
           }
         }
   

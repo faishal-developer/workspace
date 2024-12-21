@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import './static/static.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { iconList } from '../../Components/FontAwesome/FontAwesome';
+import tick from "../../assets/svgs/tick.png"
+import { pagetitle } from '../../helper/CommonFunction';
 
-const AddUserForm = () => {
-  const [isSuccess,setIsSuccess]=useState(true);
+const AddUserForm = (props) => {
+  const [isSuccess,setIsSuccess]=useState(false);
+  // title is too important for onpage seo
+  pagetitle(props.pageTitle);
+  
   return (
     <div className='c-container'>
       <button className="back-button">
@@ -14,7 +19,9 @@ const AddUserForm = () => {
       {isSuccess?(
           <div className="success-message-container">
           <div className="success-content">
-            <div className="success-icon">✔</div>
+            <div className="success-icon">
+              <img className='img' src={tick}/>
+            </div>
             <p className="success-title">New User Created</p>
             <p className="user-name">Mr. Jhon Doe</p>
             <button className="view-button">View</button>

@@ -1,9 +1,10 @@
+import logo from "../assets/logo.png"
 
 const siteConfig = {
-    company_name: 'CUSTOM POINT',
-    company_logo1: 'Logo',
-    company_logo2: 'Logo',
-    company_favicon: '',
+    company_name: 'NEXT SOURCHING',
+    company_logo1: logo,
+    company_logo2: logo,
+    company_favicon: logo,
     company_slogan: '',
     user_default_profile_pic: 'user_default_profile_pic',
     lazy_suspense_delay: 100,
