@@ -10,6 +10,7 @@ import Spinner from "../Spinner/Spinner.view";
 
 const LoginForm = () => {
   // logic separation -> separation of concern principle
+  // Press f12/fn+f12 on useLogin to see its implementation
   const {loginFormik,loginLoader} = useLogin();
 
   return (

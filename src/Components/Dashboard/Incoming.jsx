@@ -1,41 +1,16 @@
 import React, { useState } from 'react'
 import Card from './card'
-import box from "../../assets/box.png"
-import drawer from "../../assets/drawer.png"
-import pending from "../../assets/pending.png"
 import './static/dashboard.scss';
 import FontAwesome, { iconList } from '../FontAwesome/FontAwesome'
+import { cardData1, data1, headers1 } from './static/utils'
 
 const Incoming = () => {
     const [onFocused, setOnFocused] = useState(false);
-
-
-
-    let cardData=[
-        {icon:drawer,title:"Total Sample",total:2000151,bg:"bluish"},
-        {icon:pending,title:"Pending",total:16,bg:"yellowish"},
-        {icon:box,title:"Total Received",total:108,bg:"greenish"},
-    ]
-
     
-    const headers=['ID','Sample Type','Quantity','Receiver Name','Company Name','Status','Date']
-    
-    const data=[
-        {id:5485,type:"Light",quantity:2,reciver:"Johnathan Smith",company:"EcoGlow Lamp",status:"Queued",date:"11-7-2014"},
-        {id:5488,type:"Water Bottle",quantity:2,reciver:"Emily Parker",company:"FreshFusion Bottle",status:"Pending",date:"11-7-2014"},
-        {id:5485,type:"Bedding",quantity:1,reciver:"Johnathan Smith",company:"LuxeSilk Pillow",status:"Delivered",date:"11-7-2014"},
-        {id:5485,type:"Light",quantity:8,reciver:"ohnathan Smith",company:"AquaBloom Water",status:"Pending",date:"11-7-2014"},
-        {id:5488,type:"Light",quantity:8,reciver:"Michael Roberts",company:"PureHarvest Snacks",status:"Pending",date:"11-7-2014"},
-        {id:5485,type:"Bedding",quantity:4,reciver:"Johnathan Smith",company:"SmartSphere Tracker",status:"Delivered",date:"11-7-2014"},
-        {id:5488,type:"Lighting",quantity:6,reciver:"AquaBloom Water",company:"AquaBloom Water",status:"Queued",date:"11-7-2014"},
-        {id:5485,type:"Water",quantity:5,reciver:"Michael Roberts",company:"LuxeSilk Pillow",status:"Pending",date:"11-7-2014"},
-        {id:5485,type:"Bedding",quantity:2,reciver:"Emily Parker",company:"AquaBloom Water",status:"Delivered",date:"11-7-2014"},
-        {id:5488,type:"Water Bottle",quantity:1,reciver:"Michael Roberts",company:"LuxeSilk Pillow",status:"Queued",date:"11-7-2014"},
-    ]
   return (
     <div className='mb-4 main-cont'>
         <div className='card-container'>
-            {cardData.map((item)=>(
+            {cardData1.map((item)=>(
                 <Card icon={item.icon} title={item.title} bg={item.bg} total={item.total}/>
             ))}
         </div>
@@ -114,13 +89,13 @@ const Incoming = () => {
                         <th>
                         <input type="checkbox" />
                         </th>
-                        {headers.map(item=>(
+                        {headers1.map(item=>(
                             <th>{item}</th>
                         ))}
                     </tr>
                     </thead>
                     <tbody>
-                    {data.map((item)=>(
+                    {data1.map((item)=>(
                         <tr key={item.id+item.reciver}>
                             <td>
                             <input type="checkbox" />

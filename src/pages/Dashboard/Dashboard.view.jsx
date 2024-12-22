@@ -11,6 +11,7 @@ const Dashboard = (props) => {
     pagetitle(props.pageTitle);
   return (
     <div className='mt-4 dashboard-container'>
+        {/* common tab created which is reusable */}
         <CustomTab
             allTabs={[
                 {

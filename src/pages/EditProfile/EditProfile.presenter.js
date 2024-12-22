@@ -12,6 +12,7 @@ export const useEditUser=()=>{
     const [imageError,setImageError]=useState('')
     const [image,setImage]=useState(null);
 
+    // image upload handler. also validate the image 
     const handleImageUpload = (e) => {
         const file = e.target.files[0]; // Get the first file
         const maxFileSize = 2 * 1024 * 1024; // 2 MB in bytes
@@ -40,6 +41,7 @@ export const useEditUser=()=>{
         }
       };
 
+    //   form validation logic
     const validateEditUserForm = (values) => {
         const errors = {};
         if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {

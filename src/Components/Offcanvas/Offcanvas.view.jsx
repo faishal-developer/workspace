@@ -5,7 +5,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 function CustomOffcanvas(props) {
     const {children,title,show,handleClose} =props;
   
-
+  // reusable offcanvas 
   return (
     <>
       <Offcanvas show={show} onHide={handleClose}>

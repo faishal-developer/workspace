@@ -15,6 +15,8 @@ import PasswordStrengthMeter from '../../Components/passWordStrength/passwordStr
 const Registration = (props) => {
     pagetitle(props.pageTitle);
     const { t } = useTranslation();
+    // logic separation -> separation of concern principle
+  // Press f12/fn+f12 on useLogin to see its implementation
     const {registrationFormik,registrationLoader} = useLogin()
 
     return (

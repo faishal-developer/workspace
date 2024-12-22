@@ -3,6 +3,7 @@ import './TextArea.scss'
 import { ReactComponent as InfoCircle } from "../../assets/svgs/InfoCircle.svg";
 
 const TextareaSimple = (props) => {
+    // common text area component with validation logic 
     return (
         <div className="simple_textarea_block">
             <label htmlFor="">

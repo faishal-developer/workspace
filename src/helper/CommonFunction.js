@@ -1,10 +1,13 @@
 import { getDataLS } from "./localStorage";
 
+// all common function that are used very often 
 
+// set page title 
 export function pagetitle(title){
     document.title =title;
 };
 
+// during theme change you should trigger the function 
 export const themeChange = (givenTheme)=>{
     const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-theme' : 'light-theme';
     const resultTheme = givenTheme ? givenTheme : theme;
@@ -12,58 +15,20 @@ export const themeChange = (givenTheme)=>{
     return resultTheme;
 } 
 
+// for string slicer it is helpfull, specially when you will show limited char 
 export const stringSlicer=(data,length)=>{
     if(typeof data !== 'string') return null;
     else if(data.length<=length) return data;
     return `${data.slice(0,length)}...`
 }
 
+// windows width detector 
 export const widthDetector=(max,min)=>{
     let w = window.innerWidth;
     return w<= max && w>= min ?true : false;
 }
 
-export const stickyPosition=(id,className,id2)=>{
-    const stickyElement = document.getElementById(id);
-    // const stickyOffset = stickyElement.offsetTop;
-    const rect = stickyElement.getBoundingClientRect();
-    let rectOff, stickyElementOfff,height,isTrue=true;
-    if(id2){
-        stickyElementOfff = document.getElementById(id2);
-        rectOff = stickyElementOfff.getBoundingClientRect();
-    }
-
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        if (id2) {
-            let Falsy = height - 400 >= scrollPosition;
-            setTimeout(()=>{
-                isTrue = Falsy
-            },100);
-            height = stickyElementOfff.offsetTop + stickyElementOfff.offsetHeight;
-        }
-                // console.log("working",isTrue,rect.top,scrollPosition);
-        if (isTrue && (rect.top+40 < scrollPosition) && (scrollPosition<2450)) {
-            stickyElement.classList.add(className);
-        } else {
-            stickyElement.classList.remove(className);
-        }
-    });
-}
-
-export const cal_discounted_price = (price,discount) =>{
-    price = Number(price);
-    discount = Number(discount);
-    let discounted =  Math.floor(price - price*discount/100);
-    return discounted ;
-}
-
-export const cal_subtotal = ({price,discount,quantity}) =>{
-    let discounted =  cal_discounted_price(price,discount);
-    return discounted*quantity ;
-}
-
-
+// capitalize 
 export const capitalize = (string) =>{
     if(typeof string !=='string')return '';
     let strArray = string.split(' ');
@@ -81,10 +46,12 @@ export const removeUnderScore=(string)=>{
     return capitalize(strArray[0])+' '+strArray.splice(1).join(' ');
 }
 
+// scroll to top 
 export const scrollToTop=()=>{
     window.scrollTo(0, 0);
 }
 
+// number charecter changer when changing language 
 export const NumberByLang = (num, t) => {
     let numArray = Number(num).toString().split('');
     let newArray = [];
@@ -93,6 +60,7 @@ export const NumberByLang = (num, t) => {
     })
     return newArray.join('')
 }
+
 
 export const changeRoute = (navigate, url) => {
     return navigate(url);
@@ -108,15 +76,6 @@ export const addQueryParams = (navigate,location,{key,value}) =>{
     navigate(newLocation);
 }
 
-export const getTotal = (newData) => {
-    if(!newData?.[0]?.product_data?.price)return 0;
-    let t = 0;
-    newData.forEach((el, i) => {
-        // t += cal_discounted_price(el.price, el.discount) * el.quantity;
-        t += cal_subtotal({price:el.product_data.price, discount:el.product_data.discount,quantity:el.quantity});
-    });
-    return t;
-}
 
 export const getCartFromLocalStorage=()=>{
     return getDataLS('cart')

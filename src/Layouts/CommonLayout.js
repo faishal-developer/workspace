@@ -6,7 +6,7 @@ import CustomNavbar from '../Components/navbar/navbar.view';
 const CommonLayout = () => {
     return (
         <div className='container-custom'>
-            {/* layout working */}
+            {/* containing navbar  */}
             <CustomNavbar/>
             <Outlet/>
             {/* <Footer/> */}

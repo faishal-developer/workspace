@@ -2,13 +2,12 @@ import { useFormik } from "formik"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 export const useAddUser=()=>{
     const [AddUserLoader,setAddUserLoader] = useState();
     const navigate = useNavigate()
     const [success,setIsSuccess]=useState(false);
 
+    // form validation logic
     const validateAddUserForm = (values) => {
         const errors = {};
         if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -53,6 +52,7 @@ export const useAddUser=()=>{
         return errors;
     }
 
+    //dummy submisssion handler 
     const AddUserHandle=(values)=>{
         console.log("submission working");
         

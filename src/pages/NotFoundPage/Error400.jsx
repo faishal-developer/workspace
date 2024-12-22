@@ -4,7 +4,9 @@ import { pagetitle, scrollToTop } from '../../helper/CommonFunction';
 
 const Error400 = (props) => {
     scrollToTop();
+    // pagetitle it impotant for on page seo
     pagetitle(props.pageTitle)
+
     return (
         <div className="not-found-container">
           <div className="not-found-content">

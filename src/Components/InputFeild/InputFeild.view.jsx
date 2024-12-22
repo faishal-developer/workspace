@@ -14,6 +14,7 @@ const InputField = (props) => {
         setInputType(inputType === "password" ? "text" : "password");
     };
 
+    // reusable input field with validation logic
     
     return (
         <div className="input-block">

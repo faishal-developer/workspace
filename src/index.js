@@ -20,6 +20,7 @@ localStorage.setItem("userData",true);
 localStorage.setItem("isDeveloper",false);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+// root is wrapped up with router and redux
 root.render(
   <React.StrictMode>
     <Provider store={temporaryStore}>

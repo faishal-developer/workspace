@@ -3,6 +3,8 @@ import './Button.scss';
 
 //todo button spinner
 const Commonbutton = (props) => {
+
+    // a common reusable button created containing all logic
     return (
         <button
             type={props.type ?? 'button'}

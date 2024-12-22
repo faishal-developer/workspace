@@ -27,7 +27,7 @@ const MainRoutes = () => {
         
     }, []);
     
-
+    // redirecting to routes by checking public or private
     return maintenance && isDeveloper !== 'true' ? (
         <Maintenance />
     ) : (
@@ -39,6 +39,7 @@ const MainRoutes = () => {
                             {
                                 Layout2? (
                                     <Route element={Layout2} key={path+"second"}>
+                                        {/* Suspense is too important for mid time of loading another route */}
                                         <Route exact path={path} element={<Suspense fallback={<CustomPageLoader default />}>{Component}</Suspense>} />
                                     </Route>
                                 ) :(

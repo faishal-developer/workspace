@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope,faBolt,faCar,faRightFromBracket,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash, faTextWidth, faCloudArrowUp, faArrowsToDot, faTrashCan, faPhotoFilm, faArrowUp, faArrowDown, faArrowLeft, faArrowRight, faEye, faLock, faUnlock, faLockOpen, faEyeSlash, faCalendar, faCaretDown} from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFacebook,faLinkedin, faGoogle, faProductHunt } from '@fortawesome/free-brands-svg-icons'
 
-
+// try to loosely coupling with font FontAwesome. it will be helpfull when i will use another library instead of fontawesome 
 
 const FontAwesome = (props) => {
     return <FontAwesomeIcon className='icon' icon={props.icon}/>

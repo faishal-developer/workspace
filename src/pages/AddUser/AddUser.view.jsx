@@ -14,6 +14,8 @@ const AddUserForm = (props) => {
   const navigate=useNavigate();
   // title is too important for onpage seo
   pagetitle(props.pageTitle);
+  // logic separation -> separation of concern principle
+  // Press f12/fn+f12 on useLogin to see its implementation
   const {AddUserFormik,AddUserLoader,success,values} = useAddUser()
   
   return (
@@ -31,7 +33,7 @@ const AddUserForm = (props) => {
             </div>
             <p className="success-title">New User Created</p>
             <p className="user-name">{values.userName}</p>
-            <button className="view-button">
+            <button onClick={()=>navigate(path.dashboard+"?tab=Teams")} className="view-button">
               <Link to={path.dashboard+"?tab=Teams"}>View</Link>
             </button>
           </div>
@@ -172,11 +174,7 @@ const AddUserForm = (props) => {
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="defaultCompany">Your Default Company*</label>
-              {/* <input
-                type="text"
-                id="defaultCompany"
-                placeholder="Next Sourcing Bangladesh"
-              /> */}
+              
               <InputField
                 placeHolder={"Type here"}
                 textType="text"
@@ -193,11 +191,7 @@ const AddUserForm = (props) => {
             </div>
             <div className="form-group">
               <label htmlFor="defaultAddress">Default Company Address*</label>
-              {/* <input
-                type="text"
-                id="defaultAddress"
-                placeholder="House #217 Road #02(New)/10(Old), Dohs Mirpur, 1216"
-              /> */}
+              
               <InputField
                 placeHolder={"Type here"}
                 textType="text"

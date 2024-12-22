@@ -9,11 +9,14 @@ import { ReactComponent as InfoCircle } from "../../assets/svgs/InfoCircle.svg";
 
 
 const ProfileForm = () => {
+  // logic separation -> separation of concern principle
+  // Press f12/fn+f12 on useLogin to see its implementation
   const {EditUserFormik,EditUserLoader,handleImageUpload,image,imageError} = useEditUser()
 
   return (
     <div className="custom-container">
       <div className="profile-form">
+        {/* profile header  */}
       <div className="profile-header">
         <div className="profile-photo">
           <img
@@ -25,12 +28,14 @@ const ProfileForm = () => {
         <label className="upload-btn" htmlFor="photo">Upload Photo</label>
         <input onChange={handleImageUpload} id="photo" className="d-none" type={'file'}/>
       </div>
+      {/* if any unwanted image uploads the error will be shown */}
       {imageError?(
         <span className="input-error error-message">
           <InfoCircle fill="" /> {imageError}
         </span>
       ):''}
 
+      {/* edit user form  */}
       <form onSubmit={EditUserFormik.handleSubmit}>
         <div className="flex">
           <div className="form-row">
@@ -151,7 +156,7 @@ const ProfileForm = () => {
           </div>
         </div>
 
-        <button className="save-btn" type="submit">
+        <button disabled={EditUserLoader} className="save-btn" type="submit">
           <Spinner isLoading={EditUserLoader}/>
           Save Profile
         </button>

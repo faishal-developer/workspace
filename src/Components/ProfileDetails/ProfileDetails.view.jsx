@@ -5,6 +5,7 @@ import { path } from '../../routes/path';
 import { Link } from 'react-router-dom';
 
 const UserProfile = () => {
+  // view user profile 
   return (
     <div className="user-profile-container">
       <div className="profile-card">

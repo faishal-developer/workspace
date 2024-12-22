@@ -1,5 +1,6 @@
 import logo from "../assets/logo.png"
 
+// site static config 
 const siteConfig = {
     company_name: 'NEXT SOURCHING',
     company_logo1: logo,

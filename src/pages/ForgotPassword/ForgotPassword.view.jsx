@@ -8,6 +8,8 @@ import Spinner from '../../Components/Spinner/Spinner.view';
 const OtpForm = (props) => {
   // title is too important for onpage seo
   pagetitle(props.pageTitle);
+  // logic separation -> separation of concern principle
+  // Press f12/fn+f12 on useLogin to see its implementation  
   const {OtpFormik,OtpLoader}=useOtp();
   
   return (

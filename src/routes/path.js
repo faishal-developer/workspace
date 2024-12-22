@@ -1,3 +1,4 @@
+// all path name is separated so that if i change from one file it will change in every file
 export const path ={
     home:"/",
     login:"/login",

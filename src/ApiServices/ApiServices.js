@@ -2,6 +2,8 @@ import siteConfig from "../Config/siteConfig";
 import { Endpoints } from "./apiEndPoints"
 import axios from 'axios';
 
+// common function that is reusable for all api call 
+
 function authHeader(){
     let userData = JSON.parse(localStorage.getItem('userData'));
     let idToken;

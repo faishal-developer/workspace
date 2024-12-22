@@ -7,6 +7,7 @@ import AuthLayout from '../Layouts/AuthLayout';
 let DelayTime = siteConfig.lazy_suspense_delay;
 let SiteName = `| ${siteConfig.company_name}`;
 
+// chunkname works when app load specific chunk by given name in comment
 const Home = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "Home" */ "../pages/Home/Home.View"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
@@ -29,6 +30,7 @@ const Dashboard = React.lazy(() => {
     return Promise.all([import(/*webpackChunkName: "Dashboard" */ "../pages/Dashboard/Dashboard.view.jsx"), new Promise(resolve => setTimeout(resolve, DelayTime))]).then(([moduleExports]) => moduleExports);
 });
 
+// private routes , these routes go through special checks
 export const private_routes = [
     { path: `${path.add_user}`, Component: <AddUser pageTitle={`Add User ${SiteName}`} />, Layout: <CommonLayout /> },
     { path: `${path.my_profile}`, Component: <MyProfile pageTitle={`My Profile ${SiteName}`} />, Layout: <CommonLayout /> },

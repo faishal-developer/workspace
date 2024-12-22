@@ -13,6 +13,7 @@ export const useOtp=()=>{
         return errors;
     }
 
+    // a dummy otp handler
     const OtpHandle=(values)=>{
         setOtpLoader(true)
         setTimeout(async()=>{
