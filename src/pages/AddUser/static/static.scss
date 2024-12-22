@@ -1,5 +1,11 @@
+
+.main-container{
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  margin:auto;
+}
 .add-user-form-container {
-    max-width: 1400px;
     margin: 20px auto;
     padding: 30px;
     background-color: #ffffff;
@@ -161,7 +167,7 @@
   
   .view-button {
     background-color: #0F0F0F;
-    color: #fff;
+    
     border: none;
     border-radius: 6px;
     padding: 10px ;
@@ -170,9 +176,24 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
   
+    a{
+      color: #fff;
+    }
     &:hover {
       background-color: #333;
       transform: scale(1.02);
     }
   }
   
+
+  @media screen and (max-width: 700px){
+    .form-row{
+      flex-direction: column;
+    }
+    .form-group + .form-group {
+      margin-left: 0px;
+    }
+    .view-button {
+      max-width: 250px;
+    }
+  }

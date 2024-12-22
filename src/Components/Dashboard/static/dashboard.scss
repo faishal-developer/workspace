@@ -1,3 +1,8 @@
+.main-cont{
+  box-shadow: 0px 1px 3px 0px #00000033,
+        0px 0px 1px 0px #00000020;
+
+}
 .card-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -78,7 +83,7 @@
         align-items: center;
         border: 1px solid #ddd;
         border-radius: 2px;
-        background-color: #f9f9f9;
+        // background-color: #f9f9f9;
         padding: 0 12px;
         transition: border-color 0.3s;
   
@@ -126,7 +131,16 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-  
+      .relative{
+        position: relative;
+        .icon{
+          position: absolute;
+          top: 10px;
+          font-size: 12px;
+          color:#666;
+          right: 8px;
+        }
+      }
       .dropdown {
         width: 240px;
         padding: 16px;
@@ -137,15 +151,27 @@
         color: #555;
         outline: none;
         transition: border-color 0.3s;
+        appearance:none;
+        
   
         &:focus {
           border-color: #007bff;
         }
+        
+          
       }
   
       .date-range-button-wrapper {
         position: relative;
         width: 240px;
+
+        .icon{
+          position: absolute;
+          top: 10px;
+          font-size: 16px;
+          color:#555;
+          right: 8px;
+        }
   
         .date-range-button {
           width: 100%;
@@ -165,6 +191,9 @@
           }
   
           &:focus {
+            ~.icon{
+              display: hidden;
+            }
             border-color: #007bff;
           }
         }
@@ -198,11 +227,12 @@
     // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   
     .data-table {
-      width: 100%;
       border-collapse: collapse;
       background-color: #fff;
       border-radius: 8px;
-      overflow: hidden;
+      // overflow: hidden
+      width: 100%;
+      // overflow-x: auto;
   
       thead {
         // background-color: #f4f4f4;
@@ -322,10 +352,19 @@
     grid-template-columns: repeat(4,1fr);
 }
 
-
+.tab-cont{
+  max-width: 100%;
+  overflow-x: auto;
+}
+.teams-table{
+  // width:640px;
+  min-width: 640px;
+  width: 100%;
+  overflow-x: scroll;
+}
 .create-sample{
     
-    button{
+    .button{
         border:none;
         outline:none;
         background-color: #0F0F0F;
@@ -333,6 +372,7 @@
         width:232px;
         height: 48px;
         margin-top:35px;
+        margin-right: 15px;
         color:white;
     }
 }
@@ -341,4 +381,68 @@
 }
 .w-100{
     width:100%;
+}
+.tab-cont2{
+  max-width: 100%;
+  overflow-x: auto;
+}
+.table-container2{
+  min-width: 750px;
+}
+.tab-cont3{
+  max-width: 100%;
+  overflow-x: auto;
+}
+.table-container3{
+  min-width: 850px;
+}
+
+
+@media screen and (max-width: 1300px){
+  .search-filter-bar {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 600px){
+  .search-filter-bar{
+    flex-direction: column;
+    .date-range-button-wrapper,.date-section,.w-50,.search-section,.status-section{
+      width:100% !important;
+      span{
+        width: 100%;
+      }
+      select{
+        width: 100% !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px){
+  .card-container, .card-container-2{
+    grid-template-columns: repeat(2,1fr);
+    .total-sample-card{
+      margin-bottom:15px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 500px){
+  .card-container, .card-container-2{
+    grid-template-columns: repeat(1,1fr);
+    margin: auto;
+    .total-sample-card{
+      margin-right: 0;
+      margin-bottom:15px;
+    }
+  }
+  .search-filter-bar{
+    flex-direction: column;
+    .date-range-button-wrapper,.date-section,.w-50,.search-section,.status-section{
+      width:100% !important;
+      select{
+        width:100%;
+      }
+    }
+  }
 }

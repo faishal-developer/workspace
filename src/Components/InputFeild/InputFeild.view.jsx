@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Input.scss";
-import { ReactComponent as NotVisiable } from "../../assets/svgs/NotVisiable.svg";
-import { ReactComponent as Visiable } from "../../assets/svgs/Visiable.svg";
 import { ReactComponent as InfoCircle } from "../../assets/svgs/InfoCircle.svg";
+import FontAwesome, { iconList } from "../FontAwesome/FontAwesome";
 
 const InputField = (props) => {
     const active = props.textAlign ? "right-input-text" : "";
@@ -19,38 +17,37 @@ const InputField = (props) => {
     
     return (
         <div className="input-block">
-            <label htmlFor="">
-                <span className={props.asterisk ? "asterisk label_name" : "label_name"}>{props.inputLabel}</span>
-
-                {props.labelLink && (
-                    <span className="link">
-                        <Link to={props?.labelLink}>{props?.labelLinkText}</Link>
-                    </span>
-                )}
-                {props.labelOnChangeCallback && (
-                    <span className="link">
-                        <a href={void 0} onClick={props.labelOnChangeCallback}>
-                            {props.labelLinkText}
-                        </a>
-                    </span>
-                )}
-            </label>
-            <input
-                id={props.id}
-                className={`input-box ${props.type === "file" ? "inp-file" : "input"} ${active} ${isError} ${disabledClass} ${props.inputClassName}`}
-                placeholder={props.placeHolder}
-                accept={props.accept}
-                type={inputType}
-                value={props.value}
-                onChange={props.onchangeCallback}
-                onBlur={props.onBlur}
-                autoComplete={props.autoComplete || "off"}
-                name={props.inputName}
-                ref={props.inputRef}
-                multiple={isMultiple}
-                maxLength={props.maxLength}
-                disabled={props.disabled}
-            />
+            
+            <div className="input_icon">
+                <input
+                    id={props.id}
+                    className={`input-box ${props.type === "file" ? "inp-file" : "input"} ${active} ${isError} ${disabledClass} ${props.inputClassName}`}
+                    placeholder={props.placeHolder}
+                    accept={props.accept}
+                    type={inputType}
+                    value={props.value}
+                    onChange={props.onchangeCallback}
+                    onBlur={props.onBlur}
+                    autoComplete={props.autoComplete || "off"}
+                    name={props.inputName}
+                    ref={props.inputRef}
+                    multiple={isMultiple}
+                    maxLength={props.maxLength}
+                    disabled={props.disabled}
+                />
+                {props.icon?(
+                    <div className="icon">{props.icon}</div>
+                ):''}
+                {props.textType === "password" && (
+                <span className="password-visiablity icon" onClick={passwordVisiablityClick}>
+                    {
+                        inputType === "password" || props?.value?.length === 0 ?
+                            <FontAwesome icon={props.icons? props.icons[0] : iconList.lock}/>
+                            : <FontAwesome icon={props.icons? props.icons[1] :iconList.unloack}/>
+                    }
+                </span>
+            )   }
+            </div>
             {props.requiredMessage ? (
                 <span className="error-message">
                     <InfoCircle fill="" /> {props.requiredMessageLabel}
@@ -62,15 +59,7 @@ const InputField = (props) => {
                     
                 )
             }
-            {props.textType === "password" && (
-                <span className="password-visiablity" onClick={passwordVisiablityClick}>
-                    {
-                        inputType === "password" || props?.value?.length === 0 ?
-                            <NotVisiable fill="white" />
-                            : <Visiable className="paasword-visiable" />
-                    }
-                </span>
-            )}
+            
         </div>
     );
 };

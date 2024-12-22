@@ -4,19 +4,13 @@ import "./static/LoginForm.scss";
 import FontAwesome, { iconList } from "../FontAwesome/FontAwesome";
 import { Link } from "react-router-dom";
 import { path } from "../../routes/path";
+import InputField from "../InputFeild/InputFeild.view";
+import { useLogin } from "../../pages/Login/Login.logic";
+import Spinner from "../Spinner/Spinner.view";
 
 const LoginForm = () => {
-  const [formData, setFormData] = useState({ email: "", password: "", rememberMe: false });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+  // logic separation -> separation of concern principle
+  const {loginFormik,loginLoader} = useLogin();
 
   return (
     <div className="login-form">
@@ -26,29 +20,38 @@ const LoginForm = () => {
         </h1>
         <p>Sign in to start your session</p>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={loginFormik.handleSubmit}>
         <div className="input-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
+          <InputField
+              placeHolder={'Email'}
+              textType="email"
+              inputName="email"
+              asterisk={true}
+              icon={<FontAwesome icon={iconList.Envelope}/>}
+              whiteSpace={false}
+              onBlur={loginFormik.handleBlur}
+              value={loginFormik.values.email}
+              onchangeCallback={loginFormik.handleChange}
+              inputClassName={loginFormik.touched.email && loginFormik.errors.email ? " is-invalid" : ""}
+              requiredMessage={loginFormik.touched.email && loginFormik.errors.email}
+              requiredMessageLabel={loginFormik.touched.email || loginFormik.isSubmitting ? loginFormik.errors.email : ""}
           />
-          <FontAwesome icon={iconList.Envelope}/>
         </div>
 
         <div className="input-group">
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
+          <InputField
+              placeHolder={"Password"}
+              textType="password"
+              inputName="password"
+              asterisk={true}
+              whiteSpace={false}
+              onBlur={loginFormik.handleBlur}
+              value={loginFormik.values.password}
+              onchangeCallback={loginFormik.handleChange}
+              inputClassName={loginFormik.touched.password && loginFormik.errors.password ? " is-invalid" : ""}
+              requiredMessage={loginFormik.touched.password && loginFormik.errors.password}
+              requiredMessageLabel={loginFormik.touched.password || loginFormik.isSubmitting ? loginFormik.errors.password : ""}
           />
-          <FontAwesome icon={iconList.lock}/>
         </div>
 
         <div className="options">
@@ -56,12 +59,13 @@ const LoginForm = () => {
             <input
               type="checkbox"
               name="rememberMe"
-              checked={formData.rememberMe}
-              onChange={handleChange}
+              // checked={formData.rememberMe}
+              // onChange={handleChange}
             />
             <span className="remember">Remember Me</span>
           </label>
-          <button type="submit" className="signin-btn">
+          <button disabled={loginLoader} type="submit" className="signin-btn">
+            <Spinner isLoading={loginLoader}/>
             Sign In
           </button>
         </div>

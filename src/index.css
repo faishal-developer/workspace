@@ -5,6 +5,8 @@ body {
   margin: 0;
   font-family: "Source Sans 3", serif !important;
   /* font-family: 'Raleway', sans-serif; */
+  max-width: 100% !important;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

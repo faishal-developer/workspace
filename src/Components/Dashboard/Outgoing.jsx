@@ -45,7 +45,7 @@ const Outgoing = () => {
         {id:5488,type:"Water Bottle",quantity:1,reciver:"Michael Roberts",company:"LuxeSilk Pillow",status:"Queued",date:"11-7-2014"},
     ]
   return (
-    <div className='mb-4'>
+    <div className='mb-4 main-cont'>
         <div className='card-container card-container-2'>
             {cardData.map((item)=>(
                 <Card icon={item.icon} title={item.title} bg={item.bg} total={item.total}/>
@@ -99,53 +99,54 @@ const Outgoing = () => {
                 </div>
             </div>
             <div className='create-sample'>
-                <button>
+                <button className='button'>
                     Create Sample
                 </button>
+                <button className="export-button">Export</button>
             </div>
 
-            {/* Export Button */}
-            <button className="export-button">Export</button>
         </div>
-        <div className="table-container">
-            <table className="data-table">
-                <thead>
-                <tr>
-                    <th>
-                    <input type="checkbox" />
-                    </th>
-                    {headers.map(item=>(
-                        <th>{item}</th>
-                    ))}
-                </tr>
-                </thead>
-                <tbody>
-                {data.map((item)=>(
-                    <tr key={item.id+item.reciver}>
-                        <td>
+        <div className='tab-cont2'>
+            <div className="table-container table-container2">
+                <table className="data-table">
+                    <thead>
+                    <tr>
+                        <th>
                         <input type="checkbox" />
-                        </td>
-                        <td>{item.reciver}</td>
-                        <td>{item.type}</td>
-                        <td>{item.quantity}</td>
-                        <td>{item.company}</td>
-                        <td>{item.status}</td>
-                        <td>{item.date}</td>
+                        </th>
+                        {headers.map(item=>(
+                            <th>{item}</th>
+                        ))}
                     </tr>
-                ))}
-                </tbody>
-            </table>
-            <div className="pagination">
-                <span>Showing 1 to 10 of 57 entries</span>
-                <div>
-                <button>Previous</button>
-                <button className="active">1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>Next</button>
+                    </thead>
+                    <tbody>
+                    {data.map((item)=>(
+                        <tr key={item.id+item.reciver}>
+                            <td>
+                            <input type="checkbox" />
+                            </td>
+                            <td>{item.reciver}</td>
+                            <td>{item.type}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.company}</td>
+                            <td>{item.status}</td>
+                            <td>{item.date}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+                <div className="pagination">
+                    <span>Showing 1 to 10 of 57 entries</span>
+                    <div>
+                    <button>Previous</button>
+                    <button className="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>Next</button>
+                    </div>
                 </div>
             </div>
         </div>

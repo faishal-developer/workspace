@@ -32,6 +32,8 @@
         border: 1px solid #CED4DA;
         border: none;
         cursor: pointer;
+        text-align: center;
+        padding-top: 11px;
         font-size: 14px;
         width: 124px;
         color:#495057;
@@ -115,4 +117,15 @@
     max-width:1400px;
     margin: 30px;
 
+  }
+
+  @media screen and (max-width: 550px){
+    form{
+      .flex{
+        flex-direction: column;
+        .form-row{
+          width: 100%;
+        }
+      }
+    }
   }

@@ -1,15 +1,7 @@
 import React, { useState } from 'react'
 import Card from './card'
-import box from "../../assets/box.png"
-import boxWithHand from "../../assets/boxWithHand.png"
-import boxes from "../../assets/boxes.png"
 import boy from "../../assets/boy.png"
-import car from "../../assets/car.png"
-import drawer from "../../assets/drawer.png"
 import kham from "../../assets/kham.png"
-import myProfile from "../../assets/myProfile.png"
-import pending from "../../assets/pending.png"
-import profile from "../../assets/profile.png"
 import redWarn from "../../assets/redWarn.png"
 import worker from "../../assets/worker.png"
 import './static/dashboard.scss';
@@ -45,7 +37,7 @@ const Teams = () => {
         {desc:"LuxeSilk Pillow",name:"Accounts",count:22},
     ]
   return (
-    <div className='mb-4'>
+    <div className='mb-4 main-cont'>
         <div className='card-container card-container-2'>
             {cardData.map((item)=>(
                 <Card icon={item.icon} title={item.title} bg={item.bg} total={item.total}/>
@@ -91,36 +83,38 @@ const Teams = () => {
                 </div>
             </div>
         </div>
-        <div className="table-container">
-            <table className="data-table">
-                <thead>
-                <tr>
-                    {headers.map(item=>(
-                        <th>{item}</th>
-                    ))}
-                </tr>
-                </thead>
-                <tbody>
-                {data.map((item)=>(
-                    <tr key={item.id+item.reciver}>
-                        <td>{item.name}</td>
-                        <td>{item.desc}</td>
-                        <td>{item.count}</td>
+        <div className='tab-cont'>
+            <div className="table-container teams-table">
+                <table className="data-table">
+                    <thead>
+                    <tr>
+                        {headers.map(item=>(
+                            <th>{item}</th>
+                        ))}
                     </tr>
-                ))}
-                </tbody>
-            </table>
-            <div className="pagination">
-                <span>Showing 1 to 10 of 57 entries</span>
-                <div>
-                <button>Previous</button>
-                <button className="active">1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>Next</button>
+                    </thead>
+                    <tbody>
+                    {data.map((item)=>(
+                        <tr key={item.id+item.reciver}>
+                            <td>{item.name}</td>
+                            <td>{item.desc}</td>
+                            <td>{item.count}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+                <div className="pagination">
+                    <span>Showing 1 to 10 of 57 entries</span>
+                    <div>
+                    <button>Previous</button>
+                    <button className="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>Next</button>
+                    </div>
                 </div>
             </div>
         </div>

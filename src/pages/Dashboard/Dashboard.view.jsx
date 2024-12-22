@@ -4,12 +4,13 @@ import Incoming from '../../Components/Dashboard/Incoming'
 import Outgoing from '../../Components/Dashboard/Outgoing'
 import Teams from '../../Components/Dashboard/Teams'
 import { pagetitle } from '../../helper/CommonFunction'
+import "./static/dashboard.scss"
 
 const Dashboard = (props) => {
     // title is too important for onpage seo
     pagetitle(props.pageTitle);
   return (
-    <div className='mt-4'>
+    <div className='mt-4 dashboard-container'>
         <CustomTab
             allTabs={[
                 {

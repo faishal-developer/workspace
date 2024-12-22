@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope,faBolt,faCar,faRightFromBracket,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash, faTextWidth, faCloudArrowUp, faArrowsToDot, faTrashCan, faPhotoFilm, faArrowUp, faArrowDown, faArrowLeft, faArrowRight, faEye, faLock} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope,faBolt,faCar,faRightFromBracket,faAngleDown,faCircleQuestion,faRightToBracket,faCartArrowDown,faHeart,faCircleUser,faBars,faX,faMagnifyingGlass, faTShirt, faShirt, faFaceAngry, faBowlFood,faBuildingLock,faFaceSmile ,faTruck, faTrash, faTextWidth, faCloudArrowUp, faArrowsToDot, faTrashCan, faPhotoFilm, faArrowUp, faArrowDown, faArrowLeft, faArrowRight, faEye, faLock, faUnlock, faLockOpen, faEyeSlash, faCalendar, faCaretDown} from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFacebook,faLinkedin, faGoogle, faProductHunt } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -11,11 +11,17 @@ const FontAwesome = (props) => {
 export const iconList={
     search: faMagnifyingGlass,
     t_shirt: faTShirt,
+    menu:faBars,
     shirt: faShirt,
+    calendar:faCalendar,
+    bottomTri:faCaretDown,
     face: faFaceAngry,
     lock:faLock,
+    eyeClose:faEyeSlash,
+    eyeOpen:faEye,
     Envelope:faEnvelope,
     Bolt:faBolt,
+    unloack:faUnlock,
     Car:faCar,
     AngleDown:faAngleDown,
     cir_question:faCircleQuestion,

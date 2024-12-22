@@ -4,10 +4,10 @@ import {path} from "./path";
 // import { userData } from "../Config/sessionKeys";
 
 export const RouteRestriction = (props) => {
-    const jwt_token = JSON.parse(localStorage.getItem('token'));
+    const user = JSON.parse(localStorage.getItem('user'));
 
     return props.type === "private" ? (
-        jwt_token ? <Outlet /> : <Navigate to={`${path.login}`} />
+        user ? <Outlet /> : <Navigate to={`${path.login}`} />
     ) : (
         <>
             <Outlet/>

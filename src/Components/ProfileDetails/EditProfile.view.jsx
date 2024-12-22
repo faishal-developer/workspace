@@ -1,23 +1,15 @@
 // ProfileForm.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./static/static.scss";
 import myProfile from "../../assets/myProfile.png"
+import { useEditUser } from "../../pages/EditProfile/EditProfile.presenter";
+import Spinner from "../Spinner/Spinner.view";
+import InputField from "../InputFeild/InputFeild.view";
+import { ReactComponent as InfoCircle } from "../../assets/svgs/InfoCircle.svg";
+
 
 const ProfileForm = () => {
-  const [formData, setFormData] = useState({
-    userName: "Nina Mcintire",
-    userId: "123",
-    email: "Email@email.com",
-    contactNo: "0102 02585 08847",
-    role: "",
-    defaultCompany: "Next Sourcing Bangladesh",
-    companyAddress: "House # 217 Road # 02(New)/10(old), Dohs Mirpur, 1216",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const {EditUserFormik,EditUserLoader,handleImageUpload,image,imageError} = useEditUser()
 
   return (
     <div className="custom-container">
@@ -25,33 +17,54 @@ const ProfileForm = () => {
       <div className="profile-header">
         <div className="profile-photo">
           <img
-            src={myProfile}
+            src={image ?? myProfile}
             alt="profile"
             className="photo"
           />
         </div>
-        <button className="upload-btn">Upload Photo</button>
+        <label className="upload-btn" htmlFor="photo">Upload Photo</label>
+        <input onChange={handleImageUpload} id="photo" className="d-none" type={'file'}/>
       </div>
+      {imageError?(
+        <span className="input-error error-message">
+          <InfoCircle fill="" /> {imageError}
+        </span>
+      ):''}
 
-      <form>
+      <form onSubmit={EditUserFormik.handleSubmit}>
         <div className="flex">
           <div className="form-row">
             <label>User Name*</label>
-            <input
-              type="text"
-              name="userName"
-              value={formData.userName}
-              onChange={handleChange}
+            <InputField
+              placeHolder={'Type here'}
+              textType="text"
+              inputName="userName"
+              asterisk={true}
+              whiteSpace={false}
+              onBlur={EditUserFormik.handleBlur}
+              value={EditUserFormik.values.userName}
+              onchangeCallback={EditUserFormik.handleChange}
+              inputClassName={EditUserFormik.touched.userName && EditUserFormik.errors.userName ? " is-invalid" : ""}
+              requiredMessage={EditUserFormik.touched.userName && EditUserFormik.errors.userName}
+              requiredMessageLabel={EditUserFormik.touched.userName || EditUserFormik.isSubmitting ? EditUserFormik.errors.userName : ""}
             />
+        
           </div>
 
           <div className="form-row">
             <label>User ID*</label>
-            <input
-              type="text"
-              name="userId"
-              value={formData.userId}
-              onChange={handleChange}
+            <InputField
+              placeHolder={'Type here'}
+              textType="text"
+              inputName="userId"
+              asterisk={true}
+              whiteSpace={false}
+              onBlur={EditUserFormik.handleBlur}
+              value={EditUserFormik.values.userId}
+              onchangeCallback={EditUserFormik.handleChange}
+              inputClassName={EditUserFormik.touched.userId && EditUserFormik.errors.userId ? " is-invalid" : ""}
+              requiredMessage={EditUserFormik.touched.userId && EditUserFormik.errors.userId}
+              requiredMessageLabel={EditUserFormik.touched.userId || EditUserFormik.isSubmitting ? EditUserFormik.errors.userId : ""}
             />
           </div>
         </div>
@@ -59,31 +72,45 @@ const ProfileForm = () => {
         <div className="flex">
           <div className="form-row">
             <label>Email*</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
+            <InputField
+              placeHolder={'Type here'}
+              textType="email"
+              inputName="email"
+              asterisk={true}
+              whiteSpace={false}
+              onBlur={EditUserFormik.handleBlur}
+              value={EditUserFormik.values.email}
+              onchangeCallback={EditUserFormik.handleChange}
+              inputClassName={EditUserFormik.touched.email && EditUserFormik.errors.email ? " is-invalid" : ""}
+              requiredMessage={EditUserFormik.touched.email && EditUserFormik.errors.email}
+              requiredMessageLabel={EditUserFormik.touched.email || EditUserFormik.isSubmitting ? EditUserFormik.errors.email : ""}
             />
           </div>
 
           <div className="form-row">
             <label>Contact No*</label>
-            <input
-              type="text"
-              name="contactNo"
-              value={formData.contactNo}
-              onChange={handleChange}
+            <InputField
+              placeHolder={'Type here'}
+              textType="text"
+              inputName="contact"
+              asterisk={true}
+              whiteSpace={false}
+              onBlur={EditUserFormik.handleBlur}
+              value={EditUserFormik.values.contact}
+              onchangeCallback={EditUserFormik.handleChange}
+              inputClassName={EditUserFormik.touched.contact && EditUserFormik.errors.contact ? " is-invalid" : ""}
+              requiredMessage={EditUserFormik.touched.contact && EditUserFormik.errors.contact}
+              requiredMessageLabel={EditUserFormik.touched.contact || EditUserFormik.isSubmitting ? EditUserFormik.errors.contact : ""}
             />
           </div>
         </div>
 
         <div className="select">
           <label>Your Role*</label>
-          <select name="role" value={formData.role} onChange={handleChange}>
-            <option value="">Designation</option>
-            <option value="Manager">Manager</option>
+          <select name="role" >
+            {/* <option value="">Designation</option> */}
             <option value="Developer">Developer</option>
+            <option value="Manager">Manager</option>
             <option value="Designer">Designer</option>
           </select>
         </div>
@@ -91,26 +118,41 @@ const ProfileForm = () => {
         <div className="flex">
           <div className="form-row">
             <label>Your Default Company*</label>
-            <input
-              type="text"
-              name="defaultCompany"
-              value={formData.defaultCompany}
-              onChange={handleChange}
+            <InputField
+              placeHolder={'Type here'}
+              textType="text"
+              inputName="company"
+              asterisk={true}
+              whiteSpace={false}
+              onBlur={EditUserFormik.handleBlur}
+              value={EditUserFormik.values.company}
+              onchangeCallback={EditUserFormik.handleChange}
+              inputClassName={EditUserFormik.touched.company && EditUserFormik.errors.company ? " is-invalid" : ""}
+              requiredMessage={EditUserFormik.touched.company && EditUserFormik.errors.company}
+              requiredMessageLabel={EditUserFormik.touched.company || EditUserFormik.isSubmitting ? EditUserFormik.errors.company : ""}
             />
           </div>
 
           <div className="form-row">
             <label>Default Company Address*</label>
-            <input
-              type="text"
-              name="companyAddress"
-              value={formData.companyAddress}
-              onChange={handleChange}
+            <InputField
+              placeHolder={'Type here'}
+              textType="text"
+              inputName="companyAddress"
+              asterisk={true}
+              whiteSpace={false}
+              onBlur={EditUserFormik.handleBlur}
+              value={EditUserFormik.values.companyAddress}
+              onchangeCallback={EditUserFormik.handleChange}
+              inputClassName={EditUserFormik.touched.companyAddress && EditUserFormik.errors.companyAddress ? " is-invalid" : ""}
+              requiredMessage={EditUserFormik.touched.companyAddress && EditUserFormik.errors.companyAddress}
+              requiredMessageLabel={EditUserFormik.touched.companyAddress || EditUserFormik.isSubmitting ? EditUserFormik.errors.companyAddress : ""}
             />
           </div>
         </div>
 
         <button className="save-btn" type="submit">
+          <Spinner isLoading={EditUserLoader}/>
           Save Profile
         </button>
       </form>
