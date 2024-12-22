@@ -32,6 +32,7 @@ const MainRoutes = () => {
         <Maintenance />
     ) : (
         <>
+        {/* all route will pass throw this private public checking  */}
             <Routes>
                 <Route exact path='/' element={<RouteRestriction type="both" />}>
                     {public_private_routes.map(({ path, Component, Layout,Layout2 }, i) => (
@@ -52,11 +53,6 @@ const MainRoutes = () => {
                 <Route exact path='/' element={<RouteRestriction type="private" />}>
                     {private_routes.map(({ path, Component, Layout }, i) => (
                         <Route element={Layout} key={path}>
-                            {/* {jwt_token ? <Route exact
-                                path={`/`}
-                                element={<Navigate
-                                    to={`${pages_path.home}`} />}
-                            /> : */}
                             <Route exact path={path}
                                 element={<Suspense fallback={<CustomPageLoader default={true} />}>{Component}</Suspense>}
                             />

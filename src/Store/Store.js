@@ -7,19 +7,9 @@ const rootReducer = combineReducers({
         // sampleCartSlice,
         userSlice
 })
-// const storageReducer = combineReducers({
-//     testSlice2
-// })
-// const persistConfig = {
-//     key: 'persisted',
-//     storage,
-//     whitelist: ['persistedData'],
-// };
 
 
-// const persistedStore = configureStore({
-//     reducer: persistReducer(persistConfig, storageReducer),
-// });
+// main redux store 
 
 const temporaryStore = configureStore({
     reducer: rootReducer,

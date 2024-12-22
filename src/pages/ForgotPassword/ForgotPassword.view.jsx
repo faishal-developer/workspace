@@ -21,12 +21,8 @@ const OtpForm = (props) => {
         <p className="otp-form-description">
           Please enter your registered email or username<br/> to receive a secure code.
         </p>
+        {/* login form  */}
         <form className='left' onSubmit={OtpFormik.handleSubmit}>
-          {/* <input
-            type="text"OtpFormik
-            
-            placeholder="Email/Username"
-          /> */}
           <InputField
               placeHolder={'Email/Username'}
               textType="text"
@@ -40,7 +36,7 @@ const OtpForm = (props) => {
               requiredMessage={OtpFormik.touched.email && OtpFormik.errors.email}
               requiredMessageLabel={OtpFormik.touched.email || OtpFormik.isSubmitting ? OtpFormik.errors.email : ""}
           />
-          <button className="otp-form-button">
+          <button disabled={OtpLoader} className="otp-form-button">
             <Spinner isLoading={OtpLoader}/>
             Send OTP
           </button>

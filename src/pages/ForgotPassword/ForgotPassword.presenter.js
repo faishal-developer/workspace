@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 export const useOtp=()=>{
     const [OtpLoader,setOtpLoader] = useState();
 
+    //form validation logic 
     const validateOtpForm = (values) => {
         const errors = {};
         if (!values.email.trim()) {
@@ -24,6 +25,7 @@ export const useOtp=()=>{
         },500)
     }
 
+    // formik is external library used for form validation 
     const OtpFormik = useFormik({
         initialValues: {
             email:''

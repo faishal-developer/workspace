@@ -4,6 +4,7 @@ const initialState = {
     user: null
 };
 
+// sample redux slice 
 export const userSlice = createSlice({
     name: 'user',
     initialState,

@@ -5,6 +5,7 @@ import { path } from "../../routes/path";
 const Home = (props) => {
     const navigate = useNavigate();
     
+    // a dummy implementation 
     useEffect(()=>{
         navigate(path.login)
     },[])

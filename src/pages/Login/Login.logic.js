@@ -10,6 +10,7 @@ export const useLogin=()=>{
     const navigate = useNavigate()
     const dispatch = useDispatch();
 
+    // validation logic for login form 
     const validateLoginForm = (values) => {
         const errors = {};
         if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -24,13 +25,14 @@ export const useLogin=()=>{
         return errors;
     }
 
-    const loginHandle=(values)=>{
-        setloginLoader(true)
-        setTimeout(()=>{
+    // dummy login handler 
+    function loginHandle(values) {
+        setloginLoader(true);
+        setTimeout(() => {
             setloginLoader(false);
-            navigate(path.add_user)
-            localStorage.setItem('user',"true")
-        },500)
+            navigate(path.add_user);
+            localStorage.setItem('user', "true");
+        }, 500);
     }
 
     const loginFormik = useFormik({
